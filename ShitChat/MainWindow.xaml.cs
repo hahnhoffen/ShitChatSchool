@@ -23,6 +23,8 @@ namespace ShitChat
         public MainWindow()
         {
             InitializeComponent();
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
         }
     }
 }

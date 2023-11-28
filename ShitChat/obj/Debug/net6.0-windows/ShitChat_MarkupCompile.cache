@@ -1,5 +1,5 @@
 ﻿ShitChat
-1.0.0.0
+
 
 winexe
 C#
@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Tim Hahn Colbro\source\repos\ShitChat\ShitChat\App.xaml
 2582614379
 
-9-850192060
+71402733790
 194183970531
 MainWindow.xaml;RegisterWindow.xaml;
 
-True
+False
 
