@@ -12,7 +12,8 @@ namespace ShitChat
         public string UserName;
         public string Password; //Borde inte dessa två variabler ligga i User istället för Person? 
 
-        public List<User> FriendsList = new List<User>();
+        public List<User> friendsList = new List<User>();
+        public List<Conversation> conversations = new List<Conversation>();
 
 
         public User(string userName, string password)
@@ -24,13 +25,16 @@ namespace ShitChat
 
         public void AddFriend(User user)
         {
-            FriendsList.Add(user);
+            friendsList.Add(user);
         }
 
 
         public void RemoveFriend(User user)
         {
-            FriendsList.Remove(user);
+            friendsList.Remove(user);
         }
+
+
+
     }
 }

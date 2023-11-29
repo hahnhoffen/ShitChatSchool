@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ShitChat
@@ -19,5 +20,12 @@ namespace ShitChat
             this.Writer = writer;   
             this.Reciever = reciever;
         }
+
+        public string GetJson()
+        {
+            string jsonString = JsonSerializer.Serialize(this);
+            return jsonString;
+        }
+        
     }
 }
