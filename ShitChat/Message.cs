@@ -9,19 +9,17 @@ namespace ShitChat
     internal class Message
     {
         public string MessageString;
-        public string Writer;
-        public string Reciever;
+        public User Writer;
+        public User Reciever;
         public string TimeStamp;
 
 
-        public Message(string messageString, string writer, string reciever, string timeStamp)
+        public Message(string messageString, User writer, User reciever, string timeStamp)
         {
             this.MessageString = messageString;
             this.Writer = writer;   
             this.Reciever = reciever;
             this.TimeStamp = timeStamp;
         }
-
-
     }
 }
