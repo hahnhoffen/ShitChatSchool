@@ -9,7 +9,7 @@ namespace ShitChat
 {
     public class User : Person
     {
-        public string UserName; 
+        public string UserName;
         public string Password; //Borde inte dessa två variabler ligga i User istället för Person? 
 
         public List<User> friendsList = new List<User>();

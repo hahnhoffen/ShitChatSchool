@@ -9,12 +9,84 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid>
+    <Grid Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Width="580" VerticalAlignment="Center" HorizontalAlignment="Center" Height="310">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Button
-            Margin="160,299,0,0"
+            x:Name="Register_Btn"
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="70"
+            Height="32"
+            Margin="0,0,10,10"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Click="ToRegisterWindow"
+            Content="Register" Cursor="Hand" />
+        <Label
+            Grid.Row="0"
+            Margin="193,10,42,30"
+            Content="Welcome to ShitChat"
+            FontSize="13" Grid.ColumnSpan="2" />
+        <TextBox
+            x:Name="UserName_block"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10,44,32,88"
+            Background="White" />
+        <TextBox
+            x:Name="Password_block"
+            Grid.Row="1"
+            Margin="10,90,32,40"
+            Background="White" Grid.Column="1" />
+        <Label
+            Grid.Row="1"
+            Width="100"
+            Margin="83,44,0,82"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Button" />
-
+            Content="Username/Email:" />
+        <Label
+            Grid.Row="1"
+            Width="63"
+            Margin="120,90,0,40"
+            HorizontalAlignment="Left"
+            Content="Password:" />
+        <Label
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="28,4,28,47"
+            Content="If you dont have a User" />
+        <Button
+            x:Name="Login_Btn"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="77"
+            Height="32"
+            Margin="0,0,69,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Click="Login_Btn_Click"
+            Content="Login" Cursor="Hand" />
+        <Button
+            x:Name="Register_Btn_Copy"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="65"
+            Height="25"
+            Margin="10,0,0,5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Click="Quit_app"
+            Content="Quit" Cursor="Hand" 
+            />
+        <Label x:Name="ErrorLabel" Content="Could not find user or password!" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="194" Grid.Column="1" Foreground="#FFF2A80B" Visibility="Hidden"/>
     </Grid>
 </Window>
