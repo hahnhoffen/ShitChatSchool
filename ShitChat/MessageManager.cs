@@ -9,11 +9,14 @@ namespace ShitChat
 {
     public class MessageManager
     {
-
         User currentUser;
 
         public static string path = "Conversation";
 
+        public void SetUser(User user)
+        {
+            this.currentUser = user;
+        }
 
 
         public void CreateNewMessage(string message, User writer, User reciever)

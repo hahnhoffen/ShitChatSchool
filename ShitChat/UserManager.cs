@@ -10,7 +10,12 @@ namespace ShitChat
     public  class UserManager
     {
         RegisterWindow registerWindow;
-        
+        User currentUser;
+
+        public void SetUser(User user)
+        {
+            this.currentUser = user;
+        }
 
         public void SetRegisterWindow(RegisterWindow registerWindow)
         {
