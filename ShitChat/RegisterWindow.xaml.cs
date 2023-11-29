@@ -23,10 +23,11 @@ namespace ShitChat
         private Person newUser;
         public List<User> userList = new List<User>();
 
+      
         public RegisterWindow()
         {
             InitializeComponent();
-            newUser = new Person();
+            newUser = new Person(); //Why do we create a person before we add the details? What happens if they don't register the form correctly? 
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

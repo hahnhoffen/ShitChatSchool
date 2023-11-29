@@ -8,11 +8,17 @@ namespace ShitChat
 {
     public class Conversation
     {
-        public List<Message> listOfConversations = new List<Message>();
-        public string Description {  get; set; }
-        public User User1 { get; set; }
-        public User User2 { get; set; }
+        public List<Message> messages;
+        public User User { get; set; }
+        public int conversationId {  get; set; }
 
+        public static int conversationNextId = 1;
+        
 
+        public Conversation(Message message, User reciever)
+        {
+            this.conversationId = conversationNextId++;
+            this.User = reciever;
+        }
     }
 }

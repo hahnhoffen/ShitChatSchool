@@ -1,24 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShitChat
 {
-    internal class UserManager
+    public  class UserManager
     {
-        List<User> listOfUsers = new List<User>();
+        RegisterWindow registerWindow;
+        
 
-        public void CreateUser(string userName, string password)
+        public void SetRegisterWindow(RegisterWindow registerWindow)
         {
-            listOfUsers.Add(new User(userName, password));
+            this.registerWindow = registerWindow;
         }
 
+        public void DeleteUser(string userName)
+        {
+            foreach (User user in registerWindow.userList)
+            {
+                registerWindow.userList.Remove(user);
 
-
-
-
-
+            }
+        }
     }
 }
