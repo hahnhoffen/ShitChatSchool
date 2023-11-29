@@ -21,6 +21,7 @@ namespace ShitChat
     public partial class RegisterWindow : Window
     {
         private Person newUser;
+        public List<User> userList = new List<User>();
 
         public RegisterWindow()
         {
