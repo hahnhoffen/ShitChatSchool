@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShitChat
 {
-    internal class User : Person
+    public class User : Person
     {
         public string UserName; 
         public string Password; //Borde inte dessa två variabler ligga i User istället för Person? 
