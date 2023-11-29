@@ -9,7 +9,7 @@ namespace ShitChat
 {
     public class MessageManager
     {
-        User currentUser;
+        public User currentUser;
 
         public static string path = "Conversation";
 
@@ -44,29 +44,29 @@ namespace ShitChat
         }
 
 
-      //  public void ExportToJson(string fileName, string location)
-      //  {
-      //      string file = System.IO.Path.Combine(location, fileName);
-      //
-      //      
-      //      
-      //      try
-      //      {
-      //          System.IO.File.Create(file).Close();
-      //          using (StreamReader reader = new StreamReader(file))
-      //          {
-      //              foreach (Conversation conversation in currentUser)
-      //              {
-      //                  switch.WriteLine(conversation.messages.GetJson)
-      //              }
-      //          }
-      //      
-      //      }
-      //      catch (Exception ex)
-      //      {
-      //          Console.WriteLine(ex.Message);
-      //      }
-      //  }
+        public void ExportToJson(string fileName, string location)
+        {
+            string file = System.IO.Path.Combine(location, fileName);
+      
+            
+            
+            try
+            {
+                System.IO.File.Create(file).Close();
+                using (StreamWriter sw = new StreamWriter(file))
+                {
+                    foreach (Conversation conversation in currentUser.conversations)
+                    {
+                        sw.WriteLine(conversation.GetJson());
+                    }
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
     }
 }
