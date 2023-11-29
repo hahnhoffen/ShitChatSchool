@@ -8,5 +8,10 @@ namespace ShitChat
 {
     internal class MessageManager
     {
+
+        public void CreateMessage(string user, string reciever, string message)
+        {
+
+        }
     }
 }

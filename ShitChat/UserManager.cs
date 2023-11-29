@@ -8,5 +8,7 @@ namespace ShitChat
 {
     internal class UserManager
     {
+
+
     }
 }

@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Tim Hahn Colbro\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Tim Hahn Colbro\\.nuget\\packages"
+      "C:\\Users\\SOS23\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\SOS23\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
