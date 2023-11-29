@@ -9,7 +9,12 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Width="580" VerticalAlignment="Center" HorizontalAlignment="Center" Height="310">
+    <Grid
+        Width="580"
+        Height="310"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -30,12 +35,14 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             Click="ToRegisterWindow"
-            Content="Register" Cursor="Hand" />
+            Content="Register"
+            Cursor="Hand" />
         <Label
             Grid.Row="0"
+            Grid.ColumnSpan="2"
             Margin="193,10,42,30"
             Content="Welcome to ShitChat"
-            FontSize="13" Grid.ColumnSpan="2" />
+            FontSize="13" />
         <TextBox
             x:Name="UserName_block"
             Grid.Row="1"
@@ -45,8 +52,9 @@
         <TextBox
             x:Name="Password_block"
             Grid.Row="1"
+            Grid.Column="1"
             Margin="10,90,32,40"
-            Background="White" Grid.Column="1" />
+            Background="White" />
         <Label
             Grid.Row="1"
             Width="100"
@@ -74,7 +82,8 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             Click="Login_Btn_Click"
-            Content="Login" Cursor="Hand" />
+            Content="Login"
+            Cursor="Hand" />
         <Button
             x:Name="Register_Btn_Copy"
             Grid.Row="2"
@@ -85,8 +94,18 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Click="Quit_app"
-            Content="Quit" Cursor="Hand" 
-            />
-        <Label x:Name="ErrorLabel" Content="Could not find user or password!" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="194" Grid.Column="1" Foreground="#FFF2A80B" Visibility="Hidden"/>
+            Content="Quit"
+            Cursor="Hand" />
+        <Label
+            x:Name="ErrorLabel"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="194"
+            Height="28"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Could not find user or password!"
+            Foreground="#FFF2A80B"
+            Visibility="Hidden" />
     </Grid>
 </Window>
