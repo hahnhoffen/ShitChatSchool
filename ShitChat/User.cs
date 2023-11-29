@@ -33,8 +33,5 @@ namespace ShitChat
         {
             friendsList.Remove(user);
         }
-
-
-
     }
 }

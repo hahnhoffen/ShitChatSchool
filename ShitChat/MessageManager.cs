@@ -47,9 +47,6 @@ namespace ShitChat
         public void ExportToJson(string fileName, string location)
         {
             string file = System.IO.Path.Combine(location, fileName);
-      
-            
-            
             try
             {
                 System.IO.File.Create(file).Close();
@@ -60,13 +57,11 @@ namespace ShitChat
                         sw.WriteLine(conversation.GetJson());
                     }
                 }
-            
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
         }
-
     }
 }
