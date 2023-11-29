@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ShitChat
 {
-    internal class MessageManager
+    public class MessageManager
     {
 
-        public void CreateMessage(string user, string reciever, string message)
+        public void CreateMessage(string message, User writer, User reciever, Conversation conversation)
         {
-
+            conversation.listOfConversations.Add(new Message(message, writer, reciever));
         }
     }
 }
