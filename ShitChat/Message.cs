@@ -6,20 +6,18 @@ using System.Threading.Tasks;
 
 namespace ShitChat
 {
-    internal class Message
+    public class Message
     {
-        public string MessageString;
-        public User Writer;
-        public User Reciever;
-        public string TimeStamp;
+        public string MessageString { get; set; }
+        public User Writer {  get; set; }
+        public User Reciever { get; set; }
 
 
-        public Message(string messageString, User writer, User reciever, string timeStamp)
+        public Message(string messageString, User writer, User reciever)
         {
             this.MessageString = messageString;
             this.Writer = writer;   
             this.Reciever = reciever;
-            this.TimeStamp = timeStamp;
         }
     }
 }
