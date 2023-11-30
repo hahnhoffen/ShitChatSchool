@@ -9,6 +9,9 @@ namespace ShitChat
 {
     public  class UserManager
     {
+
+        //Tjenare, masterbranchen här. 
+
         RegisterWindow registerWindow;
         public User currentUser;
 
