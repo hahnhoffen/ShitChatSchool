@@ -10,17 +10,19 @@ namespace ShitChat
     public  class UserManager
     {
         RegisterWindow registerWindow;
-        User currentUser;
+        public User currentUser;
 
         public void SetUser(User user)
         {
             this.currentUser = user;
         }
 
+
         public void SetRegisterWindow(RegisterWindow registerWindow)
         {
             this.registerWindow = registerWindow;
         }
+
 
         public void DeleteUser(string userName)
         {
@@ -29,6 +31,25 @@ namespace ShitChat
                 registerWindow.userList.Remove(user);
 
             }
+        }
+
+
+        internal bool LogInUser(string username, string password)
+        {
+            foreach (User user in registerWindow.userList)
+            {
+                if (user.Username == username)
+                {
+                    user.LogIn(username, password);
+                    currentUser = user;
+                    return true;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return false;
         }
     }
 }

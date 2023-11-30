@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ShitChat
@@ -32,6 +33,30 @@ namespace ShitChat
         public void RemoveFriend(User user)
         {
             friendsList.Remove(user);
+        }
+
+
+        public string GetJson()
+        {
+            string jsonUser = JsonSerializer.Serialize(this);
+            return jsonUser;
+        }
+
+
+        public bool LogIn(string email, string password)
+        {
+            if (email == null || password == null)
+            {
+                return false;
+            }
+            else if (email == this.Email.ToLower() && password == this.Password)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
