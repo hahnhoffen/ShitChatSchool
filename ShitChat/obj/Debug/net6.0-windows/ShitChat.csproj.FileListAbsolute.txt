@@ -72,3 +72,5 @@ C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\ref
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\ShitChat.pdb
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\ShitChat.genruntimeconfig.cache
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\ref\ShitChat.dll
+C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\UserControls\dropDownMenu.g.cs
+C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\UserControls\dropDownMenu.baml

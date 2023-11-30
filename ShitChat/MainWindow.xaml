@@ -17,6 +17,9 @@
         
         <!--- Menu Bar -->
         <UserControls:menuBar  />
+        
+        <!--- User Menu -->
+        <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" />
 
 
     </Grid>
