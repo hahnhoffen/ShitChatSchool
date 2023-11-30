@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\App.xaml
-32093759016
+41977292134
 
-14-1412514825
+151617921556
 194726069201
-Login.xaml;MainWindow.xaml;RegisterWindow.xaml;
+Login.xaml;MainWindow.xaml;RegisterWindow.xaml;UserControls\menuBar.xaml;
 
 True
 
