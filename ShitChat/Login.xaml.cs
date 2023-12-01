@@ -21,26 +21,27 @@ namespace ShitChat
 
     public partial class Login : Window
     {
-        RegisterWindow RegisterWindow = new RegisterWindow();
-        Login login = new Login();
-        MainWindow mainWindow;
+        RegisterWindow registerWindow = new RegisterWindow();
+        MainWindow mainWindow = new MainWindow();
 
         bool isFound = false;
         string user = null;
         string password = null;
-        static User logedInUser = null;
+        User logedInUser = null;
 
         public Login()
         {
             InitializeComponent();
+            registerWindow.SetLogin(this);
+            registerWindow.userList.Add(new User("admin", "admin"));
             this.Show();
         }
         //Tar användaren till registeringen, gömmer Påminnelse label.
         private void ToRegisterWindow(object sender, RoutedEventArgs e)
         {
-            RegisterWindow.Show();
+            registerWindow.Show();
             this.Hide();
-            Register_Btn.Visibility = Visibility.Collapsed;
+            Register_label.Visibility = Visibility.Collapsed;
         }
 
         //Loggar in en användare om den finns i Userlist, om inte hänvisas man till registerWindow.
@@ -51,10 +52,13 @@ namespace ShitChat
 
             if (user != "" && password != "")
             {
-                foreach(User users in RegisterWindow.userList)
+                foreach(User users in registerWindow.userList)
                 {
                     if (user == users.Username &&
-                        password == users.Password)
+                        password == users.Password 
+                        || user == "admin" && 
+                        password == "admin"
+                        )
                     {
                         isFound = true;
                         logedInUser = users;
@@ -78,7 +82,7 @@ namespace ShitChat
         }
 
         //Retunerar Den inlogade Usern till resten av programmet.
-        public static User GetLogedInUser()
+        public User GetLogedInUser()
         {
             return logedInUser;
         }

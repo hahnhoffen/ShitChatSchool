@@ -29,6 +29,7 @@ namespace ShitChat
             InitializeComponent();
             newUser = new Person(); //Why do we create a person before we add the details? What happens if they don't register the form correctly? 
         }
+     
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
@@ -65,9 +66,12 @@ namespace ShitChat
 
         private void GoBack_button(object sender, RoutedEventArgs e)
         {
-            
             login.Show();
             this.Hide();
+        }
+        public void SetLogin(Login login)
+        {
+            this.login = login;
         }
     }
 }

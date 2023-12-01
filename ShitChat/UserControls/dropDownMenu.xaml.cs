@@ -17,10 +17,16 @@ namespace ShitChat.UserControls
 {
     public partial class dropDownMenu : UserControl
     {
+
         public dropDownMenu()
         {
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application application = Application.Current;
+            application.Shutdown();
+        }
     }
 }
