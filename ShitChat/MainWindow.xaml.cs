@@ -24,8 +24,6 @@ namespace ShitChat
         public MainWindow()
         {
             InitializeComponent();           
-            Login login = new Login();
-            login.Show();
         }
     }
 }

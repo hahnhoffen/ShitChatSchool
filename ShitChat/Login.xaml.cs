@@ -22,6 +22,7 @@ namespace ShitChat
     public partial class Login : Window
     {
         RegisterWindow RegisterWindow = new RegisterWindow();
+        Login login = new Login();
         MainWindow mainWindow;
 
         bool isFound = false;

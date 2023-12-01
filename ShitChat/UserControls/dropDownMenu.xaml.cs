@@ -15,14 +15,12 @@ using System.Windows.Shapes;
 
 namespace ShitChat.UserControls
 {
-    /// <summary>
-    /// Interaction logic for dropDownMenu.xaml
-    /// </summary>
     public partial class dropDownMenu : UserControl
     {
         public dropDownMenu()
         {
             InitializeComponent();
         }
+
     }
 }
