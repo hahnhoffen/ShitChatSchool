@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\
+C:\Users\Raash\OneDrive\Skrivbord\ShitChat\ShitChat\obj\Debug\net6.0-windows\
 ShitChat
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\App.xaml
+C:\Users\Raash\OneDrive\Skrivbord\ShitChat\ShitChat\App.xaml
 5-751820728
 
 16-1060325794
 194726069201
 Login.xaml;MainWindow.xaml;RegisterWindow.xaml;UserControls\dropDownMenu.xaml;UserControls\menuBar.xaml;
 
-True
+False
 
