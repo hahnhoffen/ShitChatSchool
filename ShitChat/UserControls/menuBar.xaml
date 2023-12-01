@@ -5,12 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="40"
+    d:DesignHeight="50"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <Grid
@@ -27,7 +27,7 @@
             <TextBox
                 x:Name="txtInput"
                 Grid.Column="1"
-                Margin="195,0,200,0"
+                Margin="195,5,200,0"
                 VerticalAlignment="Center"
                 Background="Black"
                 BorderThickness="2"
@@ -36,7 +36,7 @@
             <TextBlock
                 x:Name="tbPlaceHolder"
                 Grid.Column="1"
-                Margin="200,0,200,0"
+                Margin="200,5,200,0"
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Light"
@@ -47,7 +47,7 @@
                 Grid.Column="1"
                 Width="30"
                 Height="25"
-                Margin="0,0,200,0"
+                Margin="0,5,200,0"
                 HorizontalAlignment="Right"
                 Background="Transparent"
                 BorderThickness="0"
@@ -56,7 +56,7 @@
             <Button
                 x:Name="btn_userMenu"
                 FontSize="16"
-                Grid.Column="1"
+                Grid.Column="0"
                 Width="175"
                 Height="40"
                 Margin="0,0,0,0"
@@ -66,15 +66,17 @@
                 Background="Transparent"
                 Content="       Username"
                 Foreground="AliceBlue" />
-
-            <Image
-                x:Name="userIcon"
-                Grid.Column="1"
-                Width="25"
-                Margin="5,0,0,2"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Source="/UserControls/account.png" OpacityMask="Black" />
+                
+            
+            <Path Grid.Column="0" 
+                  Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                  Fill="DarkGreen" 
+                  Margin="0, 5, 0, 0"
+                  VerticalAlignment="Center"/>
+                  
+                  
+                  
+                  
         </Grid>
     </Grid>
 </UserControl>
