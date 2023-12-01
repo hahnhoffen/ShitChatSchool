@@ -6,7 +6,7 @@
         xmlns:UserControls="clr-namespace:ShitChat.UserControls"
         xmlns:local="clr-namespace:ShitChat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="900">
     
     <Grid Background="Black">
         <Grid.RowDefinitions>
@@ -19,7 +19,7 @@
         <UserControls:menuBar  />
         
         <!--- User Menu -->
-        <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" Width="150" />
+        <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" Width="200" />
 
 
     </Grid>
