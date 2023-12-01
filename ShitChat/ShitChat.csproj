@@ -15,4 +15,9 @@
     <Resource Include="UserControls\userIcon.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MVVM\Model\" />
+    <Folder Include="MVVM\View\" />
+  </ItemGroup>
+
 </Project>

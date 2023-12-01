@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Raash\OneDrive\Skrivbord\ShitChat\ShitChat\App.xaml
-5-751820728
+681093848
 
-16-1060325794
+18-1756955221
 194726069201
-Login.xaml;MainWindow.xaml;RegisterWindow.xaml;UserControls\dropDownMenu.xaml;UserControls\menuBar.xaml;
+ChatWindow.xaml;Login.xaml;MainWindow.xaml;RegisterWindow.xaml;UserControls\dropDownMenu.xaml;UserControls\menuBar.xaml;
 
-False
+True
 
