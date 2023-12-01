@@ -7,7 +7,7 @@
         xmlns:viewmodel="clr-namespace:ShitChat.MVVM.ViewModel"
         mc:Ignorable="d"
         Height="650" Width="1200"
-        Background="#36393F"
+        Background="#FFF9F9F9"
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip">
@@ -31,11 +31,11 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.ColumnSpan="2"
-                Background="#252525">
+                Background="#FF59C858">
 
             <Grid HorizontalAlignment="Stretch">
                 <Label Content="Chat"
-                       Foreground="Gray"
+                       Foreground="Black"
                        FontWeight="SemiBold"/>
 
                 <StackPanel HorizontalAlignment="Right"
@@ -72,7 +72,7 @@
 
         </Border>
 
-        <Grid Background="#2F3136"
+        <Grid Background="#FFF9F9F9"
               Grid.Row="1">
 
             <Grid.RowDefinitions>
@@ -84,13 +84,13 @@
             <Label Content="Friends"
                    VerticalAlignment="Center"
                    FontWeight="Medium"
-                   Foreground="Gray"
+                   Foreground="Black"
                    Margin="8,0,0,0"/>
 
             <ListView ItemsSource="{Binding Contacts}"
                       Background="Transparent"
                       BorderThickness="0"
-                      Grid.Row="1"/>
+                      Grid.Row="1" BorderBrush="#FFF9F9F9"/>
 
 
 
