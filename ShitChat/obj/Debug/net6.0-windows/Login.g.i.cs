@@ -103,7 +103,11 @@ namespace ShitChat {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.0.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "7.0.10.0")]
+>>>>>>> 780757ff7d1b288bd3bf95e2296c63226d859bb9
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
