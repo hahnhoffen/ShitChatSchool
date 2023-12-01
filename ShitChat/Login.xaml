@@ -70,8 +70,8 @@
         <Label
             Grid.Row="2"
             Grid.Column="2"
-            Margin="28,4,28,47"
-            Content="If you dont have a User" />
+            Margin="93,8,0,42"
+            Content="Register Here!" Foreground="#FFFB730A" Visibility="Hidden" />
         <Button
             x:Name="Login_Btn"
             Grid.Row="1"
@@ -107,5 +107,6 @@
             Content="Could not find user or password!"
             Foreground="#FFF2A80B"
             Visibility="Hidden" />
+        <Label x:Name="Register_label" Grid.Column="2" Content="Register here" HorizontalAlignment="Left" Margin="29,36,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="#FFCBE62D"/>
     </Grid>
 </Window>

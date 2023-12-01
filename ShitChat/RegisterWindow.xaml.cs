@@ -22,7 +22,7 @@ namespace ShitChat
     {
         private Person newUser;
         public List<User> userList = new List<User>();
-
+        public Login login;
       
         public RegisterWindow()
         {
@@ -65,7 +65,9 @@ namespace ShitChat
 
         private void GoBack_button(object sender, RoutedEventArgs e)
         {
-
+            
+            login.Show();
+            this.Hide();
         }
     }
 }
