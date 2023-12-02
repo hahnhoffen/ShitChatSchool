@@ -31,10 +31,13 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 Width="350"
-                Background="Black"
+                Background="Transparent"
                 BorderThickness="2"
                 FontSize="16"
-                FontWeight="Light" />
+                FontWeight="Light" 
+                TextChanged="txtInput_TextChanged"
+                />
+            
             <TextBlock
                 x:Name="tbPlaceHolder"
                 Grid.Column="1"
@@ -44,7 +47,9 @@
                 FontSize="16"
                 FontWeight="Light"
                 Foreground="DarkGray"
-                Text="Search for friends and events..." />
+                Text="Search for friends and events..." 
+                Panel.ZIndex="-1"/>
+                
             <Button
                 x:Name="btnClear"
                 Grid.Column="1"
@@ -55,7 +60,10 @@
                 Background="Transparent"
                 BorderThickness="0"
                 Content="X"
-                Foreground="LightGray" />
+                Foreground="LightGray" 
+                Click="btnClear_Click"
+                />
+                
             <Button
                 x:Name="btn_userMenu"
                 FontSize="16"
@@ -70,18 +78,12 @@
                 Content="      Username"
                 Foreground="AliceBlue" 
                 BorderBrush="Transparent"/>
-                
-                
-            
+
             <Path Grid.Column="0" 
                   Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
                   Fill="White" 
                   Margin="0, 5, 0, 0"
                   VerticalAlignment="Center"/>
-                  
-                  
-                  
-                  
         </Grid>
     </Grid>
 </UserControl>
