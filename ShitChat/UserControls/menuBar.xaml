@@ -27,56 +27,63 @@
             <TextBox
                 x:Name="txtInput"
                 Grid.Column="1"
-                Margin="195,5,200,0"
+                Margin="0,5,200,0"
                 VerticalAlignment="Center"
-                Background="Black"
+                HorizontalAlignment="Left"
+                Width="350"
+                Background="Transparent"
                 BorderThickness="2"
                 FontSize="16"
-                FontWeight="Light" />
+                FontWeight="Light" 
+                TextChanged="txtInput_TextChanged"
+                />
+            
             <TextBlock
                 x:Name="tbPlaceHolder"
                 Grid.Column="1"
-                Margin="200,5,200,0"
+                Margin="5,5,200,0"
                 VerticalAlignment="Center"
+                HorizontalAlignment="Left"
                 FontSize="16"
                 FontWeight="Light"
                 Foreground="DarkGray"
-                Text="Search for friends and events..." />
+                Text="Search for friends and events..." 
+                Panel.ZIndex="-1"/>
+                
             <Button
                 x:Name="btnClear"
                 Grid.Column="1"
                 Width="30"
                 Height="25"
-                Margin="0,5,200,0"
-                HorizontalAlignment="Right"
+                Margin="323,5,0,0"
+                HorizontalAlignment="Left"
                 Background="Transparent"
                 BorderThickness="0"
                 Content="X"
-                Foreground="LightGray" />
+                Foreground="LightGray" 
+                Click="btnClear_Click"
+                />
+                
             <Button
                 x:Name="btn_userMenu"
                 FontSize="16"
                 Grid.Column="0"
-                Width="175"
+                Width="200"
                 Height="40"
                 Margin="0,0,0,0"
                 HorizontalContentAlignment="Left"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 Background="Transparent"
-                Content="       Username"
-                Foreground="AliceBlue" />
-                
-            
+                Content="      Username"
+                Foreground="AliceBlue" 
+                BorderBrush="Transparent"/>
+
             <Path Grid.Column="0" 
                   Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
-                  Fill="DarkGreen" 
+                  Fill="White" 
                   Margin="0, 5, 0, 0"
                   VerticalAlignment="Center"/>
-                  
-                  
-                  
-                  
         </Grid>
     </Grid>
 </UserControl>

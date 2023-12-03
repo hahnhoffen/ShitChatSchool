@@ -24,5 +24,25 @@ namespace ShitChat.UserControls
         {
             InitializeComponent();
         }
+
+        private void txtInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtInput.Text))
+            {
+                tbPlaceHolder.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                tbPlaceHolder.Visibility = Visibility.Hidden;
+                txtInput.Foreground = Brushes.White;
+            }
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtInput.Clear();
+            txtInput.Focus();
+        }
+
     }
 }
