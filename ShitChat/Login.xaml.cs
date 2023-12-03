@@ -35,6 +35,7 @@ namespace ShitChat
             registerWindow.SetLogin(this);
             registerWindow.userList.Add(new User("admin", "admin"));
             this.Show();
+            
         }
         //Tar användaren till registeringen, gömmer Påminnelse label.
         private void ToRegisterWindow(object sender, RoutedEventArgs e)
@@ -43,20 +44,20 @@ namespace ShitChat
             this.Hide();
             Register_label.Visibility = Visibility.Collapsed;
         }
-
+        
         //Loggar in en användare om den finns i Userlist, om inte hänvisas man till registerWindow.
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
-            user = UserName_block.Text;
-            password = Password_block.Text;
+            user = UserName_box.Text;
+            password = Password_box.Text;
 
             if (user != "" && password != "")
             {
                 foreach(User users in registerWindow.userList)
                 {
                     if (user == users.Username &&
-                        password == users.Password 
-                        || user == "admin" && 
+                        password == users.Password || 
+                        user == "admin" && 
                         password == "admin"
                         )
                     {

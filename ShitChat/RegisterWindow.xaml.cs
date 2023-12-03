@@ -69,6 +69,8 @@ namespace ShitChat
             login.Show();
             this.Hide();
         }
+
+        //Sätter värdet på Login så det inte öppnet ett nytt varje gång.
         public void SetLogin(Login login)
         {
             this.login = login;
