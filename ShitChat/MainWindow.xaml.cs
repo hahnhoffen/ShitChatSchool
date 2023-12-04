@@ -25,5 +25,11 @@ namespace ShitChat
         {
             InitializeComponent();           
         }
+
+
+        public void SetUserName(string userName)
+        {
+            MenuBar.SetUserName(userName);
+        }
     }
 }

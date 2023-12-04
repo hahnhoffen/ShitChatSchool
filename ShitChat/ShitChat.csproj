@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="UserControls\account-box.svg" />
     <Resource Include="UserControls\account.png" />
     <Resource Include="UserControls\userIcon.png" />
