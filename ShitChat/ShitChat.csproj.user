@@ -13,10 +13,16 @@
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\chatWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\dropDownMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\menuBar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,10 +36,16 @@
     <Page Update="RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserControls\chatWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserControls\dropDownMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\menuBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\Profile.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

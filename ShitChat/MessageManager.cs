@@ -10,6 +10,7 @@ namespace ShitChat
 {
     public class MessageManager
     {
+        //Hämta currentUSer från Login??  currentUser = login.GetLoginnUser() 
         public User currentUser;
         public static string path = "Conversation";
 
