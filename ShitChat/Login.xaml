@@ -412,7 +412,7 @@
             Click="ToRegisterWindow"
             Content="Register"
             Cursor="Hand"
-            Style="{DynamicResource ButtonStyle3}">
+            Style="{DynamicResource ButtonStyle3}" TabIndex="4">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>
@@ -424,7 +424,7 @@
             Margin="150,120,0,160"
             HorizontalAlignment="Left"
             Background="White"
-            Style="{DynamicResource TextBoxStyle2}" />
+            Style="{DynamicResource TextBoxStyle2}" TabIndex="0" />
         <Label
             Width="100"
             Margin="47,124,0,158"
@@ -461,7 +461,7 @@
             Click="Login_Btn_Click"
             Content="Login"
             Cursor="Hand"
-            Style="{DynamicResource ButtonStyle1}">
+            Style="{DynamicResource ButtonStyle1}" TabIndex="3">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>
@@ -476,7 +476,7 @@
             Click="Quit_app"
             Content="Quit"
             Cursor="Hand"
-            Style="{DynamicResource ButtonStyle2}">
+            Style="{DynamicResource ButtonStyle2}" TabIndex="5">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>
@@ -526,7 +526,7 @@
             VerticalAlignment="Top"
             Background="White"
             Style="{DynamicResource TextBoxStyle3}"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" TabIndex="1" />
 
     </Grid>
 </Window>

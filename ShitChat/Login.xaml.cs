@@ -85,7 +85,6 @@ namespace ShitChat
         //Retunerar Den inlogade Usern till resten av programmet.
         public string GetLogedInUser()
         {
-
             return logedInUser.ToString();
         }
 
