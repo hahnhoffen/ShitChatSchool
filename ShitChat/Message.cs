@@ -20,12 +20,5 @@ namespace ShitChat
             this.Writer = writer;   
             this.Reciever = reciever;
         }
-
-
-        public string GetJson()
-        {
-            string jsonString = JsonSerializer.Serialize(this);
-            return jsonString;
-        }
     }
 }

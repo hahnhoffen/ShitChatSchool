@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         
         <!--- Menu Bar -->
-        <UserControls:menuBar  />
+        <UserControls:menuBar x:Name="MenuBar"  />
         
         <!--- User Menu -->
         <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" Width="200" Background="Black" />

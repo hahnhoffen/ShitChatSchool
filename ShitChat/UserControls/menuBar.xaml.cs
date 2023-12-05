@@ -44,5 +44,9 @@ namespace ShitChat.UserControls
             txtInput.Focus();
         }
 
+        public void SetUserName(string username)
+        {
+            btn_userMenu.Content = username;
+        }
     }
 }
