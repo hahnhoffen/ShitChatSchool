@@ -396,3 +396,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/.vs/ProjectEvaluation/shitchat.metadata.v7.bin
+/.vs/ProjectEvaluation/shitchat.projects.v7.bin
+/.vs/ShitChat/v17/.futdcache.v2
+/.vs/ShitChat/DesignTimeBuild/.dtbcache.v2
