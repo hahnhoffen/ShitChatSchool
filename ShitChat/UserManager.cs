@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -36,25 +37,6 @@ namespace ShitChat
                 registerWindow.userList.Remove(user);
 
             }
-        }
-
-
-        internal bool LogInUser(string username, string password)
-        {
-            foreach (User user in registerWindow.userList)
-            {
-                if (user.Username == username)
-                {
-                    user.LogIn(username, password);
-                    currentUser = user;
-                    return true;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-            return false;
         }
 
 

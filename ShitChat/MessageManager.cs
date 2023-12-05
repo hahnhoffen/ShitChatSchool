@@ -12,7 +12,6 @@ namespace ShitChat
     {
         //Hämta currentUSer från Login??  currentUser = login.GetLoginnUser() 
         public User currentUser;
-
         public static string path = "Conversation";
 
         public void SetUser(User user)
