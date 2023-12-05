@@ -17,7 +17,7 @@ namespace ShitChat.UserControls
     /// <summary>
     /// Interaction logic for chatWindow.xaml
     /// </summary>
-    public partial class chatWindow : Window
+    public partial class chatWindow : UserControl
     {
         public chatWindow()
         {
@@ -29,6 +29,6 @@ namespace ShitChat.UserControls
 
         }
 
-       
+       //
     }
 }
