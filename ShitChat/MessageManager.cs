@@ -11,7 +11,6 @@ namespace ShitChat
     public class MessageManager
     {
         public User currentUser;
-
         public static string path = "Conversation";
 
         public void SetUser(User user)
