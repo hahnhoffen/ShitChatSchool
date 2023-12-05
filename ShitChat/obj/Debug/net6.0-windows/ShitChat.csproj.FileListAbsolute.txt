@@ -79,3 +79,5 @@ C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\refint\
 C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\ShitChat.pdb
 C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\ShitChat.genruntimeconfig.cache
 C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\ref\ShitChat.dll
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\UserControls\Profilexaml.g.cs
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\UserControls\Profilexaml.baml

@@ -421,7 +421,6 @@
             x:Name="UserName_box"
             Width="170"
             Height="30"
-            TextAlignment="Justify"
             Margin="150,120,0,160"
             HorizontalAlignment="Left"
             Background="White"
@@ -506,7 +505,6 @@
         <Image
             x:Name="Icon_image"
             Margin="196,10,202,233"
-            Panel.ZIndex="1"
             Source="/shit.png"
             Stretch="Fill" />
         <Label
@@ -520,10 +518,9 @@
             </Label.Foreground>
         </Label>
         <TextBox
-            x:Name= "Password_box"
+            x:Name="Password_box"
             Width="170"
             Height="30"
-            TextAlignment="Center"
             Margin="150,170,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"

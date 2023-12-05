@@ -27,7 +27,7 @@ namespace ShitChat
         bool isFound = false;
         string user = null;
         string password = null;
-        User logedInUser = null;
+        User logedInUser { set; get; }
 
         public Login()
         {
@@ -83,9 +83,10 @@ namespace ShitChat
         }
 
         //Retunerar Den inlogade Usern till resten av programmet.
-        public User GetLogedInUser()
+        public string GetLogedInUser()
         {
-            return logedInUser;
+
+            return logedInUser.ToString();
         }
 
         //stänger ner applikationen.
