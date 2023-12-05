@@ -27,8 +27,8 @@
         <Button
             x:Name="Apply_btn"
             Grid.Row="4"
-            Grid.Column="2"
-            Width="70"
+            Grid.Column="1"
+            Width="100"
             Height="35"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -81,14 +81,6 @@
             VerticalAlignment="Center"
             HorizontalContentAlignment="Center"
             Content="Confirm Password" />
-        <Button
-            Grid.Row="4"
-            Grid.Column="0"
-            Width="70"
-            Height="35"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Content="Back" />
         <Label
             x:Name="Pwrd_Error_Label"
             Grid.Row="4"

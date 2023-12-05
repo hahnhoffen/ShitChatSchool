@@ -33,7 +33,7 @@ namespace ShitChat.UserControls
         private void Profile_Loaded(object sender, RoutedEventArgs e)
         {
             CurrentUser = login.GetLogedInUser();
-            UsrName_Label.Content = CurrentUser;
+            UsrName_Label.Content = CurrentUser.ToString();
         }
 
         //tar värdet från login och tilldelar denna usercontrolen
