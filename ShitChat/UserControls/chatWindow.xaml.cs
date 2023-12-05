@@ -23,5 +23,12 @@ namespace ShitChat.UserControls
         {
             InitializeComponent();
         }
+
+        private void Sendbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       
     }
 }

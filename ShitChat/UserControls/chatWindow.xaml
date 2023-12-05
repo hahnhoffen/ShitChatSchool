@@ -35,36 +35,7 @@
                    Foreground="Black"
                    FontWeight="SemiBold"/>
 
-                <StackPanel HorizontalAlignment="Right"
-                        Orientation="Horizontal">
-
-                    <Button Width="30"
-                        Content="—"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Foreground="Gray"
-                        FontWeight="Bold" Click="MinimizeButton_Click" />
-
-
-
-
-                    <Button Width="30"
-                        Content="⬜"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Foreground="Gray"
-                        FontWeight="Bold" Click="MaximizeButton_Click" />
-
-
-                    <Button Width="30"
-                        Content="✕"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Foreground="Gray"
-                        FontWeight="Bold" Click="CloseButton_Click" />
-
-                </StackPanel>
-
+               
             </Grid>
 
         </Border>
@@ -150,7 +121,7 @@
                                 Margin="5,0,5,0"
                                 Background="Transparent"
                                 BorderThickness="0">
-                            <Image 
+                            <Image Source="\Icons\video.png"
                            
                            
                            />
@@ -162,7 +133,7 @@
                                 Background="Transparent"
                                 BorderThickness="0">
 
-                            <Image 
+                            <Image Source="\Icons\phone.png"
                            />
                         </Button>
 
@@ -202,10 +173,10 @@
                             Height="50"
                             Margin="5,5,5,0"
                             Background="Transparent"
-                            BorderThickness="0" >
-                        <Image Source="Icons/Phonebtn.png"
-                           
-                           />
+                            BorderThickness="0"  >
+                        <Image Source="\Icons\send.png">
+                            
+                        </Image>
                     </Button>
 
 
