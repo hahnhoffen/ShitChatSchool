@@ -55,19 +55,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SOS23\\.nuget\\packages\\": {}
+    "C:\\Users\\johan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SOS23\\source\\repos\\ShitChatSchool\\ShitChat\\ShitChat.csproj",
+      "projectUniqueName": "C:\\Users\\johan\\OneDrive\\Plugg\\ShitChat\\ShitChat\\ShitChat.csproj",
       "projectName": "ShitChat",
-      "projectPath": "C:\\Users\\SOS23\\source\\repos\\ShitChatSchool\\ShitChat\\ShitChat.csproj",
-      "packagesPath": "C:\\Users\\SOS23\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SOS23\\source\\repos\\ShitChatSchool\\ShitChat\\obj\\",
+      "projectPath": "C:\\Users\\johan\\OneDrive\\Plugg\\ShitChat\\ShitChat\\ShitChat.csproj",
+      "packagesPath": "C:\\Users\\johan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\johan\\OneDrive\\Plugg\\ShitChat\\ShitChat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SOS23\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\johan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -117,7 +117,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

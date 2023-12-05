@@ -16,25 +16,25 @@ using System.Windows.Shapes;
 namespace ShitChat.UserControls
 {
     /// <summary>
-    /// Interaction logic for Profilexaml.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class Profilexaml : UserControl
+    public partial class Profile : UserControl
     {
         public Login login;
-        string CurrentUser = null;
+        User CurrentUser = null;
         public RegisterWindow registerWindow;
 
-        public Profilexaml()
+        public Profile()
         {
             InitializeComponent();
         }
-
-        //sätter värdet till den inloggades användarnamn
-        private void Profile_Loaded(object sender, RoutedEventArgs e)
+        //hämtas i LoginWindow. Användar labeln byts när man loggar in.
+        public void SetLabelToUser()
         {
             CurrentUser = login.GetLogedInUser();
-            UsrName_Label.Content = CurrentUser.ToString();
+            UsrName_Label.Content = CurrentUser;
         }
+        //sätter värdet till den inloggades användarnamn
 
         //tar värdet från login och tilldelar denna usercontrolen
         public void SetLogin(Login login)
@@ -94,9 +94,10 @@ namespace ShitChat.UserControls
                 }
             }
         }
-        private void SetProfile()
+
+        public void ShowProfile()
         {
-            
+            this.Visibility = Visibility.Visible;
         }
     }
 }
