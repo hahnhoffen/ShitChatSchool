@@ -94,5 +94,9 @@ namespace ShitChat.UserControls
                 }
             }
         }
+        private void SetProfile()
+        {
+            
+        }
     }
 }

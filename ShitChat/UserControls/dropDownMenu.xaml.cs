@@ -28,5 +28,10 @@ namespace ShitChat.UserControls
             Application application = Application.Current;
             application.Shutdown();
         }
+
+        private void Profile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
