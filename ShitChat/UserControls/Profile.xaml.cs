@@ -23,6 +23,7 @@ namespace ShitChat.UserControls
         public Login login;
         User CurrentUser = null;
         public RegisterWindow registerWindow;
+        dropDownMenu DropDownMenu;
 
         public Profile()
         {
@@ -41,7 +42,6 @@ namespace ShitChat.UserControls
         {
             this.login = login;
         }
-
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
         //Är inte adresstextBoxen "" så ändras adressen till det angivna.
         private void Apply_btn_Click(object sender, RoutedEventArgs e)
@@ -74,7 +74,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.Username.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -87,7 +87,7 @@ namespace ShitChat.UserControls
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.Username.Equals(CurrentUser))
+                if (user.UserName.Equals(CurrentUser))
                 {
                     Chg_Adr_Box.Text = user.Address;
                     break;
@@ -99,5 +99,11 @@ namespace ShitChat.UserControls
         {
             this.Visibility = Visibility.Visible;
         }
+
+        public void HideProfile()
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
+       
     }
 }
