@@ -20,6 +20,7 @@ namespace ShitChat.UserControls
 
         Profile profile;
         chatWindow chatWindow;
+        FrontWindow frontWindow;
 
         public dropDownMenu()
         {
@@ -35,42 +36,42 @@ namespace ShitChat.UserControls
 
         private void Profile_btn_Click(object sender, RoutedEventArgs e)
         {
-            chatWindow.HideChatWindow();
+             chatWindow.HideChatWindow();
+             frontWindow.HideFront();
 
             if (profile.Visibility != Visibility.Visible)
             {
                 profile.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                profile.Visibility = Visibility.Hidden;
             }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             profile.Visibility = Visibility.Hidden;
+            frontWindow.HideFront();
+
             if (chatWindow.Visibility != Visibility.Visible)
             {
                 chatWindow.ShowChatWindow();
             }
-            else
-            {
-                chatWindow.HideChatWindow();
-            }
         }
 
 
-        //hämtar värdena av profile 
+        //sätter värdena av profile 
         public void SetProfile(Profile profile)
         {
             this.profile = profile;
         }
 
-        //hämtar värdena av chatWindow 
+        //sätter värdet av chatWindow 
         public void SetChatWindow(chatWindow ChatWindow)
         {
             this.chatWindow = ChatWindow;
+        }
+        //sätter värdet av FrontWindow
+        public void SetFrontWindow(FrontWindow frontWindow)
+        {
+            this.frontWindow = frontWindow;
         }
     }
 }

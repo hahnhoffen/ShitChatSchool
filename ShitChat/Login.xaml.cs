@@ -66,12 +66,12 @@ namespace ShitChat
                     {
                         isFound = true;
                         logedInUser = users;
-                        profile.SetLabelToUser();
+                        //profile.SetLabelToUser(logedInUser);
                         mainWindow.SetUserName(user);
                         mainWindow.Show();
                         this.Hide();
 
-                        Register_label.Visibility = Visibility.Collapsed;
+                        Register_label.Visibility = Visibility.Hidden;
                         break;
                     }
                     if (!isFound)

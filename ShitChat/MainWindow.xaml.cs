@@ -26,16 +26,17 @@ namespace ShitChat
             InitializeComponent();
             DropDownMenu.SetChatWindow(ChatWindow);
             DropDownMenu.SetProfile(Profile);
+            DropDownMenu.SetFrontWindow(frontWindow);
         }
 
         public void SetUserName(string userName)
         {
             MenuBar.SetUserName(userName);
+            Profile.SetLabelToUser(userName.ToString()); 
         }
         public void ShowProfile()
         {
             Profile.ShowProfile();
         }
-        
     }
 }

@@ -29,11 +29,66 @@ namespace ShitChat.UserControls
         {
             InitializeComponent();
         }
+
         //hämtas i LoginWindow. Användar labeln byts när man loggar in.
-        public void SetLabelToUser()
+        Profile profile;
+        chatWindow chatWindow;
+
+        public void dropDownMenu()
         {
-            CurrentUser = login.GetLogedInUser();
-            UsrName_Label.Content = CurrentUser;
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application application = Application.Current;
+            application.Shutdown();
+        }
+
+
+        private void Profile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            chatWindow.HideChatWindow();
+
+            if (profile.Visibility != Visibility.Visible)
+            {
+                profile.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                profile.Visibility = Visibility.Hidden;
+            }
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            profile.Visibility = Visibility.Hidden;
+            if (chatWindow.Visibility != Visibility.Visible)
+            {
+                chatWindow.ShowChatWindow();
+            }
+            else
+            {
+                chatWindow.HideChatWindow();
+            }
+        }
+
+
+        //hämtar värdena av profile 
+        public void SetProfile(Profile profile)
+        {
+            this.profile = profile;
+        }
+
+        //hämtar värdena av chatWindow 
+        public void SetChatWindow(chatWindow ChatWindow)
+        {
+            this.chatWindow = ChatWindow;
+        }
+        public void SetLabelToUser(string CurrentUser)
+        { 
+            UsrName_Label.Content = CurrentUser.ToString();
         }
         //sätter värdet till den inloggades användarnamn
 
