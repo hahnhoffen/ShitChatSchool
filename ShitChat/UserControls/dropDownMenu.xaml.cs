@@ -45,7 +45,6 @@ namespace ShitChat.UserControls
             {
                 profile.Visibility = Visibility.Hidden;
             }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -73,8 +72,5 @@ namespace ShitChat.UserControls
         {
             this.chatWindow = ChatWindow;
         }
-
-
-
     }
 }

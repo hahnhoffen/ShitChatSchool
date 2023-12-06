@@ -39,9 +39,5 @@ namespace ShitChat.UserControls
         {
             this.Visibility = Visibility.Collapsed;
         }
-        public void SetDropDownMenu()
-        {
-            
-        }
     }
 }
