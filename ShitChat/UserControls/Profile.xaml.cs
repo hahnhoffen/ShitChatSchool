@@ -16,32 +16,32 @@ using System.Windows.Shapes;
 namespace ShitChat.UserControls
 {
     /// <summary>
-    /// Interaction logic for Profile.xaml
+    /// Interaction logic for Profilexaml.xaml
     /// </summary>
-    public partial class Profile : UserControl
+    public partial class Profilexaml : UserControl
     {
         public Login login;
-        User CurrentUser = null;
+        string CurrentUser = null;
         public RegisterWindow registerWindow;
-        dropDownMenu DropDownMenu;
 
-        public Profile()
+        public Profilexaml()
         {
             InitializeComponent();
         }
-        //hämtas i LoginWindow. Användar labeln byts när man loggar in.
-        public void SetLabelToUser()
+
+        //sätter värdet till den inloggades användarnamn
+        private void Profile_Loaded(object sender, RoutedEventArgs e)
         {
             CurrentUser = login.GetLogedInUser();
             UsrName_Label.Content = CurrentUser;
         }
-        //sätter värdet till den inloggades användarnamn
 
         //tar värdet från login och tilldelar denna usercontrolen
         public void SetLogin(Login login)
         {
             this.login = login;
         }
+
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
         //Är inte adresstextBoxen "" så ändras adressen till det angivna.
         private void Apply_btn_Click(object sender, RoutedEventArgs e)
@@ -74,7 +74,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser) &&
+                if (user.Username.Equals(CurrentUser) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -87,23 +87,12 @@ namespace ShitChat.UserControls
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser))
+                if (user.Username.Equals(CurrentUser))
                 {
                     Chg_Adr_Box.Text = user.Address;
                     break;
                 }
             }
         }
-
-        public void ShowProfile()
-        {
-            this.Visibility = Visibility.Visible;
-        }
-
-        public void HideProfile()
-        {
-            this.Visibility = Visibility.Collapsed;
-        }
-       
     }
 }

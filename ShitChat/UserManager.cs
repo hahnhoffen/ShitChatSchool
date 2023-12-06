@@ -1,5 +1,4 @@
-﻿
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -44,7 +43,7 @@ namespace ShitChat
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.UserName == username)
+                if (user.Username == username)
                 {
                     user.LogIn(username, password);
                     currentUser = user;
@@ -57,7 +56,6 @@ namespace ShitChat
             }
             return false;
         }
-
 
 
         public void SaveUserListToJson()
