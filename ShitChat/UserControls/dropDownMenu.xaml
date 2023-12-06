@@ -138,7 +138,7 @@
             Height="25"
             Margin="10,12,18,13"
             Content="ShitChat"
-            Cursor="Hand">
+            Cursor="Hand" >
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>
