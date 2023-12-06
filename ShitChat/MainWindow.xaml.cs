@@ -23,13 +23,19 @@ namespace ShitChat
     {
         public MainWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            DropDownMenu.SetChatWindow(ChatWindow);
+            DropDownMenu.SetProfile(Profile);
         }
-
 
         public void SetUserName(string userName)
         {
             MenuBar.SetUserName(userName);
         }
+        public void ShowProfile()
+        {
+            Profile.ShowProfile();
+        }
+        
     }
 }

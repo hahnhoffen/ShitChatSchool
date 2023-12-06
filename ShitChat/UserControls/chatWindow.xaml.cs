@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +20,24 @@ namespace ShitChat.UserControls
     /// </summary>
     public partial class chatWindow : UserControl
     {
+        
         public chatWindow()
         {
             InitializeComponent();
+            this.Visibility = Visibility.Hidden;
         }
 
         private void Sendbtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-       //
+        public void ShowChatWindow()
+        {
+            this.Visibility = Visibility.Visible;
+        }
+        public void HideChatWindow()
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 }

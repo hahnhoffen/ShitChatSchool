@@ -18,6 +18,9 @@ namespace ShitChat.UserControls
     public partial class dropDownMenu : UserControl
     {
 
+        Profile profile;
+        chatWindow chatWindow;
+
         public dropDownMenu()
         {
             InitializeComponent();
@@ -29,9 +32,45 @@ namespace ShitChat.UserControls
             application.Shutdown();
         }
 
+
         private void Profile_btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            chatWindow.HideChatWindow();
+
+            if (profile.Visibility != Visibility.Visible)
+            {
+                profile.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                profile.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            profile.Visibility = Visibility.Hidden;
+            if (chatWindow.Visibility != Visibility.Visible)
+            {
+                chatWindow.ShowChatWindow();
+            }
+            else
+            {
+                chatWindow.HideChatWindow();
+            }
+        }
+
+
+        //hämtar värdena av profile 
+        public void SetProfile(Profile profile)
+        {
+            this.profile = profile;
+        }
+
+        //hämtar värdena av chatWindow 
+        public void SetChatWindow(chatWindow ChatWindow)
+        {
+            this.chatWindow = ChatWindow;
         }
 
        

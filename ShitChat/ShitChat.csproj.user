@@ -45,8 +45,5 @@
     <Page Update="UserControls\menuBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserControls\Profile.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>
