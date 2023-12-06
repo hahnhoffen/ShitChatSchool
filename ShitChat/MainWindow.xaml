@@ -19,7 +19,7 @@
         <UserControls:menuBar x:Name="MenuBar"  />
         
         <!--- User Menu -->
-        <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" Width="200" Background="Black" />
+        <UserControls:dropDownMenu x:Name="DropDownMenu" HorizontalAlignment="Left" Grid.Row="1" Width="200" Background="Black" />
         
         <!-- Chat Window -->
         <UserControls:chatWindow x:Name="ChatWindow" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" />
