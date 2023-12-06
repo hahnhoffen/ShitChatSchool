@@ -12,6 +12,7 @@ namespace ShitChat
     {
         //Hämta currentUSer från Login??  currentUser = login.GetLoginnUser() 
         public User currentUser;
+
         public static string path = "Conversation";
 
         public void SetUser(User user)
@@ -20,11 +21,11 @@ namespace ShitChat
         }
 
 
-        public void CreateNewMessage(string message, User currentUser, User reciever)
+        public void CreateNewMessage(string message, User writer, User reciever)
         {
-            Message newMessage = new Message(message, currentUser, reciever);
-            currentUser.conversations.Add(new Conversation(newMessage, reciever));
-            reciever.conversations.Add(new Conversation(newMessage, currentUser));
+            Message newMessage = new Message(message, writer, reciever);
+            writer.conversations.Add(new Conversation(newMessage, reciever));
+            reciever.conversations.Add(new Conversation(newMessage, writer));
         }
 
 

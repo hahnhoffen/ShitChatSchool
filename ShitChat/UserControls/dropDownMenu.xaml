@@ -5,11 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="ChatWindow"
     d:DesignHeight="400"
     d:DesignWidth="160"
-    mc:Ignorable="d"
-    x:Name="ChatWindow" >
-    
+    mc:Ignorable="d">
+
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -96,12 +96,14 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button x:Name="Profile_btn"
+        <Button
+            x:Name="Profile_btn"
             Grid.Row="2"
             Height="25"
             Margin="11,14,18,11"
+            Click="Profile_btn_Click"
             Content="Profile"
-            Cursor="Hand" Click="Profile_btn_Click">
+            Cursor="Hand">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>
@@ -140,22 +142,24 @@
             Height="25"
             Margin="10,12,18,13"
             Content="ShitChat"
-            Cursor="Hand" Click="Button_Click_1">
-            <Button.Background>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
-            </Button.Background>
+            Cursor="Hand" />
+
+        <Button Background="Transparent">
+            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
         </Button>
+
         <Button
             Grid.Row="7"
             Height="25"
             Margin="11,12,18,12"
+            Click="Button_Click"
             Content="Sign out"
-            Cursor="Hand" Click="Button_Click">
+            Cursor="Hand">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>
         </Button>
-        
+
         <Path
             Grid.Row="2"
             Margin="22,0,0,0"
