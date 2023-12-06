@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="ShitChat.UserControls.Profile"
+    x:Class="ShitChat.UserControls.Profilexaml"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="700"
     mc:Ignorable="d">
-    <Grid Margin="10">
+    <Grid Margin="10" Loaded="Profile_Loaded">
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
         </Grid.Background>
@@ -27,8 +27,8 @@
         <Button
             x:Name="Apply_btn"
             Grid.Row="4"
-            Grid.Column="1"
-            Width="100"
+            Grid.Column="2"
+            Width="70"
             Height="35"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -81,26 +81,35 @@
             VerticalAlignment="Center"
             HorizontalContentAlignment="Center"
             Content="Confirm Password" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Width="70"
+            Height="35"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Back" />
         <Label
             x:Name="Pwrd_Error_Label"
             Grid.Row="4"
             Grid.Column="1"
-            Width="230"
+            Visibility="Hidden"
+            Foreground="Red"
+            FontSize="16"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontSize="16"
-            Foreground="Red"
-            Visibility="Hidden" />
+            Width="230"
+            />
         <Label
-            x:Name="Adrs_Error_Label"
-            Grid.Row="4"
-            Grid.Column="1"
-            Width="230"
-            Margin="0,0,0,40"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="16"
-            Foreground="Red"
-            Visibility="Hidden" />
+         x:Name="Adrs_Error_Label"
+         Grid.Row="4"
+         Grid.Column="1"
+         Visibility="Hidden"
+         Foreground="Red"
+         FontSize="16"
+         HorizontalAlignment="Center"
+         VerticalAlignment="Center"
+         Width="230"
+         Margin="0 0 0 40" />
     </Grid>
 </UserControl>
