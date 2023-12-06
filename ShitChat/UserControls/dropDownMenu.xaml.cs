@@ -17,7 +17,7 @@ namespace ShitChat.UserControls
 {
     public partial class dropDownMenu : UserControl
     {
-
+        Profile profile = new Profile();
         public dropDownMenu()
         {
             InitializeComponent();
@@ -27,6 +27,11 @@ namespace ShitChat.UserControls
         {
             Application application = Application.Current;
             application.Shutdown();
+        }
+
+        private void Profile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            profile.ShowProfile();
         }
     }
 }

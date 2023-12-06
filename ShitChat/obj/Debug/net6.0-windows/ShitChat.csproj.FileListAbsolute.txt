@@ -102,3 +102,8 @@ C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\Use
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\UserControls\chatWindow.baml
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\UserControls\Profile.baml
 C:\Users\SOS23\source\repos\ShitChatSchool\ShitChat\obj\Debug\net6.0-windows\ShitChat.csproj.CopyComplete
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\ShitChat.csproj.AssemblyReference.cache
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\UserControls\chatWindow.g.cs
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\UserControls\chatWindow.baml
+C:\Users\johan\OneDrive\Plugg\ShitChat\ShitChat\obj\Debug\net6.0-windows\ShitChat.csproj.CopyComplete
