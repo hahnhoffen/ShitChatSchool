@@ -10,28 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ShitChat.UserControls
 {
-    public partial class dropDownMenu : UserControl
+    /// <summary>
+    /// Interaction logic for chatWindow.xaml
+    /// </summary>
+    public partial class chatWindow : UserControl
     {
-        Profile profile = new Profile();
-        public dropDownMenu()
+        public chatWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Sendbtn_Click(object sender, RoutedEventArgs e)
         {
-            Application application = Application.Current;
-            application.Shutdown();
-        }
 
-        private void Profile_btn_Click(object sender, RoutedEventArgs e)
-        {
-            profile.ShowProfile();
         }
     }
 }

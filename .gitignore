@@ -377,12 +377,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+
 
 # Local History for Visual Studio Code
 .history/
@@ -396,3 +391,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/.vs/ProjectEvaluation/shitchat.metadata.v7.bin
+/.vs/ProjectEvaluation/shitchat.projects.v7.bin
+/.vs/ShitChat/v17/.futdcache.v2
+/.vs/ShitChat/DesignTimeBuild/.dtbcache.v2

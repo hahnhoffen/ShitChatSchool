@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -39,6 +40,7 @@ namespace ShitChat
         }
 
 
+<<<<<<< HEAD
         internal bool LogInUser(string username, string password)
         {
             foreach (User user in registerWindow.userList)
@@ -58,6 +60,8 @@ namespace ShitChat
         }
 
 
+=======
+>>>>>>> ee5f9b5f21f2b0572465970ede654c850dbc25ba
         public void SaveUserListToJson()
         {
             string json = JsonConvert.SerializeObject(registerWindow.userList);

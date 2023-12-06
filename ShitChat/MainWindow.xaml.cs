@@ -31,5 +31,10 @@ namespace ShitChat
         {
             MenuBar.SetUserName(userName);
         }
+
+        public void ShowProfile()
+        {
+            
+        }
     }
 }

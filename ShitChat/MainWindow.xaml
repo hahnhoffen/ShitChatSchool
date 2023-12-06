@@ -20,7 +20,12 @@
         
         <!--- User Menu -->
         <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" Width="200" Background="Black" />
-
+        
+        <!-- Chat Window -->
+        <UserControls:chatWindow Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        
+        <!--Profile Window-->
+        <UserControls:Profile Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

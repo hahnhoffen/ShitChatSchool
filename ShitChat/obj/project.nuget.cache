@@ -1,10 +1,18 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "/o9wAi1PYIDDQcm30tH5E2MwV66Xo7OAHCS20T4Tu6wNGF8/25A5vIX3f2PoM2UJrCpdOmooyaG/UVS/X8ulVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tim Hahn Colbro\\Desktop\\Git\\ShitChat\\ShitChat.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tim Hahn Colbro\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+=======
+  "dgSpecHash": "gVqINkEkYa+HtB8NP/6ZjXJzc+52mzzmBKpC2LuR7R2rBO4goWvduKf1euPt1ckIFhv89kiMqyexDihikqugTQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\johan\\OneDrive\\Plugg\\ShitChat\\ShitChat\\ShitChat.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\johan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+>>>>>>> ee5f9b5f21f2b0572465970ede654c850dbc25ba
   ],
   "logs": []
 }
