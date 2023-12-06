@@ -40,6 +40,28 @@ namespace ShitChat
         }
 
 
+<<<<<<< HEAD
+        internal bool LogInUser(string username, string password)
+        {
+            foreach (User user in registerWindow.userList)
+            {
+                if (user.UserName == username)
+                {
+                    user.LogIn(username, password);
+                    currentUser = user;
+                    return true;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            return false;
+        }
+
+
+=======
+>>>>>>> ee5f9b5f21f2b0572465970ede654c850dbc25ba
         public void SaveUserListToJson()
         {
             string json = JsonConvert.SerializeObject(registerWindow.userList);

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,37 +22,51 @@ namespace ShitChat
 
     public partial class RegisterWindow : Window
     {
-        private Person newUser;
+        private User newUser;
         public List<User> userList = new List<User>();
         public Login login;
       
         public RegisterWindow()
         {
             InitializeComponent();
-            newUser = new Person(); //Why do we create a person before we add the details? What happens if they don't register the form correctly? 
+            newUser = new User("Username", "Password");
         }
+       
      
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            newUser.Username = UsernameTextBox.Text;
+            newUser.UserName = UsernameTextBox.Text;
             newUser.FirstName = FirstnameTextBox.Text;
             newUser.LastName = LastnameTextBox.Text;
             newUser.Email = EmailTextBox.Text;
             newUser.Password = PasswordBox.Password;
-            newUser.Country = CountryTextBox.Text;
-            newUser.City = CityTextBox.Text;
-            newUser.PhoneNumber = PhoneTextBox.Text;
-
+            // kollar ifall de båda lösenorden stämmer med varandra
             if (PasswordBox.Password != RePasswordBox.Password)
             {
                 MessageBox.Show("Password doesn't match.");
                 return;
             }
-            MessageBox.Show("User registered:\nUsername: " + newUser.Username + "\nFirstname: " + newUser.FirstName + "\nLastname: " + newUser.LastName + "\nEmail: " + newUser.Email + "\nCountry: " + newUser.Country + "\nCity: " + newUser.City + "\nPhone: " + newUser.PhoneNumber);
+            // kollar ifall namnet man väljer redan finns
+            if (IsUsernameTaken(newUser.UserName))
+            {
+                MessageBox.Show("Username already taken.");
+                return;
+            }
+            SaveUserToJson(newUser);
             ClearInputFields();
+            login.Show();
+            this.Hide();
+
+
+        }
+        private bool IsUsernameTaken(string username)
+        {
+            // kollar ifall namnet man väljer redan finns
+            return userList.Any(user => user.UserName == username);
         }
 
+        // Tömmer textboxnarna
         private void ClearInputFields()
         {
             UsernameTextBox.Text = "";
@@ -59,9 +75,6 @@ namespace ShitChat
             EmailTextBox.Text = "";
             PasswordBox.Password = "";
             RePasswordBox.Password = "";
-            CountryTextBox.Text = "";
-            CityTextBox.Text = "";
-            PhoneTextBox.Text = "";
         }
 
         private void GoBack_button(object sender, RoutedEventArgs e)
@@ -74,6 +87,41 @@ namespace ShitChat
         public void SetLogin(Login login)
         {
             this.login = login;
+        }
+        private void SaveUserToJson(User user)
+        {
+            try
+            {
+                string filePath = "userList.json";
+                List<User> existingUsers = ReadUsersFromJson(filePath);
+                existingUsers.Add(user);
+                string json = JsonSerializer.Serialize(existingUsers, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(filePath, json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        private List<User> ReadUsersFromJson(string filePath)
+        {
+            List<User> existingUsers = new List<User>();
+
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    existingUsers = JsonSerializer.Deserialize<List<User>>(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading users from JSON file: " );
+            }
+
+            return existingUsers;
         }
     }
 }

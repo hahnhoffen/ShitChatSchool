@@ -20,11 +20,11 @@ namespace ShitChat
         }
 
 
-        public void CreateNewMessage(string message, User writer, User reciever)
+        public void CreateNewMessage(string message, User currentUser, User reciever)
         {
-            Message newMessage = new Message(message, writer, reciever);
-            writer.conversations.Add(new Conversation(newMessage, reciever));
-            reciever.conversations.Add(new Conversation(newMessage, writer));
+            Message newMessage = new Message(message, currentUser, reciever);
+            currentUser.conversations.Add(new Conversation(newMessage, reciever));
+            reciever.conversations.Add(new Conversation(newMessage, currentUser));
         }
 
 

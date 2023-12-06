@@ -74,7 +74,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.Username.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -87,7 +87,7 @@ namespace ShitChat.UserControls
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.Username.Equals(CurrentUser))
+                if (user.UserName.Equals(CurrentUser))
                 {
                     Chg_Adr_Box.Text = user.Address;
                     break;
