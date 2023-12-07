@@ -26,8 +26,10 @@ namespace ShitChat
 
         public MainWindow()
         {
+            
             InitializeComponent();
             DropDownMenu.SetWindows(Profile, ChatWindow, Front, this);
+
         }
 
         public void SetUserName(User user)
