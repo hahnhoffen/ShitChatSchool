@@ -56,7 +56,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </TextBlock.Foreground>
         </TextBlock>
-        <Label Content="Tim, Victor, Raashid, Johan, Freddie" Grid.Row="2" FontSize="20" Margin="220,17,208,22" >
+        <Label Content="Tim, Victor, Raashid, Johan, Freddie" Grid.Row="2" FontSize="20" Margin="230,17,100,22" >
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Label.Foreground>

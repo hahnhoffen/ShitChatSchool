@@ -102,7 +102,7 @@
             Height="25"
             Margin="11,14,18,11"
             Click="Profile_btn_Click"
-            Content="Profile"
+            Content="Settings"
             Cursor="Hand">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
@@ -142,7 +142,7 @@
             Height="25"
             Margin="10,12,18,13"
             Content="ShitChat"
-            Cursor="Hand" />
+            Cursor="Hand" Click="Button_Click_1" />
 
         <Button Background="Transparent">
             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />

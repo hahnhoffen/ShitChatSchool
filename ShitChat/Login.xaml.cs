@@ -25,6 +25,7 @@ namespace ShitChat
         RegisterWindow registerWindow = new RegisterWindow();
         MainWindow mainWindow = new MainWindow();
         Profile profile = new Profile();
+        dropDownMenu menu = new dropDownMenu();
 
         bool isFound = false;
         string user = null;
@@ -66,7 +67,6 @@ namespace ShitChat
                     {
                         isFound = true;
                         logedInUser = users;
-                        //profile.SetLabelToUser(logedInUser);
                         mainWindow.SetUserName(user);
                         mainWindow.Show();
                         this.Hide();
