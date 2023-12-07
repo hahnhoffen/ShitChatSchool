@@ -20,6 +20,7 @@ namespace ShitChat.UserControls
     /// </summary>
     public partial class chatWindow : UserControl
     {
+        MessageManager messageManager;
 
         public chatWindow()
         {
@@ -27,14 +28,43 @@ namespace ShitChat.UserControls
             this.Visibility = Visibility.Hidden;
         }
 
+        public void SetManager(MessageManager messageManager1)
+        {
+            this.messageManager = messageManager1;
+        }
+
+        public void UpdateWindowInformation()
+        {
+            userNameLabel.Content = messageManager.currentUser.UserName;
+        }
+
         private void Sendbtn_Click(object sender, RoutedEventArgs e)
         {
+            User reciever;
+            string message = MessageTextBox.Text;
+            foreach (User user in messageManager.currentUser.friendsList)
+            {
+                if (user.Username == MessagesListView.SelectedItem.ToString())
+                {
+                    reciever = user;
+                }
+                else
+                {
+                    continue;
+                }
 
+            }
+            //messageManager.CreateNewMessage(message, messageManager.currentUser, reciever);
+            
         }
+
+
         public void ShowChatWindow()
         {
             this.Visibility = Visibility.Visible;
         }
+
+
         public void HideChatWindow()
         {
             this.Visibility = Visibility.Collapsed;

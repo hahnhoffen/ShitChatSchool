@@ -8,7 +8,7 @@
     d:DesignHeight="450"
     d:DesignWidth="700"
     mc:Ignorable="d" Visibility="Visible">
-    <Grid Margin="10">
+    <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
         </Grid.Background>
