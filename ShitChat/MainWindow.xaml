@@ -7,20 +7,24 @@
         xmlns:local="clr-namespace:ShitChat"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900">
-    
+
     <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
-        
+
         <!--- Menu Bar -->
         <UserControls:menuBar x:Name="MenuBar"  />
-        
+
         <!--- User Menu -->
-        <UserControls:dropDownMenu HorizontalAlignment="Left" Grid.Row="1" Width="200" Background="Black" />
-
-
+        <UserControls:dropDownMenu x:Name="DropDownMenu" HorizontalAlignment="Left" Grid.Row="1" Width="200" Background="Black" />
+        
+        <!-- Chat Window -->
+        <UserControls:chatWindow x:Name="ChatWindow" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        
+        <!--Profile Window-->
+        <UserControls:Profile x:Name="Profile" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShitChat.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ShitChat
     {
         RegisterWindow registerWindow = new RegisterWindow();
         MainWindow mainWindow = new MainWindow();
+        Profile profile = new Profile();
 
         bool isFound = false;
         string user = null;
@@ -34,6 +36,7 @@ namespace ShitChat
             InitializeComponent();
             registerWindow.SetLogin(this);
             registerWindow.userList.Add(new User("admin", "admin"));
+            profile.SetLogin(this);
             this.Show();
             
         }
@@ -55,7 +58,7 @@ namespace ShitChat
             {
                 foreach(User users in registerWindow.userList)
                 {
-                    if (user == users.Username &&
+                    if (user == users.UserName &&
                         password == users.Password || 
                         user == "admin" && 
                         password == "admin"
@@ -63,12 +66,12 @@ namespace ShitChat
                     {
                         isFound = true;
                         logedInUser = users;
-
+                        //profile.SetLabelToUser(logedInUser);
                         mainWindow.SetUserName(user);
                         mainWindow.Show();
                         this.Hide();
 
-                        Register_label.Visibility = Visibility.Collapsed;
+                        Register_label.Visibility = Visibility.Hidden;
                         break;
                     }
                     if (!isFound)
@@ -84,9 +87,9 @@ namespace ShitChat
         }
 
         //Retunerar Den inlogade Usern till resten av programmet.
-        public string GetLogedInUser()
+        public User GetLogedInUser()
         {
-            return logedInUser.ToString();
+            return logedInUser;
         }
 
         //stänger ner applikationen.

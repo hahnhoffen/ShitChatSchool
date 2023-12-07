@@ -16,32 +16,87 @@ using System.Windows.Shapes;
 namespace ShitChat.UserControls
 {
     /// <summary>
-    /// Interaction logic for Profilexaml.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class Profilexaml : UserControl
+    public partial class Profile : UserControl
     {
         public Login login;
-        string CurrentUser = null;
+        User CurrentUser = null;
         public RegisterWindow registerWindow;
+        dropDownMenu DropDownMenu;
 
-        public Profilexaml()
+        public Profile()
         {
             InitializeComponent();
         }
 
-        //sätter värdet till den inloggades användarnamn
-        private void Profile_Loaded(object sender, RoutedEventArgs e)
+        //hämtas i LoginWindow. Användar labeln byts när man loggar in.
+        Profile profile;
+        chatWindow chatWindow;
+
+        public void dropDownMenu()
         {
-            CurrentUser = login.GetLogedInUser();
-            UsrName_Label.Content = CurrentUser;
+            InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application application = Application.Current;
+            application.Shutdown();
+        }
+
+
+        private void Profile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            chatWindow.HideChatWindow();
+
+            if (profile.Visibility != Visibility.Visible)
+            {
+                profile.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                profile.Visibility = Visibility.Hidden;
+            }
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            profile.Visibility = Visibility.Hidden;
+            if (chatWindow.Visibility != Visibility.Visible)
+            {
+                chatWindow.ShowChatWindow();
+            }
+            else
+            {
+                chatWindow.HideChatWindow();
+            }
+        }
+
+
+        //hämtar värdena av profile 
+        public void SetProfile(Profile profile)
+        {
+            this.profile = profile;
+        }
+
+        //hämtar värdena av chatWindow 
+        public void SetChatWindow(chatWindow ChatWindow)
+        {
+            this.chatWindow = ChatWindow;
+        }
+        public void SetLabelToUser(string CurrentUser)
+        { 
+            UsrName_Label.Content = CurrentUser.ToString();
+        }
+        //sätter värdet till den inloggades användarnamn
 
         //tar värdet från login och tilldelar denna usercontrolen
         public void SetLogin(Login login)
         {
             this.login = login;
         }
-
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
         //Är inte adresstextBoxen "" så ändras adressen till det angivna.
         private void Apply_btn_Click(object sender, RoutedEventArgs e)
@@ -74,7 +129,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.Username.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -87,12 +142,23 @@ namespace ShitChat.UserControls
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.Username.Equals(CurrentUser))
+                if (user.UserName.Equals(CurrentUser))
                 {
                     Chg_Adr_Box.Text = user.Address;
                     break;
                 }
             }
         }
+
+        public void ShowProfile()
+        {
+            this.Visibility = Visibility.Visible;
+        }
+
+        public void HideProfile()
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
+       
     }
 }
