@@ -52,7 +52,7 @@ namespace ShitChat
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
             user = UserName_box.Text;
-            password = Password_box.Text;
+            password = Psw_Box.Password;
 
             if (user != "" && password != "")
             {
