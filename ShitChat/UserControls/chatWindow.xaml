@@ -53,12 +53,10 @@
                Foreground="Black"
                Margin="8,0,0,0"/>
 
-            <ListView x:Name="FriendsListView"
-               
+            <ListBox x:Name="FriendsListBox"
                Background="Transparent"
                BorderThickness="0"
                Grid.Row="1"
-              
                BorderBrush="#FFEFEDE9"/>
 
             <StackPanel Grid.Row="2"

@@ -37,6 +37,7 @@ namespace ShitChat
             Profile.SetLabelToUser(user.UserName.ToString());
             messageManager.SetUser(user);
             ChatWindow.SetManager(messageManager);
+            currentUser.friendsList.Add(new User("polaren", "1234"));
         }
         public void ShowProfile()
         {
