@@ -67,7 +67,7 @@ namespace ShitChat
                     {
                         isFound = true;
                         logedInUser = users;
-                        mainWindow.SetUserName(user);
+                        mainWindow.SetUserName(users);
                         mainWindow.Show();
                         this.Hide();
 

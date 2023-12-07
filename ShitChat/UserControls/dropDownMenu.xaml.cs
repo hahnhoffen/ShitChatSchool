@@ -53,6 +53,7 @@ namespace ShitChat.UserControls
 
             if (chatWindow.Visibility != Visibility.Visible)
             {
+                chatWindow.UpdateWindowInformation();
                 chatWindow.ShowChatWindow();
             }
         }
