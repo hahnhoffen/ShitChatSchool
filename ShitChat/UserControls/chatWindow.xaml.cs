@@ -21,6 +21,7 @@ namespace ShitChat.UserControls
     public partial class chatWindow : UserControl
     {
         MessageManager messageManager;
+        User reciever;
 
         public chatWindow()
         {
@@ -32,15 +33,18 @@ namespace ShitChat.UserControls
         {
             this.messageManager = messageManager1;
         }
-
+        
         public void UpdateWindowInformation()
         {
             userNameLabel.Content = messageManager.currentUser.UserName;
+            foreach (User user in messageManager.currentUser.friendsList)
+            {
+                FriendsListBox.Items.Add(user.Username);
+            }
         }
 
         private void Sendbtn_Click(object sender, RoutedEventArgs e)
         {
-            User reciever;
             string message = MessageTextBox.Text;
             foreach (User user in messageManager.currentUser.friendsList)
             {
@@ -52,10 +56,8 @@ namespace ShitChat.UserControls
                 {
                     continue;
                 }
-
             }
-            //messageManager.CreateNewMessage(message, messageManager.currentUser, reciever);
-            
+            messageManager.CreateNewMessage(message, messageManager.currentUser, reciever);
         }
 
 
