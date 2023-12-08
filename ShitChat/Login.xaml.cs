@@ -35,11 +35,12 @@ namespace ShitChat
         public Login()
         {
             InitializeComponent();
+            profile.SetRegisterWindow(registerWindow);
             registerWindow.SetLogin(this);
             registerWindow.userList.Add(new User("admin", "admin"));
             profile.SetLogin(this);
             this.Show();
-            
+
         }
         //Tar användaren till registeringen, gömmer Påminnelse label.
         private void ToRegisterWindow(object sender, RoutedEventArgs e)
