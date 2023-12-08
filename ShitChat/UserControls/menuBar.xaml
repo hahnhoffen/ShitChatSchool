@@ -36,7 +36,8 @@
                 BorderThickness="2"
                 FontSize="16"
                 FontWeight="Light"
-                TextChanged="txtInput_TextChanged" />
+                TextChanged="txtInput_TextChanged"
+                 />
 
             <TextBlock
                 x:Name="tbPlaceHolder"

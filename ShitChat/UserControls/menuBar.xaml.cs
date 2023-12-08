@@ -20,6 +20,7 @@ namespace ShitChat.UserControls
     /// </summary>
     public partial class menuBar : UserControl
     {
+        profilePage ProfilePage;
         public menuBar()
         {
             InitializeComponent();
@@ -47,6 +48,18 @@ namespace ShitChat.UserControls
         public void SetUserName(string username)
         {
             btn_userMenu.Content = username;
+        }
+
+        public void SetProfilePage(profilePage ProfilePage)
+        {
+            this.ProfilePage = ProfilePage;
+        }
+
+        private void txtInput_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            string friendsName = txtInput.ToString();
+            ProfilePage.SearchFriend(friendsName);
+            txtInput.Clear();
         }
     }
 }
