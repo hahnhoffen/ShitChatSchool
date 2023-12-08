@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShitChat.UserControls"
              mc:Ignorable="d" 
+              Background="#FFF9F9F9"
              d:DesignHeight="435" d:DesignWidth="700">
     <Grid>
 
@@ -111,30 +112,7 @@
                        Margin="5,0,5,0"
                        VerticalAlignment="Center"/>
 
-                    <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Right">
-
-                        <Button Width="20"
-                                Height="20"
-                                Margin="5,0,5,0"
-                                Background="Transparent"
-                                BorderThickness="0">
-
-
-
-                            />
-                        </Button>
-
-                        <Button Width="20"
-                                Height="20"
-                                Margin="5,0,5,0"
-                                Background="Transparent"
-                                BorderThickness="0">
-
-
-                        </Button>
-
-                    </StackPanel>
+                   
 
                 </Grid>
             </Border>
