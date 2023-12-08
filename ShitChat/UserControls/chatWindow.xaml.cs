@@ -39,7 +39,7 @@ namespace ShitChat.UserControls
             userNameLabel.Content = messageManager.currentUser.UserName;
             foreach (User user in messageManager.currentUser.friendsList)
             {
-                FriendsListBox.Items.Add(user.Username);
+                FriendsListBox.Items.Add(user.UserName);
             }
         }
 
@@ -48,7 +48,7 @@ namespace ShitChat.UserControls
             string message = MessageTextBox.Text;
             foreach (User user in messageManager.currentUser.friendsList)
             {
-                if (user.Username == MessagesListView.SelectedItem.ToString())
+                if (user.UserName == MessagesListView.SelectedItem.ToString())
                 {
                     reciever = user;
                 }
