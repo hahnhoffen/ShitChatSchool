@@ -16,7 +16,10 @@ namespace ShitChat
         public List<User> friendsList = new List<User>();
         public List<Conversation> conversations = new List<Conversation>();
 
+        public User()
+        {
 
+        }
         public User(string userName, string password)
         {
             this.UserName = userName;

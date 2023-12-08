@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,35 +22,45 @@ namespace ShitChat
 
     public partial class RegisterWindow : Window
     {
-        private Person newUser;
-        public List<User> userList = new List<User>();
+        private User newUser;
+        public List<User> userList;
         public Login login;
       
         public RegisterWindow()
         {
             InitializeComponent();
-            newUser = new Person(); //Why do we create a person before we add the details? What happens if they don't register the form correctly? 
+            newUser = new User("Username", "Password"); //Why do we create a person before we add the details? What happens if they don't register the form correctly?
+            userList = ReadUsersFromJson("userList.json") ?? new List<User>();
         }
      
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            newUser.Username = UsernameTextBox.Text;
+            newUser.UserName = UsernameTextBox.Text;
             newUser.FirstName = FirstnameTextBox.Text;
             newUser.LastName = LastnameTextBox.Text;
             newUser.Email = EmailTextBox.Text;
             newUser.Password = PasswordBox.Password;
-            newUser.Country = CountryTextBox.Text;
-            newUser.City = CityTextBox.Text;
-            newUser.PhoneNumber = PhoneTextBox.Text;
-
             if (PasswordBox.Password != RePasswordBox.Password)
             {
                 MessageBox.Show("Password doesn't match.");
                 return;
             }
-            MessageBox.Show("User registered:\nUsername: " + newUser.Username + "\nFirstname: " + newUser.FirstName + "\nLastname: " + newUser.LastName + "\nEmail: " + newUser.Email + "\nCountry: " + newUser.Country + "\nCity: " + newUser.City + "\nPhone: " + newUser.PhoneNumber);
+            if (UserAlreadyExist(newUser.UserName)) 
+            {
+                MessageBox.Show("Username already in use");
+                return;
+            }
+            MessageBox.Show("User registered:\nUsername: " + newUser.UserName + "\nFirstname: " + newUser.FirstName + "\nLastname: " + newUser.LastName + "\nEmail: " + newUser.Email);
+            SaveUserToJson(newUser);
             ClearInputFields();
+            login.Show();
+            this.Hide();
+
+        }
+        private bool UserAlreadyExist(string username)
+        {
+            return userList?.Any(user => user?.UserName != null && user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)) ?? false;
         }
 
         private void ClearInputFields()
@@ -59,9 +71,6 @@ namespace ShitChat
             EmailTextBox.Text = "";
             PasswordBox.Password = "";
             RePasswordBox.Password = "";
-            CountryTextBox.Text = "";
-            CityTextBox.Text = "";
-            PhoneTextBox.Text = "";
         }
 
         private void GoBack_button(object sender, RoutedEventArgs e)
@@ -75,5 +84,54 @@ namespace ShitChat
         {
             this.login = login;
         }
+        private void SaveUserToJson(User user)
+        {
+            try
+            {
+                string filePath = "userList.json";
+                userList = ReadUsersFromJson(filePath);
+
+                userList.Add(user);
+
+                string json = JsonSerializer.Serialize(userList, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(filePath, json);
+            }
+            catch (JsonException ex)
+            {
+                MessageBox.Show("Error deserializing JSON: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saving user to JSON file: " + ex.Message);
+            }
+        }
+
+        private List<User> ReadUsersFromJson(string filePath)
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
+
+                    if (userList == null)
+                    {
+                        userList = new List<User>();
+                    }
+                }
+                else
+                {
+                    userList = new List<User>();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading users from JSON file: " + ex.Message);
+            }
+
+            return userList;
+        }
     }
 }
+

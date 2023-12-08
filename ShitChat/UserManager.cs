@@ -43,7 +43,7 @@ namespace ShitChat
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.Username == username)
+                if (user.UserName == username)
                 {
                     user.LogIn(username, password);
                     currentUser = user;
