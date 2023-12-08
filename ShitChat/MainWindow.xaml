@@ -42,10 +42,8 @@
         <UserControls:Profile
             x:Name="Profile"
             Grid.Row="1"
-            Width="700"
-            Height="435"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center" Visibility="Hidden" />
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" Visibility="Hidden" />
 
         <!--  Front Window  -->
         <UserControls:FrontWindow
