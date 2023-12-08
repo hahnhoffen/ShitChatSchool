@@ -17,23 +17,52 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Border 
+            Grid.Row="1"
+            Margin="10,10,10,10"
+        BorderBrush="White"
+        Background="Black"
+        BorderThickness="1,1,1,1"
+        CornerRadius="8,8,8,8"
+        Opacity="0.4">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Opacity="0.5"/>
+            </Border.Effect>
+        </Border>
         <Image
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="0"
-            Margin="30,30,30,30" />
+            Margin="30,30,30,30" 
+            />
         <Label 
             x:Name="userNameLabel"
-            Grid.Row="0"
+            Content="UserName"
+            Grid.Row="1"
             Grid.Column="1"
             Width="200"
-            Height="30"
+            Height="40"
             Margin="20,50"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="16" />
+            FontSize="20" 
+            Foreground="White"/>
+        
+        <Label 
+            x:Name="userCityLabel"
+            Content="City: "
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Height="40"
+            Margin="150,55"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="16" 
+            Foreground="White"/>
     </Grid>
 </UserControl>

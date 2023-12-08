@@ -61,6 +61,7 @@ namespace ShitChat.UserControls
         public void DisplayProfile(User user)
         {
             userNameLabel.Content = user.UserName;
+            userCityLabel.Content = "City: " + user.City.ToString();
         }
     }
 }

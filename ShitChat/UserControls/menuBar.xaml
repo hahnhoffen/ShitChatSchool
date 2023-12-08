@@ -6,15 +6,24 @@
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="MenuBar"
-    d:DesignHeight="50"
-    d:DesignWidth="800"
+    d:DesignHeight="60"
+    d:DesignWidth="820"
     mc:Ignorable="d">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-        </Grid.RowDefinitions>
-
+    <Grid Background="Black" >
+        <Border Margin="5,5,5,5"
+                BorderBrush="White"
+                Background="Black"
+                BorderThickness="1,1,1,1"
+                CornerRadius="8,8,8,8"
+                Opacity="1"
+                 >
+                
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Opacity="0.5"/>
+            </Border.Effect>
+        </Border>
         <Grid
+            
             Grid.Row="1"
             HorizontalAlignment="Stretch"
             Background="#FF336444">
@@ -24,7 +33,9 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
             <TextBox
                 x:Name="txtInput"
                 Grid.Column="1"
@@ -92,5 +103,6 @@
                 Fill="White"
                 Stretch="Fill" />
         </Grid>
+        
     </Grid>
 </UserControl>
