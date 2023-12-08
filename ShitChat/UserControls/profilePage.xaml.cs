@@ -20,8 +20,10 @@ namespace ShitChat.UserControls
     /// </summary>
     public partial class profilePage : UserControl
     {
+        RegisterWindow registerWindow;
         UserManager userManager;
         menuBar MenuBar;
+        User searchedUser;
 
         public profilePage()
         {
@@ -33,14 +35,32 @@ namespace ShitChat.UserControls
             this.MenuBar = MenuBar;
         }
 
+        public void SetRegisterWindow(RegisterWindow registerWindow)
+        {
+
+            this.registerWindow = registerWindow;
+        }
         public void SetUserManager(UserManager userManager)
         {
             this.userManager = userManager;
+
         }
 
         public void SearchFriend(string friendName)
         {
+            foreach (User user in registerWindow.userList)
+            {
+                if (friendName == user.UserName)
+                {
+                    searchedUser = user;
+                    DisplayProfile(user);
+                }
+            }
+        }
 
+        public void DisplayProfile(User user)
+        {
+            userNameLabel.Content = user.UserName;
         }
     }
 }

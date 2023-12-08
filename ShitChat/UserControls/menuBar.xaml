@@ -37,6 +37,7 @@
                 FontSize="16"
                 FontWeight="Light"
                 TextChanged="txtInput_TextChanged"
+                KeyDown="txtInput_KeyDown_1"
                  />
 
             <TextBlock

@@ -57,9 +57,12 @@ namespace ShitChat.UserControls
 
         private void txtInput_KeyDown_1(object sender, KeyEventArgs e)
         {
-            string friendsName = txtInput.ToString();
-            ProfilePage.SearchFriend(friendsName);
-            txtInput.Clear();
+            if (e.Key == Key.Enter)
+            {
+                string friendsName = txtInput.Text;
+                ProfilePage.SearchFriend(friendsName);
+                ProfilePage.Visibility = Visibility.Visible;    
+            }
         }
     }
 }
