@@ -32,9 +32,6 @@ namespace ShitChat
             InitializeComponent();
             newUser = new User("Username", "Password"); //Why do we create a person before we add the details? What happens if they don't register the form correctly?
             userList = ReadUsersFromJson("userList.json") ?? new List<User>();
-            userList.Add(new User("admin", "admin"));
-            userList[0].friendsList.Add(new User("Example Friend 1", "1234"));
-            userList[0].friendsList.Add(new User("Example Friend 2", "1234"));
         }
      
 
