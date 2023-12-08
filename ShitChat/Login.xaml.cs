@@ -61,10 +61,7 @@ namespace ShitChat
                 foreach(User users in registerWindow.userList)
                 {
                     if (user == users.UserName &&
-                        password == users.Password || 
-                        user == "admin" && 
-                        password == "admin"
-                        )
+                        password == users.Password)
                     {
                         isFound = true;
                         logedInUser = users;

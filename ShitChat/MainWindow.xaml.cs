@@ -22,6 +22,7 @@ namespace ShitChat
     public partial class MainWindow : Window
     {
         MessageManager messageManager = new MessageManager();
+        UserManager userManager = new UserManager();
         User currentUser;
 
         public MainWindow()
@@ -38,9 +39,11 @@ namespace ShitChat
             MenuBar.SetUserName(user.UserName.ToString());
             Profile.SetLabelToUser(user.UserName.ToString());
             messageManager.SetUser(user);
+            userManager.SetUser(user);
             ChatWindow.SetManager(messageManager);
-            currentUser.friendsList.Add(new User("polaren", "1234"));
         }
+
+
         public void ShowProfile()
         {
             Profile.ShowProfile();

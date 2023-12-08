@@ -11,15 +11,22 @@ using System.Xml;
 
 namespace ShitChat
 {
-    public  class UserManager
+    public class UserManager
     {
         RegisterWindow registerWindow;
         public User currentUser;
         public string usersPath = "users.txt";
 
+        public UserManager()
+        {
+
+        }
+
+
         public void SetUser(User user)
         {
             this.currentUser = user;
+            currentUser.friendsList.Add(new User("Example friend", "1234"));
         }
 
 

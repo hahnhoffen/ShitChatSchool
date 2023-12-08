@@ -37,6 +37,7 @@ namespace ShitChat.UserControls
         public void UpdateWindowInformation()
         {
             userNameLabel.Content = messageManager.currentUser.UserName;
+            FriendsListBox.Items.Clear();
             foreach (User user in messageManager.currentUser.friendsList)
             {
                 FriendsListBox.Items.Add(user.UserName);
