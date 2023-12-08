@@ -21,18 +21,25 @@ namespace ShitChat
     /// </summary>
     public partial class MainWindow : Window
     {
+        MessageManager messageManager = new MessageManager();
+        User currentUser;
+
         public MainWindow()
         {
+            
             InitializeComponent();
-            DropDownMenu.SetChatWindow(ChatWindow);
-            DropDownMenu.SetProfile(Profile);
-            DropDownMenu.SetFrontWindow(Front);
+            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this);
+
         }
 
-        public void SetUserName(string userName)
+        public void SetUserName(User user)
         {
-            MenuBar.SetUserName(userName);
-            Profile.SetLabelToUser(userName.ToString()); 
+            currentUser = user;
+            MenuBar.SetUserName(user.UserName.ToString());
+            Profile.SetLabelToUser(user.UserName.ToString());
+            messageManager.SetUser(user);
+            ChatWindow.SetManager(messageManager);
+            currentUser.friendsList.Add(new User("polaren", "1234"));
         }
         public void ShowProfile()
         {
