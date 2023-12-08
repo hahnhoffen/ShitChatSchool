@@ -23,23 +23,30 @@ namespace ShitChat
     {
         MessageManager messageManager = new MessageManager();
         UserManager userManager = new UserManager();
+        RegisterWindow registerWindow;
         User currentUser;
 
         public MainWindow()
         {
-            
             InitializeComponent();
-            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this);
-
+            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager);
         }
+
+
+        public void SetRegisterWindow(RegisterWindow registerWindow)
+        {
+            this.registerWindow = registerWindow;
+        }
+
 
         public void SetUserName(User user)
         {
-            currentUser = user;
+            this.currentUser = user;
             MenuBar.SetUserName(user.UserName.ToString());
             Profile.SetLabelToUser(user.UserName.ToString());
             messageManager.SetUser(user);
             userManager.SetUser(user);
+            userManager.SetRegisterWindow(registerWindow);
             ChatWindow.SetManager(messageManager);
         }
 

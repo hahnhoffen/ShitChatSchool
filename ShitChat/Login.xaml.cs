@@ -38,6 +38,7 @@ namespace ShitChat
             profile.SetRegisterWindow(registerWindow);
             registerWindow.SetLogin(this);
             registerWindow.userList.Add(new User("admin", "admin"));
+            mainWindow.SetRegisterWindow(registerWindow);
             profile.SetLogin(this);
             this.Show();
 
