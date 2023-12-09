@@ -77,5 +77,12 @@ namespace ShitChat.UserControls
                 MessageBox.Show("Fool! You can't add youself.");
             }
         }
+
+
+        private void editProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            userManager.currentUser.OpenFileDialog();
+            //profilePicture.Source = userManager.currentUser.ProfileImage.ToString();
+        }
     }
 }

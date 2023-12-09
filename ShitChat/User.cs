@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ShitChat
 {
@@ -12,6 +16,8 @@ namespace ShitChat
     {
         public string UserName;
         public string Password; //Borde inte dessa två variabler ligga i User istället för Person? 
+        public string ProfileImage;
+
 
         public List<User> friendsList = new List<User>();
         public List<Conversation> conversations = new List<Conversation>();
@@ -20,6 +26,8 @@ namespace ShitChat
         {
 
         }
+
+
         public User(string userName, string password)
         {
             this.UserName = userName;
@@ -53,6 +61,15 @@ namespace ShitChat
             {
                 return false;
             }
+        }
+
+        public void OpenFileDialog()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = System.Environment.CurrentDirectory;
+            openFileDialog.Filter = "png files (*.png)|*.png|All files (*.*)|*.*";
+            openFileDialog.ShowDialog();
+            this.ProfileImage = openFileDialog.FileName;
         }
     }
 }
