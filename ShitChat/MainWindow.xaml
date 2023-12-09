@@ -69,5 +69,15 @@
             VerticalAlignment="Top"
             Visibility="Hidden" />
 
+        <!--  Avatar Control  -->
+        <UserControls:avatarMenu
+            x:Name="avatarPage"
+            Grid.Row="1"
+            Width="700"
+            Height="435"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Hidden" />
+
     </Grid>
 </Window>

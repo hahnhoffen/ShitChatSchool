@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ShitChat.UserControls
 {
@@ -22,7 +23,9 @@ namespace ShitChat.UserControls
     {
         RegisterWindow registerWindow;
         UserManager userManager;
+        MainWindow mainWindow;
         menuBar MenuBar;
+
         User searchedUser;
 
         public profilePage()
@@ -37,10 +40,11 @@ namespace ShitChat.UserControls
         }
 
 
-        public void SetManagers(RegisterWindow registerWindow, UserManager userManager)
+        public void SetManagers(RegisterWindow registerWindow, UserManager userManager, MainWindow mainWindow)
         {
             this.registerWindow = registerWindow;
             this.userManager = userManager;
+            this.mainWindow = mainWindow;
         }
 
 
@@ -74,14 +78,16 @@ namespace ShitChat.UserControls
             }
             else
             {
-                MessageBox.Show("Fool! You can't add youself.");
+                MessageBox.Show("You can't add youself.");
             }
         }
 
 
         private void editProfileBtn_Click(object sender, RoutedEventArgs e)
         {
-            userManager.currentUser.OpenFileDialog();
+            //userManager.currentUser.OpenFileDialog();
+            mainWindow.avatarPage.Visibility = Visibility.Visible;
+            profilePicture.Source = new BitmapImage(new Uri(userManager.currentUser.ProfileImage2, UriKind.Relative));
             //profilePicture.Source = userManager.currentUser.ProfileImage.ToString();
         }
     }

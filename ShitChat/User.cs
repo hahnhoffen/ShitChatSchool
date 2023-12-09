@@ -17,6 +17,8 @@ namespace ShitChat
         public string UserName;
         public string Password; //Borde inte dessa två variabler ligga i User istället för Person? 
         public string ProfileImage;
+        public string Presentation;
+        public string ProfileImage2 = "/UserControls/shitIconS.png";
 
 
         public List<User> friendsList = new List<User>();
@@ -63,6 +65,7 @@ namespace ShitChat
             }
         }
 
+
         public void OpenFileDialog()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -70,6 +73,7 @@ namespace ShitChat
             openFileDialog.Filter = "png files (*.png)|*.png|All files (*.*)|*.*";
             openFileDialog.ShowDialog();
             this.ProfileImage = openFileDialog.FileName;
+            MessageBox.Show(ProfileImage);
         }
     }
 }
