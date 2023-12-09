@@ -49,10 +49,13 @@ namespace ShitChat
 
         public void SaveUserListToJson()
         {
-            string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented);
-            StreamWriter sw = new StreamWriter(usersPath);
-            sw.WriteLine(json);
-            sw.Close();
+            if (registerWindow != null) 
+            {
+                string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented);
+                StreamWriter sw = new StreamWriter(usersPath);
+                sw.WriteLine(json);
+                sw.Close();
+            }
         }
     }
 }

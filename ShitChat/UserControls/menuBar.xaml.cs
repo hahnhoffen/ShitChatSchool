@@ -69,7 +69,8 @@ namespace ShitChat.UserControls
             {
                 string friendsName = txtInput.Text;
                 ProfilePage.SearchFriend(friendsName);
-                ProfilePage.Visibility = Visibility.Visible;    
+                ProfilePage.Visibility = Visibility.Visible;
+                txtInput.Clear();
             }
         }
 

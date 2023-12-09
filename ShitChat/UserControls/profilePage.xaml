@@ -122,7 +122,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Click="editProfileBtn_Click"
-            Content="Edit picture"
+            Content="Change avatar"
             Opacity="0.8">
             <Button.Resources>
                 <Style TargetType="Border">

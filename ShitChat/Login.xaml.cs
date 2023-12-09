@@ -47,8 +47,15 @@ namespace ShitChat
             profile.SetLogin(this);
             
             this.Show();
-
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
+
+
         //Tar användaren till registeringen, gömmer Påminnelse label.
         private void ToRegisterWindow(object sender, RoutedEventArgs e)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,15 @@ namespace ShitChat
         {
             InitializeComponent();
             DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager, profilePage);
+        }
+
+
+        //Closes application if we exit main window
+        protected override void OnClosed(EventArgs e)
+        {
+            userManager.SaveUserListToJson();
+            base.OnClosed(e);
+            Application.Current.Shutdown();
         }
 
 

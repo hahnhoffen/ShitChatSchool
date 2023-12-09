@@ -61,6 +61,7 @@
                 <DropShadowEffect
                     Direction="314"
                     Opacity="0.5"
+                    
                     Color="#FF961313" />
             </Border.Effect>
         </Border>
@@ -68,8 +69,8 @@
             x:Name="profilePicture2"
             Grid.Row="1"
             Grid.Column="1"
-            Margin="30,30,30,30"
-            Source="/UserControls/profile1.png" />
+            Margin="23,25,19,21"
+            Source="/UserControls/profile2.png" />
         <Border
             Grid.Row="1"
             Grid.Column="2"
