@@ -28,6 +28,7 @@ namespace ShitChat.UserControls
             InitializeComponent();
         }
 
+
         private void txtInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(txtInput.Text))
@@ -41,22 +42,26 @@ namespace ShitChat.UserControls
             }
         }
 
+
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             txtInput.Clear();
             txtInput.Focus();
         }
 
+
         public void SetUserName(string username)
         {
             btn_userMenu.Content = username;
         }
+
 
         public void SetProfilePage(profilePage ProfilePage, UserManager userManager)
         {
             this.ProfilePage = ProfilePage;
             this.userManager = userManager;
         }
+
 
         private void txtInput_KeyDown_1(object sender, KeyEventArgs e)
         {
@@ -67,6 +72,7 @@ namespace ShitChat.UserControls
                 ProfilePage.Visibility = Visibility.Visible;    
             }
         }
+
 
         private void btn_userMenu_Click(object sender, RoutedEventArgs e)
         {

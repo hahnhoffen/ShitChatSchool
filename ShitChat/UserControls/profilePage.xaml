@@ -5,12 +5,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Margin="190,0,0,0"
+    Margin="190,5,0,0"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
     d:DesignHeight="450"
     d:DesignWidth="860"
     mc:Ignorable="d">
+    
     <Grid Background="#FF336444">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />

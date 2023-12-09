@@ -30,21 +30,26 @@ namespace ShitChat.UserControls
             InitializeComponent();
         }
 
+
         public void SetMenuBar(menuBar MenuBar)
         {
             this.MenuBar = MenuBar;
         }
+
 
         public void SetRegisterWindow(RegisterWindow registerWindow)
         {
 
             this.registerWindow = registerWindow;
         }
+
+
         public void SetUserManager(UserManager userManager)
         {
             this.userManager = userManager;
 
         }
+
 
         public void SearchFriend(string friendName)
         {
@@ -57,6 +62,7 @@ namespace ShitChat.UserControls
                 }
             }
         }
+
 
         public void DisplayProfile(User user)
         {

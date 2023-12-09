@@ -9,21 +9,23 @@
     d:DesignHeight="60"
     d:DesignWidth="820"
     mc:Ignorable="d">
-    <Grid Background="Black" >
-        <Border Margin="5,5,5,5"
-                BorderBrush="White"
-                Background="Black"
-                BorderThickness="1,1,1,1"
-                CornerRadius="8,8,8,8"
-                Opacity="1"
-                 >
-                
-            <Border.Effect>
-                <DropShadowEffect Color="Black" Opacity="0.5"/>
-            </Border.Effect>
-        </Border>
+
+    <Border
+        Grid.Row="1"
+        Margin="0,0,0,0"
+        Panel.ZIndex="1"
+        Background="#FF336444"
+        BorderBrush="White"
+        CornerRadius="8,8,8,8"
+        Opacity="0.9"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        >
+        <Border.Effect>
+            <DropShadowEffect Opacity="0.9" Color="Black" />
+        </Border.Effect>
+
         <Grid
-            
             Grid.Row="1"
             HorizontalAlignment="Stretch"
             Background="#FF336444">
@@ -47,9 +49,8 @@
                 BorderThickness="2"
                 FontSize="16"
                 FontWeight="Light"
-                TextChanged="txtInput_TextChanged"
                 KeyDown="txtInput_KeyDown_1"
-                 />
+                TextChanged="txtInput_TextChanged" />
 
             <TextBlock
                 x:Name="tbPlaceHolder"
@@ -88,10 +89,10 @@
                 HorizontalContentAlignment="Left"
                 Background="Transparent"
                 BorderBrush="Transparent"
+                Click="btn_userMenu_Click"
                 Content="Username"
                 FontSize="30"
-                Foreground="AliceBlue" 
-                Click="btn_userMenu_Click"/>
+                Foreground="AliceBlue" />
 
             <Path
                 Grid.Column="0"
@@ -104,6 +105,6 @@
                 Fill="White"
                 Stretch="Fill" />
         </Grid>
-        
-    </Grid>
+
+    </Border>
 </UserControl>
