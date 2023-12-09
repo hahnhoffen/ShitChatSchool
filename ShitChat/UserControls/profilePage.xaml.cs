@@ -37,18 +37,12 @@ namespace ShitChat.UserControls
         }
 
 
-        public void SetRegisterWindow(RegisterWindow registerWindow)
+        public void SetManagers(RegisterWindow registerWindow, UserManager userManager)
         {
-
             this.registerWindow = registerWindow;
-        }
-
-
-        public void SetUserManager(UserManager userManager)
-        {
             this.userManager = userManager;
-
         }
+
 
 
         public void SearchFriend(string friendName)
@@ -68,6 +62,20 @@ namespace ShitChat.UserControls
         {
             userNameLabel.Content = user.UserName;
             userCityLabel.Content = "City: " + user.City.ToString();
+        }
+
+
+        private void addFriendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (searchedUser != null && searchedUser.UserName != userManager.currentUser.UserName) 
+            {
+                userManager.currentUser.AddFriend(searchedUser);
+                MessageBox.Show("You added a friend!");
+            }
+            else
+            {
+                MessageBox.Show("Fool! You can't add youself.");
+            }
         }
     }
 }

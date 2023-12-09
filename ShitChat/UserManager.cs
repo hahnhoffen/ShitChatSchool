@@ -28,6 +28,7 @@ namespace ShitChat
             this.currentUser = user;
             currentUser.friendsList.Add(new User("Example friend 1", "1234"));
             currentUser.friendsList.Add(new User("Example friend 2", "1234"));
+
         }
 
 
