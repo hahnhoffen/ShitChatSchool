@@ -5,11 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Margin="190,5,0,0"
+    Margin="200,5,0,0"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
     d:DesignHeight="450"
-    d:DesignWidth="860"
+    d:DesignWidth="800"
     mc:Ignorable="d">
     
     <Grid Background="#FF336444">
@@ -28,10 +28,10 @@
             Background="Black"
             BorderBrush="White"
             BorderThickness="1,1,1,1"
-            CornerRadius="8,8,8,8"
+            CornerRadius="15,15,15,15"
             Opacity="0.4">
             <Border.Effect>
-                <DropShadowEffect Opacity="0.5" Color="Black" />
+                <DropShadowEffect Opacity="0.5" Color="#FF961313" Direction="314" />
             </Border.Effect>
         </Border>
         <Border

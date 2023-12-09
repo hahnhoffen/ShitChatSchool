@@ -16,19 +16,19 @@
         Panel.ZIndex="1"
         Background="#FF336444"
         BorderBrush="White"
-        CornerRadius="8,8,8,8"
+        CornerRadius="0,8,8,8"
         Opacity="0.9"
         HorizontalAlignment="Stretch"
         VerticalAlignment="Stretch"
         >
         <Border.Effect>
-            <DropShadowEffect Opacity="0.9" Color="Black" />
+            <DropShadowEffect Opacity="0.75" Color="Black" Direction="275" />
         </Border.Effect>
 
         <Grid
             Grid.Row="1"
             HorizontalAlignment="Stretch"
-            Background="#FF336444">
+            Background="#FF284E35">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
