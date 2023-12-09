@@ -23,6 +23,7 @@ namespace ShitChat.UserControls
         FrontWindow frontWindow;
         MainWindow mainWindow;
         UserManager userManager;
+        profilePage ProfilePage;
 
 
         public dropDownMenu()
@@ -40,8 +41,9 @@ namespace ShitChat.UserControls
 
         private void Profile_btn_Click(object sender, RoutedEventArgs e)
         {
-             chatWindow.HideChatWindow();
-             frontWindow.HideFront();
+            chatWindow.HideChatWindow();
+            frontWindow.HideFront();
+            ProfilePage.Visibility = Visibility.Hidden;
 
             if (profile.Visibility != Visibility.Visible)
             {
@@ -53,6 +55,7 @@ namespace ShitChat.UserControls
         {
             profile.Visibility = Visibility.Hidden;
             frontWindow.HideFront();
+            ProfilePage.Visibility= Visibility.Hidden;
 
             if (chatWindow.Visibility != Visibility.Visible)
             {
@@ -62,13 +65,14 @@ namespace ShitChat.UserControls
         }
 
         //sätter värdena på Rutorna/UserControlsen.
-        public void SetWindows(Profile profile, chatWindow ChatWindow, FrontWindow frontWindow, MainWindow mainWindow, UserManager userManager)
+        public void SetWindows(Profile profile, chatWindow ChatWindow, FrontWindow frontWindow, MainWindow mainWindow, UserManager userManager, profilePage profilePage)
         {
             this.profile = profile;
             this.chatWindow = ChatWindow;
             this.frontWindow = frontWindow;
             this.mainWindow = mainWindow;
             this.userManager = userManager;
+            this.ProfilePage = profilePage;
         }
     }
 }

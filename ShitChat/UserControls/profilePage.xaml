@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Margin="200,0,0,0"
+    Margin="190,0,0,0"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
     d:DesignHeight="450"
@@ -19,50 +19,83 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="1.5*" />
         </Grid.RowDefinitions>
-        <Border 
+        <Border
             Grid.Row="1"
             Margin="10,10,10,10"
-        BorderBrush="White"
-        Background="Black"
-        BorderThickness="1,1,1,1"
-        CornerRadius="8,8,8,8"
-        Opacity="0.4">
+            Background="Black"
+            BorderBrush="White"
+            BorderThickness="1,1,1,1"
+            CornerRadius="8,8,8,8"
+            Opacity="0.4">
             <Border.Effect>
-                <DropShadowEffect Color="Black" Opacity="0.5"/>
+                <DropShadowEffect Opacity="0.5" Color="Black" />
+            </Border.Effect>
+        </Border>
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10,10,20,10"
+            Background="White"
+            BorderBrush="White"
+            BorderThickness="1,1,1,1"
+            CornerRadius="8,8,8,8"
+            Opacity="0.2">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.5" Color="Black" />
             </Border.Effect>
         </Border>
         <Image
             Grid.Row="1"
             Grid.Column="0"
-            Margin="30,30,30,30" 
-            />
-        <Label 
+            Margin="30,30,30,30" />
+        <Label
             x:Name="userNameLabel"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Height="40"
+            Margin="20,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             Content="UserName"
-            Grid.Row="1"
-            Grid.Column="1"
-            Width="200"
-            Height="40"
-            Margin="20,50"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            FontSize="20" 
-            Foreground="White"/>
-        
-        <Label 
+            FontSize="20"
+            Foreground="White" />
+
+        <Label
             x:Name="userCityLabel"
-            Content="City: "
             Grid.Row="1"
             Grid.Column="1"
             Width="200"
             Height="40"
-            Margin="150,55"
+            Margin="20,40"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="16" 
-            Foreground="White"/>
+            Content="City: "
+            FontSize="16"
+            Foreground="White" />
+        <Button
+            x:Name="addFriendBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="15,0,5,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="+ Add friend" 
+            Opacity="0.8"/>
+        <Button
+            x:Name="editProfileBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="5,0,15,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Edit profile" 
+            Opacity="0.8"/>
     </Grid>
 </UserControl>

@@ -29,7 +29,7 @@ namespace ShitChat
         public MainWindow()
         {
             InitializeComponent();
-            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager);
+            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager, profilePage);
         }
 
 
@@ -43,7 +43,7 @@ namespace ShitChat
         {
             this.currentUser = user;
             MenuBar.SetUserName(user.UserName.ToString());
-            MenuBar.SetProfilePage(profilePage);
+            MenuBar.SetProfilePage(profilePage, userManager);
             Profile.SetLabelToUser(user.UserName.ToString());
             messageManager.SetUser(user);
             userManager.SetUser(user);

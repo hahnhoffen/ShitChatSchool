@@ -65,8 +65,8 @@
             Grid.Row="1"
             Width="700"
             Height="435"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             Visibility="Hidden" />
 
     </Grid>

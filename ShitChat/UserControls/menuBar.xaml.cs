@@ -21,6 +21,8 @@ namespace ShitChat.UserControls
     public partial class menuBar : UserControl
     {
         profilePage ProfilePage;
+        UserManager userManager;
+
         public menuBar()
         {
             InitializeComponent();
@@ -50,9 +52,10 @@ namespace ShitChat.UserControls
             btn_userMenu.Content = username;
         }
 
-        public void SetProfilePage(profilePage ProfilePage)
+        public void SetProfilePage(profilePage ProfilePage, UserManager userManager)
         {
             this.ProfilePage = ProfilePage;
+            this.userManager = userManager;
         }
 
         private void txtInput_KeyDown_1(object sender, KeyEventArgs e)
@@ -63,6 +66,12 @@ namespace ShitChat.UserControls
                 ProfilePage.SearchFriend(friendsName);
                 ProfilePage.Visibility = Visibility.Visible;    
             }
+        }
+
+        private void btn_userMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePage.SearchFriend(userManager.currentUser.UserName);
+            ProfilePage.Visibility = Visibility.Visible;
         }
     }
 }

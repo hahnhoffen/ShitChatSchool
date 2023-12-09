@@ -90,7 +90,8 @@
                 BorderBrush="Transparent"
                 Content="Username"
                 FontSize="30"
-                Foreground="AliceBlue" />
+                Foreground="AliceBlue" 
+                Click="btn_userMenu_Click"/>
 
             <Path
                 Grid.Column="0"
