@@ -5,177 +5,190 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ShitChat.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="avatarMenuClass"
     d:DesignHeight="450"
     d:DesignWidth="600"
-    mc:Ignorable="d"
-    x:Name="avatarMenuClass"
-    >
-    
-    <Grid 
+    mc:Ignorable="d">
+    <Border
         Background="#FF284E35"
-        Margin="270,17,20,50"
-        
+        HorizontalAlignment="Right"
+        VerticalAlignment="Center"
+        BorderBrush="Black"
+        BorderThickness="2"
+        CornerRadius="8,8,8,8" 
+        Height="400" 
+        Width="400"
         >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="0.5*" />
-        </Grid.RowDefinitions>
-        <Border
-            Grid.Row="1"
-            Margin="10,10,10,10"
-            Background="Black"
-            BorderBrush="White"
-            BorderThickness="1,1,1,1"
-            CornerRadius="15,15,15,15"
-            Opacity="0.4">
-            <Border.Effect>
-                <DropShadowEffect
-                    Direction="314"
-                    Opacity="0.5"
-                    Color="#FF961313" />
-            </Border.Effect>
-        </Border>
-        <Image
-            x:Name="profilePicture"
-            Grid.Row="1"
-            Grid.Column="0"
-            Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png" />
-        <Border
-            Grid.Row="1"
-            Grid.Column="1"
-            Margin="10,10,10,10"
-            Background="Black"
-            BorderBrush="White"
-            BorderThickness="1,1,1,1"
-            CornerRadius="15,15,15,15"
-            Opacity="0.4">
-            <Border.Effect>
-                <DropShadowEffect
-                    Direction="314"
-                    Opacity="0.5"
-                    
-                    Color="#FF961313" />
-            </Border.Effect>
-        </Border>
-        <Image
-            x:Name="profilePicture2"
-            Grid.Row="1"
-            Grid.Column="1"
-            Margin="23,25,19,21"
-            Source="/UserControls/profile2.png" />
-        <Border
-            Grid.Row="1"
-            Grid.Column="2"
-            Margin="10,10,10,10"
-            Background="Black"
-            BorderBrush="White"
-            BorderThickness="1,1,1,1"
-            CornerRadius="15,15,15,15"
-            Opacity="0.4">
-            <Border.Effect>
-                <DropShadowEffect
-                    Direction="314"
-                    Opacity="0.5"
-                    Color="#FF961313" />
-            </Border.Effect>
-        </Border>
-        <Image
-            x:Name="profilePicture3"
-            Grid.Row="1"
-            Grid.Column="2"
-            Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png" />
-        <Border
-            Grid.Row="2"
-            Grid.Column="0"
-            Margin="10,10,10,10"
-            Background="Black"
-            BorderBrush="White"
-            BorderThickness="1,1,1,1"
-            CornerRadius="15,15,15,15"
-            Opacity="0.4">
-            <Border.Effect>
-                <DropShadowEffect
-                    Direction="314"
-                    Opacity="0.5"
-                    Color="#FF961313" />
-            </Border.Effect>
-        </Border>
-        <Image
-            x:Name="profilePicture4"
-            Grid.Row="2"
-            Grid.Column="0"
-            Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png" />
-        <Border
-            Grid.Row="2"
-            Grid.Column="2"
-            Margin="10,10,10,10"
-            Background="Black"
-            BorderBrush="White"
-            BorderThickness="1,1,1,1"
-            CornerRadius="15,15,15,15"
-            Opacity="0.4">
-            <Border.Effect>
-                <DropShadowEffect
-                    Direction="314"
-                    Opacity="0.5"
-                    Color="#FF961313" />
-            </Border.Effect>
-        </Border>
-        <Image
-            x:Name="profilePicture5"
-            Grid.Row="2"
-            Grid.Column="1"
-            Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png" />
-        <Border
-            Grid.Row="2"
-            Grid.Column="1"
-            Margin="10,10,10,10"
-            Background="Black"
-            BorderBrush="White"
-            BorderThickness="1,1,1,1"
-            CornerRadius="15,15,15,15"
-            Opacity="0.4"
-            Panel.ZIndex="-1">
-            
-            <Border.Effect>
-                <DropShadowEffect
-                    Direction="314"
-                    Opacity="0.5"
-                    Color="#FF961313" />
-            </Border.Effect>
-        </Border>
-        <Image
-            x:Name="profilePicture6"
-            Grid.Row="2"
-            Grid.Column="2"
-            Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png" />
-        <Button
-            x:Name="pickButton"
-            Height="30"
-            Width="75"
-            Grid.Row="3"
-            Grid.Column="1"
-            Margin="15,0,15,0"
-            Content="Pick"
-            Click="pickButton_Click" >
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        
+        <Border.Effect>
+            <DropShadowEffect
+                Direction="275"
+                Opacity="0.75"
+                Color="Black" />
+        </Border.Effect>
 
-    </Grid>
+
+        <Grid Background="#FF284E35" Margin="5,5,5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="1"
+                Margin="10,10,10,10"
+                Background="Black"
+                BorderBrush="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="15,15,15,15"
+                Opacity="0.4">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="314"
+                        Opacity="0.5"
+                        Color="#FF961313" />
+                </Border.Effect>
+            </Border>
+            <Image
+                x:Name="profilePicture"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="30,30,30,30"
+                Source="/UserControls/shitIconS.png" />
+            <Border
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,10,10,10"
+                Background="Black"
+                BorderBrush="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="15,15,15,15"
+                Opacity="0.4">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="314"
+                        Opacity="0.5"
+                        Color="#FF961313" />
+                </Border.Effect>
+            </Border>
+            <Image
+                x:Name="profilePicture2"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="23,25,19,21"
+                Source="/UserControls/profile2.png" />
+            <Border
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="10,10,10,10"
+                Background="Black"
+                BorderBrush="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="15,15,15,15"
+                Opacity="0.4">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="314"
+                        Opacity="0.5"
+                        Color="#FF961313" />
+                </Border.Effect>
+            </Border>
+            <Image
+                x:Name="profilePicture3"
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="30,30,30,30"
+                Source="/UserControls/profile3.png" />
+            <Border
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="10,10,10,10"
+                Background="Black"
+                BorderBrush="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="15,15,15,15"
+                Opacity="0.4">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="314"
+                        Opacity="0.5"
+                        Color="#FF961313" />
+                </Border.Effect>
+            </Border>
+            <Image
+                x:Name="profilePicture4"
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="30,30,30,30"
+                Source="/UserControls/shitIconS.png" />
+            <Border
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="10,10,10,10"
+                Background="Black"
+                BorderBrush="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="15,15,15,15"
+                Opacity="0.4">
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="314"
+                        Opacity="0.5"
+                        Color="#FF961313" />
+                </Border.Effect>
+            </Border>
+            <Image
+                x:Name="profilePicture5"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="30,30,30,30"
+                Source="/UserControls/shitIconS.png" />
+            <Border
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="10,10,10,10"
+                Panel.ZIndex="-1"
+                Background="Black"
+                BorderBrush="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="15,15,15,15"
+                Opacity="0.4">
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="314"
+                        Opacity="0.5"
+                        Color="#FF961313" />
+                </Border.Effect>
+            </Border>
+            <Image
+                x:Name="profilePicture6"
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="30,30,30,30"
+                Source="/UserControls/shitIconS.png" />
+            <Button
+                x:Name="pickButton"
+                Grid.Row="3"
+                Grid.Column="1"
+                Width="75"
+                Height="30"
+                Margin="15,0,15,0"
+                Click="pickButton_Click"
+                Content="Pick">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+        </Grid>
+    </Border>
 </UserControl>

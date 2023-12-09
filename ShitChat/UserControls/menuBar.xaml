@@ -62,7 +62,7 @@
                 FontSize="16"
                 FontWeight="Light"
                 Foreground="DarkGray"
-                Text="Search for friends and events..." />
+                Text="Search for friends..." />
 
             <Button
                 x:Name="btnClear"
@@ -105,6 +105,5 @@
                 Fill="White"
                 Stretch="Fill" />
         </Grid>
-
     </Border>
 </UserControl>

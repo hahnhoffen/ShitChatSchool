@@ -33,7 +33,14 @@ namespace ShitChat
             newUser = new User("Username", "Password"); //Why do we create a person before we add the details? What happens if they don't register the form correctly?
             userList = ReadUsersFromJson("userList.json") ?? new List<User>();
         }
-     
+
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
+
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
