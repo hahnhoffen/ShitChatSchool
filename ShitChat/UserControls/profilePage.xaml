@@ -55,8 +55,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png">
-        </Image>
+            Source="/UserControls/shitIconS.png" />
         <Label
             x:Name="userNameLabel"
             Grid.Row="1"
@@ -108,7 +107,7 @@
             Opacity="0.8">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="CornerRadius" Value="5" />
                 </Style>
             </Button.Resources>
         </Button>
@@ -126,11 +125,44 @@
             Opacity="0.8">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="CornerRadius" Value="5" />
                 </Style>
             </Button.Resources>
-        </Button> 
-
+        </Button>
+        <Button
+            x:Name="takePhoto"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="5,25,15,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Take photo"
+            Opacity="0.8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="sendMessageBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="15,25,15,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Send Message"
+            Opacity="0.8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
         <Label
             x:Name="presentationLabel"
             Grid.Row="2"
@@ -143,7 +175,5 @@
             Content="Presentation"
             FontSize="16"
             Foreground="White" />
-        
-
     </Grid>
 </UserControl>
