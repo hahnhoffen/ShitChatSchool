@@ -56,11 +56,12 @@
                 </Border.Effect>
             </Border>
             <Image
-                x:Name="profilePicture"
+                x:Name="profilePicture1"
                 Grid.Row="1"
                 Grid.Column="0"
-                Margin="30,30,30,30"
-                Source="/UserControls/shitIconS.png" />
+                Margin="30,30,30,30" >
+                <Image.Source>/UserControls/avatar1.png</Image.Source>
+            </Image>
             <Button
                 x:Name="profileBtn1"
                 Grid.Row="1"
@@ -89,7 +90,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="23,25,19,21"
-                Source="/UserControls/profile2.png" />
+                Source="/UserControls/avatar2.png" />
             <Button
                 x:Name="profileBtn2"
                 Grid.Row="1"

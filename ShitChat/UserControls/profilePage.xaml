@@ -51,11 +51,11 @@
             </Border.Effect>
         </Border>
         <Image
-            x:Name="profilePicture"
+            x:Name="avatarPicture"
             Grid.Row="1"
             Grid.Column="0"
             Margin="30,30,30,30"
-            Source="/UserControls/shitIconS.png" />
+            Source="/UserControls/avatar1.png" />
         <Label
             x:Name="userNameLabel"
             Grid.Row="1"
@@ -112,7 +112,7 @@
             </Button.Resources>
         </Button>
         <Button
-            x:Name="editProfileBtn"
+            x:Name="changeAvatarBtn"
             Grid.Row="2"
             Grid.Column="0"
             Width="100"
@@ -120,7 +120,7 @@
             Margin="5,0,15,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Click="editProfileBtn_Click"
+            Click="changeAvatarBtn_Click"
             Content="Change avatar"
             Opacity="0.8">
             <Button.Resources>

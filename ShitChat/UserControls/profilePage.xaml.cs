@@ -66,6 +66,14 @@ namespace ShitChat.UserControls
         {
             userNameLabel.Content = user.UserName;
             userCityLabel.Content = "City: " + user.City.ToString();
+            if (user.AvatarImage != null)
+            {
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.UriSource = new Uri(user.AvatarImage, UriKind.RelativeOrAbsolute);
+                b.EndInit();
+                avatarPicture.Source = b;
+            }
         }
 
 
@@ -83,12 +91,13 @@ namespace ShitChat.UserControls
         }
 
 
-        private void editProfileBtn_Click(object sender, RoutedEventArgs e)
+        private void changeAvatarBtn_Click(object sender, RoutedEventArgs e)
         {
             //userManager.currentUser.OpenFileDialog();
+            mainWindow.avatarPage.SetManagers(userManager, this);
             mainWindow.avatarPage.Visibility = Visibility.Visible;
-            profilePicture.Source = new BitmapImage(new Uri(userManager.currentUser.ProfileImage2, UriKind.Relative));
-            //profilePicture.Source = userManager.currentUser.ProfileImage.ToString();
+            //avatarPicture.Source = new BitmapImage(new Uri(userManager.currentUser.AvatarImage, UriKind.Relative));
+            //profilePicture.Source = userManager.currentUser.AvatarImage.ToString();
         }
     }
 }
