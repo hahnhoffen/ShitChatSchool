@@ -9,7 +9,7 @@
     d:DesignWidth="860"
     Visibility="Visible"
     mc:Ignorable="d"
-    Margin="200, 0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+    Margin="200,7,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
     <UserControl.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>

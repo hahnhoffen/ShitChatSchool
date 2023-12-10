@@ -13,6 +13,9 @@
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\avatarMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\chatWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
     <Compile Update="UserControls\Profile.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\profilePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Login.xaml">
@@ -37,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\avatarMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\chatWindow.xaml">
@@ -52,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\Profile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\profilePage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

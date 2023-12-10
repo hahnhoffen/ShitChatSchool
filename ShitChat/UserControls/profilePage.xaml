@@ -1,0 +1,179 @@
+﻿<UserControl
+    x:Class="ShitChat.UserControls.profilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ShitChat.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Margin="200,7,0,0"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF336444">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1.5*" />
+        </Grid.RowDefinitions>
+        <Border
+            Grid.Row="1"
+            Margin="10,10,10,10"
+            Background="Black"
+            BorderBrush="White"
+            BorderThickness="1,1,1,1"
+            CornerRadius="15,15,15,15"
+            Opacity="0.4">
+            <Border.Effect>
+                <DropShadowEffect
+                    Direction="314"
+                    Opacity="0.5"
+                    Color="#FF961313" />
+            </Border.Effect>
+        </Border>
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="10,10,20,10"
+            Background="White"
+            BorderBrush="White"
+            BorderThickness="1,1,1,1"
+            CornerRadius="8,8,8,8"
+            Opacity="0.2">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.5" Color="Black" />
+            </Border.Effect>
+        </Border>
+        <Image
+            x:Name="avatarPicture"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="30,30,30,30"
+            Source="/UserControls/avatar1.png" />
+        <Label
+            x:Name="userNameLabel"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Height="40"
+            Margin="20,10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="UserName"
+            FontSize="25"
+            Foreground="White" />
+
+        <Label
+            x:Name="userCityLabel"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Height="40"
+            Margin="20,67"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="City: "
+            FontSize="16"
+            Foreground="White" />
+        <Label
+            x:Name="userCountryLabel"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="200"
+            Height="40"
+            Margin="20,45"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Country: "
+            FontSize="16"
+            Foreground="White" />
+        <Button
+            x:Name="addFriendBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="15,0,5,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="addFriendBtn_Click"
+            Content="+ Add friend"
+            Opacity="0.8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="changeAvatarBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="5,0,15,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="changeAvatarBtn_Click"
+            Content="Change avatar"
+            Opacity="0.8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="takePhoto"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="5,25,15,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Take photo"
+            Opacity="0.8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="sendMessageBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Height="20"
+            Margin="15,25,15,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Send Message"
+            Opacity="0.8">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label
+            x:Name="presentationLabel"
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="200"
+            Height="40"
+            Margin="15,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Presentation"
+            FontSize="16"
+            Foreground="White" />
+    </Grid>
+</UserControl>
