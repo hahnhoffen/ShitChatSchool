@@ -137,6 +137,7 @@ namespace ShitChat.UserControls
 
         private void profileBtn6_Click(object sender, RoutedEventArgs e)
         {
+           // ButtonCheck(border6);
             if (border6.Opacity == 0.4)
             {
                 border6.Opacity = 0.8;
@@ -149,17 +150,18 @@ namespace ShitChat.UserControls
             }
         }
 
-        public void ButtonCheck(Button button)
-        {
-            if (button.Opacity == 0.4)
-            {
-                button.Opacity = 0.8;
-            }
-            else
-            {
-                button.Opacity = 0.4;
-                picked = 0;
-            }
-        }
+      //  public void ButtonCheck(Border border)
+      //  {
+      //      if (border.Opacity == 0.4)
+      //      {
+      //          border.Opacity = 0.8;
+      //          picked = border.Name[-1].ToString();
+      //      }
+      //      else
+      //      {
+      //          border.Opacity = 0.4;
+      //         // picked = 0;
+      //      }
+      //  }
     }
 }
