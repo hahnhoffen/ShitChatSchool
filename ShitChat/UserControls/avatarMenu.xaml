@@ -10,16 +10,15 @@
     d:DesignWidth="600"
     mc:Ignorable="d">
     <Border
-        Background="#FF284E35"
+        Width="400"
+        Height="400"
         HorizontalAlignment="Right"
         VerticalAlignment="Center"
+        Background="#FF284E35"
         BorderBrush="Black"
         BorderThickness="2"
-        CornerRadius="8,8,8,8" 
-        Height="400" 
-        Width="400"
-        >
-        
+        CornerRadius="8,8,8,8">
+
         <Border.Effect>
             <DropShadowEffect
                 Direction="275"
@@ -28,7 +27,7 @@
         </Border.Effect>
 
 
-        <Grid Background="#FF284E35" Margin="5,5,5,5">
+        <Grid Margin="5,5,5,5" Background="#FF284E35">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -41,6 +40,7 @@
                 <RowDefinition Height="0.5*" />
             </Grid.RowDefinitions>
             <Border
+                x:Name="border1"
                 Grid.Row="1"
                 Margin="10,10,10,10"
                 Background="Black"
@@ -61,7 +61,14 @@
                 Grid.Column="0"
                 Margin="30,30,30,30"
                 Source="/UserControls/shitIconS.png" />
+            <Button
+                x:Name="profileBtn1"
+                Grid.Row="1"
+                Grid.Column="0"
+                Click="profileBtn1_Click"
+                Opacity="0" />
             <Border
+                x:Name="border2"
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="10,10,10,10"
@@ -83,7 +90,14 @@
                 Grid.Column="1"
                 Margin="23,25,19,21"
                 Source="/UserControls/profile2.png" />
+            <Button
+                x:Name="profileBtn2"
+                Grid.Row="1"
+                Grid.Column="1"
+                Click="profileBtn2_Click"
+                Opacity="0" />
             <Border
+                x:Name="border3"
                 Grid.Row="1"
                 Grid.Column="2"
                 Margin="10,10,10,10"
@@ -105,7 +119,14 @@
                 Grid.Column="2"
                 Margin="30,30,30,30"
                 Source="/UserControls/profile3.png" />
+            <Button
+                x:Name="profileBtn3"
+                Grid.Row="1"
+                Grid.Column="2"
+                Click="profileBtn3_Click"
+                Opacity="0" />
             <Border
+                x:Name="border4"
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="10,10,10,10"
@@ -127,7 +148,14 @@
                 Grid.Column="0"
                 Margin="30,30,30,30"
                 Source="/UserControls/shitIconS.png" />
+            <Button
+                x:Name="profileBtn4"
+                Grid.Row="2"
+                Grid.Column="0"
+                Click="profileBtn4_Click"
+                Opacity="0" />
             <Border
+                x:Name="border6"
                 Grid.Row="2"
                 Grid.Column="2"
                 Margin="10,10,10,10"
@@ -149,7 +177,14 @@
                 Grid.Column="1"
                 Margin="30,30,30,30"
                 Source="/UserControls/shitIconS.png" />
+            <Button
+                x:Name="profileBtn5"
+                Grid.Row="2"
+                Grid.Column="1"
+                Click="profileBtn5_Click"
+                Opacity="0" />
             <Border
+                x:Name="border5"
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="10,10,10,10"
@@ -173,6 +208,12 @@
                 Grid.Column="2"
                 Margin="30,30,30,30"
                 Source="/UserControls/shitIconS.png" />
+            <Button
+                x:Name="profileBtn6"
+                Grid.Row="2"
+                Grid.Column="2"
+                Click="profileBtn6_Click"
+                Opacity="0" />
             <Button
                 x:Name="pickButton"
                 Grid.Row="3"
