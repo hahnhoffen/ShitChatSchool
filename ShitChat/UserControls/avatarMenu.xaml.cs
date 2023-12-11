@@ -23,11 +23,19 @@ namespace ShitChat.UserControls
     {
         UserManager userManager;
         profilePage profilePage;
+
+        List<Border> borderList = new List<Border>();
         string picked = "0";
 
         public avatarMenu()
         {
             InitializeComponent();
+            borderList.Add(border1);
+            borderList.Add(border2);
+            borderList.Add(border3);
+            borderList.Add(border4);
+            borderList.Add(border5);
+            borderList.Add(border6);
         }
 
 
@@ -108,8 +116,19 @@ namespace ShitChat.UserControls
         }
 
 
-        public void ButtonCheck(Border border)
+        public void PickButton(Border border)
         {
+            foreach (Border bord in borderList)
+            {
+                if (bord == border)
+                {
+                    continue;
+                }
+                else if (bord != border)
+                {
+                    bord.Opacity = 0.4;
+                }
+            }
             if (border.Opacity == 0.4)
             {
                 border.Opacity = 0.8;
@@ -126,33 +145,33 @@ namespace ShitChat.UserControls
 
         private void profileBtn1_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border1);
+            PickButton(border1);
         }
 
 
         private void profileBtn2_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border2);
+            PickButton(border2);
         }
 
         private void profileBtn3_Click(object sender, RoutedEventArgs e)
         { 
-            ButtonCheck(border3);
+            PickButton(border3);
         }
 
         private void profileBtn4_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border4);
+            PickButton(border4);
         }
 
         private void profileBtn5_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border5);
+            PickButton(border5);
         }
 
         private void profileBtn6_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border6);
+            PickButton(border6);
         }
     }
 }
