@@ -137,7 +137,6 @@ namespace ShitChat
             {
                 MessageBox.Show("Error reading users from JSON file: " + ex.Message);
             }
-
             return userList;
         }
     }

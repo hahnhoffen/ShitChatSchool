@@ -52,6 +52,7 @@ namespace ShitChat.UserControls
         }
 
 
+        //Takes the number from 'var picked' and changes the profile picture to corresponding avatar number
         public void Pick()
         {
             switch (picked)
@@ -116,7 +117,8 @@ namespace ShitChat.UserControls
         }
 
 
-        public void PickButton(Border border)
+        //Saves the chosen avatar number to -> string picked
+        public void SaveAvatarChoice(Border border)
         {
             foreach (Border bord in borderList)
             {
@@ -145,33 +147,33 @@ namespace ShitChat.UserControls
 
         private void profileBtn1_Click(object sender, RoutedEventArgs e)
         {
-            PickButton(border1);
+            SaveAvatarChoice(border1);
         }
 
 
         private void profileBtn2_Click(object sender, RoutedEventArgs e)
         {
-            PickButton(border2);
+            SaveAvatarChoice(border2);
         }
 
         private void profileBtn3_Click(object sender, RoutedEventArgs e)
         { 
-            PickButton(border3);
+            SaveAvatarChoice(border3);
         }
 
         private void profileBtn4_Click(object sender, RoutedEventArgs e)
         {
-            PickButton(border4);
+            SaveAvatarChoice(border4);
         }
 
         private void profileBtn5_Click(object sender, RoutedEventArgs e)
         {
-            PickButton(border5);
+            SaveAvatarChoice(border5);
         }
 
         private void profileBtn6_Click(object sender, RoutedEventArgs e)
         {
-            PickButton(border6);
+            SaveAvatarChoice(border6);
         }
     }
 }
