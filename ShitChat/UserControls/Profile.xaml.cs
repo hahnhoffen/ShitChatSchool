@@ -32,7 +32,35 @@ namespace ShitChat.UserControls
             InitializeComponent();
         }
 
-        
+
+        //sätter värdet i registerWindow
+        public void SetRegisterWindow(RegisterWindow registerWindow)
+        {
+            this.registerWindow = registerWindow;
+        }
+
+
+        //hämtar värdena av chatWindow 
+        public void SetChatWindow(chatWindow ChatWindow)
+        {
+            this.chatWindow = ChatWindow;
+        }
+
+
+        //sätter värdet till den inloggades användarnamn
+        public void SetLabelToUser(string CurrentUser)
+        {
+            UsrName_Label.Content = CurrentUser.ToString();
+        }
+
+
+        //tar värdet från login och tilldelar denna usercontrolen
+        public void SetLogin(Login login1)
+        {
+            this.login = login1;
+        }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Application application = Application.Current;
@@ -52,7 +80,6 @@ namespace ShitChat.UserControls
             {
                 profile.Visibility = Visibility.Hidden;
             }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -66,29 +93,6 @@ namespace ShitChat.UserControls
             {
                 chatWindow.HideChatWindow();
             }
-        }
-
-
-        //hämtar värdena av chatWindow 
-        public void SetChatWindow(chatWindow ChatWindow)
-        {
-            this.chatWindow = ChatWindow;
-        }
-        public void SetLabelToUser(string CurrentUser)
-        { 
-            UsrName_Label.Content = CurrentUser.ToString();
-        }
-        //sätter värdet till den inloggades användarnamn
-
-        //tar värdet från login och tilldelar denna usercontrolen
-        public void SetLogin(Login login1)
-        {
-            this.login = login1;
-        }
-        //sätter värdet i registerWindow
-        public void SetRegisterWindow(RegisterWindow registerWindow)
-        {
-            this.registerWindow = registerWindow;
         }
 
 
@@ -117,6 +121,8 @@ namespace ShitChat.UserControls
                 Error_Adr_Label.Visibility = Visibility.Visible;
             }
         }
+
+
         //byter till aktuellt lösenord
         private void ChangePassWord()
         {
@@ -130,6 +136,8 @@ namespace ShitChat.UserControls
                 }
             }
         }
+
+
         //Byter Adress.
         private void Change_Address()
         {
@@ -144,15 +152,18 @@ namespace ShitChat.UserControls
             }
         }
 
+
+
         public void ShowProfile()
         {
             this.Visibility = Visibility.Visible;
         }
 
+
+
         public void HideProfile()
         {
             this.Visibility = Visibility.Collapsed;
         }
-       
     }
 }
