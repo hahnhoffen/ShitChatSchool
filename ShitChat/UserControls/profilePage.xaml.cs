@@ -34,12 +34,6 @@ namespace ShitChat.UserControls
         }
 
 
-        public void SetMenuBar(menuBar MenuBar)
-        {
-            this.MenuBar = MenuBar;
-        }
-
-
         public void SetManagers(RegisterWindow registerWindow, UserManager userManager, MainWindow mainWindow)
         {
             this.registerWindow = registerWindow;
@@ -71,6 +65,15 @@ namespace ShitChat.UserControls
                 BitmapImage b = new BitmapImage();
                 b.BeginInit();
                 b.UriSource = new Uri(user.AvatarImage, UriKind.RelativeOrAbsolute);
+                b.EndInit();
+                avatarPicture.Source = b;
+            }
+            else
+            {
+                string presetAvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.UriSource = new Uri(presetAvatarImage, UriKind.RelativeOrAbsolute);
                 b.EndInit();
                 avatarPicture.Source = b;
             }
