@@ -157,16 +157,13 @@
     </UserControl.Resources>
     <Grid Background="#FF336444" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="1.5*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -182,12 +179,13 @@
             Click="Apply_btn_Click"
             Content="Apply" TabIndex="3" />
         <TextBox 
+            HorizontalAlignment="Right"
             VerticalContentAlignment="Center"
             Style="{DynamicResource TextBoxStyle1}"
             x:Name="Chge_Psw_Box"
-            Grid.Row="5"
-            Grid.Column="1"
-            Width="300"
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="200"
             Height="35" TabIndex="0" />
         <Label
             x:Name="UsrName_Label"
@@ -202,31 +200,32 @@
             </Label.Foreground>
         </Label>
         <TextBox
+            HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
-            x:Name="Chg_Adr_Box"
-            Grid.Row="4"
+            x:Name="Chg_City_Box"
+            Grid.Row="2"
             Grid.Column="1"
-            Width="300"
+            Width="200"
             Height="35" Style="{DynamicResource TextBoxStyle1}" TabIndex="2" />
         <Label
-            Grid.Row="5"
-            Grid.Column="0"
-            Margin="0,10,0,0"
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="150"
             VerticalAlignment="Center"
-            HorizontalContentAlignment="Center"
+            HorizontalContentAlignment="Right"
             Content="Change Password" 
-            FontSize="20">
+            FontSize="16">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Label.Foreground>
         </Label>
         <Label
-            Grid.Row="4"
+            Grid.Row="2"
             Grid.Column="0"
             VerticalAlignment="Center"
             HorizontalContentAlignment="Center"
-            Content="Adress"
-            FontSize="20">
+            Content="City"
+            FontSize="16">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Label.Foreground>
@@ -235,19 +234,61 @@
             VerticalContentAlignment="Center"
             Style="{DynamicResource TextBoxStyle2}"
             x:Name="Cofrm_Psw_Box"
-            Grid.Row="6"
-            Grid.Column="1"
-            Width="300"
+            Grid.Row="3"
+            Grid.Column="2"
+            Width="200"
             Height="35"
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Right"
             VerticalAlignment="Center" TabIndex="1"/>
         <Label
-            Grid.Row="6"
-            Grid.Column="0"
+            Grid.Row="3"
+            Grid.Column="1"
             VerticalAlignment="Center"
+            HorizontalAlignment="Right"
             HorizontalContentAlignment="Center"
             Content="Confirm Password"
-            FontSize="20">
+            FontSize="16">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBox 
+    HorizontalAlignment="Left"
+    VerticalContentAlignment="Center"
+    Style="{DynamicResource TextBoxStyle1}"
+    x:Name="Chge_Country_Box"
+    Grid.Row="3"
+    Grid.Column="1"
+    Width="200"
+    Height="35" TabIndex="0" />
+        <Label
+    Grid.Row="3"
+    Grid.Column="0"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    HorizontalContentAlignment="Center"
+    Content="Country"
+    FontSize="16">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBox 
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="10,10,10,10"
+            Background="#FF1F3C29"
+            Foreground="White"
+            FontSize="16"
+            />
+        <Label
+ Grid.Row="1"
+ Grid.Column="0"
+ VerticalAlignment="Top"
+ HorizontalAlignment="Center"
+ HorizontalContentAlignment="Center"
+ Content="Presentation"
+ FontSize="16">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
             </Label.Foreground>

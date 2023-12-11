@@ -82,6 +82,7 @@ namespace ShitChat.UserControls
             }
         }
 
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             profile.Visibility = Visibility.Hidden;
@@ -112,9 +113,9 @@ namespace ShitChat.UserControls
                 Error_Psw_label.Visibility = Visibility.Visible;
             }
 
-            if (Chg_Adr_Box.Text != "")
+            if (Chg_City_Box.Text != "")
             {
-                Change_Address();
+                Change_City();
             }
             else
             {
@@ -128,7 +129,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser.UserName) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -139,13 +140,13 @@ namespace ShitChat.UserControls
 
 
         //Byter Adress.
-        private void Change_Address()
+        private void Change_City()
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.Address != Chg_Adr_Box.Text)
+                if (user.UserName.Equals(CurrentUser.UserName))
                 {
-                    Chg_Adr_Box.Text = user.Address;
+                    Chg_City_Box.Text = user.City;
                     Error_Adr_Label.Visibility = Visibility.Hidden;
                     break;
                 }
