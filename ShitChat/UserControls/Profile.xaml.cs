@@ -32,7 +32,27 @@ namespace ShitChat.UserControls
             InitializeComponent();
         }
 
-        
+
+        //sätter värdet i registerWindow
+        public void SetRegisterWindow(RegisterWindow registerWindow)
+        {
+            this.registerWindow = registerWindow;
+        }
+
+
+        //hämtar värdena av chatWindow 
+        public void SetChatWindow(chatWindow ChatWindow)
+        {
+            this.chatWindow = ChatWindow;
+        }
+
+
+        public void SetLogin(Login login1)
+        {
+            this.login = login1;
+        }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Application application = Application.Current;
@@ -52,8 +72,8 @@ namespace ShitChat.UserControls
             {
                 profile.Visibility = Visibility.Hidden;
             }
-
         }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -67,30 +87,6 @@ namespace ShitChat.UserControls
                 chatWindow.HideChatWindow();
             }
         }
-
-
-        //hämtar värdena av chatWindow 
-        public void SetChatWindow(chatWindow ChatWindow)
-        {
-            this.chatWindow = ChatWindow;
-        }
-        public void SetLabelToUser(string CurrentUser)
-        { 
-            UsrName_Label.Content = CurrentUser.ToString();
-        }
-        //sätter värdet till den inloggades användarnamn
-
-        //tar värdet från login och tilldelar denna usercontrolen
-        public void SetLogin(Login login1)
-        {
-            this.login = login1;
-        }
-        //sätter värdet i registerWindow
-        public void SetRegisterWindow(RegisterWindow registerWindow)
-        {
-            this.registerWindow = registerWindow;
-        }
-
 
 
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
@@ -108,21 +104,23 @@ namespace ShitChat.UserControls
                 Error_Psw_label.Visibility = Visibility.Visible;
             }
 
-            if (Chg_Adr_Box.Text != "")
+            if (Chg_City_Box.Text != "")
             {
-                Change_Address();
+                Change_City();
             }
             else
             {
                 Error_Adr_Label.Visibility = Visibility.Visible;
             }
         }
+
+
         //byter till aktuellt lösenord
         private void ChangePassWord()
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser.UserName) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -130,29 +128,32 @@ namespace ShitChat.UserControls
                 }
             }
         }
+
+
         //Byter Adress.
-        private void Change_Address()
+        private void Change_City()
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.Address != Chg_Adr_Box.Text)
+                if (user.UserName.Equals(CurrentUser.UserName))
                 {
-                    Chg_Adr_Box.Text = user.Address;
+                    Chg_City_Box.Text = user.City;
                     Error_Adr_Label.Visibility = Visibility.Hidden;
                     break;
                 }
             }
         }
 
+
         public void ShowProfile()
         {
             this.Visibility = Visibility.Visible;
         }
 
+
         public void HideProfile()
         {
             this.Visibility = Visibility.Collapsed;
         }
-       
     }
 }

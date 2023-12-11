@@ -59,7 +59,7 @@
                 x:Name="profilePicture1"
                 Grid.Row="1"
                 Grid.Column="0"
-                Margin="30,30,30,30" >
+                Margin="30,30,30,30">
                 <Image.Source>/UserControls/avatar1.png</Image.Source>
             </Image>
             <Button
@@ -89,7 +89,7 @@
                 x:Name="profilePicture2"
                 Grid.Row="1"
                 Grid.Column="1"
-                Margin="23,25,19,21"
+                Margin="30,30,30,30"
                 Source="/UserControls/avatar2.png" />
             <Button
                 x:Name="profileBtn2"
@@ -119,7 +119,7 @@
                 Grid.Row="1"
                 Grid.Column="2"
                 Margin="30,30,30,30"
-                Source="/UserControls/profile3.png" />
+                Source="/UserControls/avatar3.png" />
             <Button
                 x:Name="profileBtn3"
                 Grid.Row="1"

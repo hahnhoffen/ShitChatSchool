@@ -122,11 +122,6 @@ namespace ShitChat
                 {
                     string json = File.ReadAllText(filePath);
                     return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
-
-                    if (userList == null)
-                    {
-                        userList = new List<User>();
-                    }
                 }
                 else
                 {
@@ -137,7 +132,6 @@ namespace ShitChat
             {
                 MessageBox.Show("Error reading users from JSON file: " + ex.Message);
             }
-
             return userList;
         }
     }

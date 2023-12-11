@@ -23,11 +23,19 @@ namespace ShitChat.UserControls
     {
         UserManager userManager;
         profilePage profilePage;
+
+        List<Border> borderList = new List<Border>();
         string picked = "0";
 
         public avatarMenu()
         {
             InitializeComponent();
+            borderList.Add(border1);
+            borderList.Add(border2);
+            borderList.Add(border3);
+            borderList.Add(border4);
+            borderList.Add(border5);
+            borderList.Add(border6);
         }
 
 
@@ -44,6 +52,7 @@ namespace ShitChat.UserControls
         }
 
 
+        //Takes the number from 'var picked' and changes the profile picture to corresponding avatar number
         public void Pick()
         {
             switch (picked)
@@ -51,13 +60,13 @@ namespace ShitChat.UserControls
                 case "0":
                     break;
                 case "1":
-                    border1.Opacity = 0.4;
-                    userManager.currentUser.AvatarImage = @"/UserControls/avatar1.png";
+                    border1.Opacity = 0.4;                                                //Resetting border opacity for next time of choosing
+                    userManager.currentUser.AvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
                     BitmapImage b1 = new BitmapImage();
                     b1.BeginInit();
                     b1.UriSource = new Uri(userManager.currentUser.AvatarImage, UriKind.RelativeOrAbsolute);
                     b1.EndInit();
-                    profilePage.avatarPicture.Source = b1;
+                    profilePage.avatarPicture.Source = b1;                               //Updating the avatar with our choice
                     break;
                 case "2":
                     border1.Opacity = 0.4;
@@ -108,13 +117,25 @@ namespace ShitChat.UserControls
         }
 
 
-        public void ButtonCheck(Border border)
-        {
+        //Saves the chosen avatar number to -> string picked
+        public void SaveAvatarChoice(Border border)
+        { 
+            foreach (Border bord in borderList) 
+            {
+                if (bord == border)
+                {
+                    continue;
+                }
+                else if (bord != border)
+                {
+                    bord.Opacity = 0.4; //Making sure the other borders wont be highlighted (otherwise they'd be lit at the same time)
+                }
+            }
             if (border.Opacity == 0.4)
             {
                 border.Opacity = 0.8;
                 int len = border.Name.Length;
-                picked = border.Name[len - 1].ToString();
+                picked = border.Name[len - 1].ToString(); //Saving the corresponding number from border.Name to variable picked
             }
             else
             {
@@ -126,33 +147,33 @@ namespace ShitChat.UserControls
 
         private void profileBtn1_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border1);
+            SaveAvatarChoice(border1);
         }
 
 
         private void profileBtn2_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border2);
+            SaveAvatarChoice(border2);
         }
 
         private void profileBtn3_Click(object sender, RoutedEventArgs e)
         { 
-            ButtonCheck(border3);
+            SaveAvatarChoice(border3);
         }
 
         private void profileBtn4_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border4);
+            SaveAvatarChoice(border4);
         }
 
         private void profileBtn5_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border5);
+            SaveAvatarChoice(border5);
         }
 
         private void profileBtn6_Click(object sender, RoutedEventArgs e)
         {
-            ButtonCheck(border6);
+            SaveAvatarChoice(border6);
         }
     }
 }
