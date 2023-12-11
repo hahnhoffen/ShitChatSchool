@@ -43,6 +43,7 @@ namespace ShitChat
             registerWindow.userList.Add(new User("Johan", "1234"));
             registerWindow.userList.Add(new User("Victor", "1234"));
             registerWindow.userList.Add(new User("Raashid", "1234"));
+            mainWindow.SetRegisterWindow(registerWindow);
             profile.SetLogin(this);
             this.Show();
         }

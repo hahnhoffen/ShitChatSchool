@@ -122,11 +122,6 @@ namespace ShitChat
                 {
                     string json = File.ReadAllText(filePath);
                     return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
-
-                    if (userList == null)
-                    {
-                        userList = new List<User>();
-                    }
                 }
                 else
                 {
