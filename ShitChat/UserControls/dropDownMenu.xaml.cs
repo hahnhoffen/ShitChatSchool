@@ -74,6 +74,14 @@ namespace ShitChat.UserControls
             this.userManager = userManager;
             this.ProfilePage = profilePage;
         }
+
+        private void Home_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (frontWindow.Visibility != Visibility.Visible)
+            {
+                frontWindow.ShowFront();
+            }
+        }
     }
 }
 
