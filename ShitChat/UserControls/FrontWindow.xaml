@@ -48,7 +48,8 @@
             Grid.Row="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Text="We have made an application that mimics a social media in such a way that you can send messages to a user who will save them in JSON format. The work aims to help us students understand how JSON works and send information to different windows, but mainly to work in groups."
+            Text="We have made an application that mimics a social media in such a way that you can send messages to users. The information is save as Json locally. 
+The work aims to deepen our understanding of information sent between different windows and user controls, but mainly cooprerate and work in groups."
             TextWrapping="Wrap"
             Width="500"
             Height="140"
