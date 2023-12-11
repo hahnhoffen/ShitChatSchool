@@ -78,6 +78,15 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Visibility="Hidden" />
-
+        
+        <!--Photo Control-->
+        <UserControls:TakePhoto
+            x:Name="TakePhoto"
+            Grid.Row="1"
+            Width="735"
+            Height="440"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Visibility="Hidden"/>
     </Grid>
 </Window>

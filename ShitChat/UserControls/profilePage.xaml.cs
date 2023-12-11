@@ -99,5 +99,10 @@ namespace ShitChat.UserControls
             //avatarPicture.Source = new BitmapImage(new Uri(userManager.currentUser.AvatarImage, UriKind.Relative));
             //profilePicture.Source = userManager.currentUser.AvatarImage.ToString();
         }
+
+        private void takePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.ShowPhotoWindow();
+        }
     }
 }

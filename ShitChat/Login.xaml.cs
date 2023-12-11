@@ -44,7 +44,6 @@ namespace ShitChat
             registerWindow.userList.Add(new User("Victor", "1234"));
             registerWindow.userList.Add(new User("Raashid", "1234"));
             profile.SetLogin(this);
-            
             this.Show();
         }
 

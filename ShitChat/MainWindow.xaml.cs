@@ -67,5 +67,14 @@ namespace ShitChat
         {
             Profile.ShowProfile();
         }
+
+        public void ShowPhotoWindow()
+        {
+            TakePhoto.PhotoShow();
+        }
+        public void hidePhotoWindow()
+        {
+            TakePhoto.PhotoHide();
+        }
     }
 }
