@@ -47,14 +47,6 @@ namespace ShitChat.UserControls
         }
 
 
-        //sätter värdet till den inloggades användarnamn
-        public void SetLabelToUser(string CurrentUser)
-        {
-            UsrName_Label.Content = CurrentUser.ToString();
-        }
-
-
-        //tar värdet från login och tilldelar denna usercontrolen
         public void SetLogin(Login login1)
         {
             this.login = login1;
@@ -95,7 +87,6 @@ namespace ShitChat.UserControls
                 chatWindow.HideChatWindow();
             }
         }
-
 
 
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
@@ -154,12 +145,10 @@ namespace ShitChat.UserControls
         }
 
 
-
         public void ShowProfile()
         {
             this.Visibility = Visibility.Visible;
         }
-
 
 
         public void HideProfile()

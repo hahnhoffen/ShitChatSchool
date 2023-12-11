@@ -19,34 +19,27 @@ namespace ShitChat
 
         public UserManager()
         {
-
         }
 
 
-        public void SetUser(User user)
+        public void SetClasses(User user, RegisterWindow registerWindow)
         {
             this.currentUser = user;
+            this.registerWindow = registerWindow;
             currentUser.friendsList.Add(new User("Example friend 1", "1234"));
             currentUser.friendsList.Add(new User("Example friend 2", "1234"));
-
         }
 
-
-       public void SetRegisterWindow(RegisterWindow registerWindow)
-       {
-           this.registerWindow = registerWindow;
-       }
-     
-     
-       public void DeleteUser(string userName)
-       {
-           foreach (User user in registerWindow.userList)
-           {
-               registerWindow.userList.Remove(user);
-           }
-       }
-
-
+       
+        public void DeleteUser(string userName)
+        {
+            foreach (User user in registerWindow.userList)
+            {
+                registerWindow.userList.Remove(user);
+            }
+        }
+       
+       
         public void SaveUserListToJson()
         {
             if (registerWindow != null) 
@@ -57,5 +50,15 @@ namespace ShitChat
                 sw.Close();
             }
         }
-    }
+       
+       
+        public void ImportJsonUserList()
+        {
+            if (registerWindow != null)
+            {
+                string jsonString = File.ReadAllText(usersPath);
+                registerWindow.userList = System.Text.Json.JsonSerializer.Deserialize<List<User>>(jsonString)!;
+            }
+        }
+    }  
 }
