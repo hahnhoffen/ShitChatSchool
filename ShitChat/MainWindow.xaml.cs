@@ -55,10 +55,8 @@ namespace ShitChat
             this.currentUser = user;
             MenuBar.SetUserName(user.UserName.ToString());
             MenuBar.SetProfilePage(profilePage, userManager);
-            Profile.SetLabelToUser(user.UserName.ToString());
             messageManager.SetUser(user);
-            userManager.SetUser(user);
-            userManager.SetRegisterWindow(registerWindow);
+            userManager.SetClasses(user, registerWindow);
             profilePage.SetManagers(registerWindow, userManager, this);
             ChatWindow.SetManager(messageManager);
         }

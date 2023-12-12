@@ -47,14 +47,6 @@ namespace ShitChat.UserControls
         }
 
 
-        //sätter värdet till den inloggades användarnamn
-        public void SetLabelToUser(string CurrentUser)
-        {
-            UsrName_Label.Content = CurrentUser.ToString();
-        }
-
-
-        //tar värdet från login och tilldelar denna usercontrolen
         public void SetLogin(Login login1)
         {
             this.login = login1;
@@ -82,6 +74,7 @@ namespace ShitChat.UserControls
             }
         }
 
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             profile.Visibility = Visibility.Hidden;
@@ -94,7 +87,6 @@ namespace ShitChat.UserControls
                 chatWindow.HideChatWindow();
             }
         }
-
 
 
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
@@ -112,9 +104,9 @@ namespace ShitChat.UserControls
                 Error_Psw_label.Visibility = Visibility.Visible;
             }
 
-            if (Chg_Adr_Box.Text != "")
+            if (Chg_City_Box.Text != "")
             {
-                Change_Address();
+                Change_City();
             }
             else
             {
@@ -128,7 +120,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser.UserName) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -139,13 +131,13 @@ namespace ShitChat.UserControls
 
 
         //Byter Adress.
-        private void Change_Address()
+        private void Change_City()
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.Address != Chg_Adr_Box.Text)
+                if (user.UserName.Equals(CurrentUser.UserName))
                 {
-                    Chg_Adr_Box.Text = user.Address;
+                    Chg_City_Box.Text = user.City;
                     Error_Adr_Label.Visibility = Visibility.Hidden;
                     break;
                 }
@@ -153,12 +145,10 @@ namespace ShitChat.UserControls
         }
 
 
-
         public void ShowProfile()
         {
             this.Visibility = Visibility.Visible;
         }
-
 
 
         public void HideProfile()

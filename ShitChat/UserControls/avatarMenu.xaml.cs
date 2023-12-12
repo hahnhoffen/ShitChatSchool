@@ -60,13 +60,13 @@ namespace ShitChat.UserControls
                 case "0":
                     break;
                 case "1":
-                    border1.Opacity = 0.4;
-                    userManager.currentUser.AvatarImage = @"/UserControls/avatar1.png";
+                    border1.Opacity = 0.4;                                                //Resetting border opacity for next time of choosing
+                    userManager.currentUser.AvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
                     BitmapImage b1 = new BitmapImage();
                     b1.BeginInit();
                     b1.UriSource = new Uri(userManager.currentUser.AvatarImage, UriKind.RelativeOrAbsolute);
                     b1.EndInit();
-                    profilePage.avatarPicture.Source = b1;
+                    profilePage.avatarPicture.Source = b1;                               //Updating the avatar with our choice
                     break;
                 case "2":
                     border1.Opacity = 0.4;
@@ -119,8 +119,8 @@ namespace ShitChat.UserControls
 
         //Saves the chosen avatar number to -> string picked
         public void SaveAvatarChoice(Border border)
-        {
-            foreach (Border bord in borderList)
+        { 
+            foreach (Border bord in borderList) 
             {
                 if (bord == border)
                 {
@@ -128,14 +128,14 @@ namespace ShitChat.UserControls
                 }
                 else if (bord != border)
                 {
-                    bord.Opacity = 0.4;
+                    bord.Opacity = 0.4; //Making sure the other borders wont be highlighted (otherwise they'd be lit at the same time)
                 }
             }
             if (border.Opacity == 0.4)
             {
                 border.Opacity = 0.8;
                 int len = border.Name.Length;
-                picked = border.Name[len - 1].ToString();
+                picked = border.Name[len - 1].ToString(); //Saving the corresponding number from border.Name to variable picked
             }
             else
             {
