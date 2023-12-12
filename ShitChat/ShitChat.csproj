@@ -11,6 +11,7 @@
     <None Remove="shit.png" />
     <None Remove="UserControls\account-box.svg" />
     <None Remove="UserControls\account.png" />
+    <None Remove="UserControls\addFriend.png" />
     <None Remove="UserControls\userIcon.png" />
   </ItemGroup>
 
