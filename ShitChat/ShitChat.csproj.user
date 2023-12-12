@@ -34,6 +34,9 @@
     <Compile Update="UserControls\profilePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\TakePhoto.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Login.xaml">
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\profilePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\TakePhoto.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

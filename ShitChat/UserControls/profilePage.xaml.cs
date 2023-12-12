@@ -42,7 +42,6 @@ namespace ShitChat.UserControls
         }
 
 
-
         public void SearchFriend(string friendName)
         {
             foreach (User user in registerWindow.userList)
@@ -101,6 +100,17 @@ namespace ShitChat.UserControls
             mainWindow.avatarPage.Visibility = Visibility.Visible;
             //avatarPicture.Source = new BitmapImage(new Uri(userManager.currentUser.AvatarImage, UriKind.Relative));
             //profilePicture.Source = userManager.currentUser.AvatarImage.ToString();
+        }
+
+        private void takePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.ShowPhotoWindow();
+        }
+
+        //Ger bildens värde till avatarPicture.
+        public void SetProfileImage(BitmapImage profileImage)
+        {
+            avatarPicture.Source = profileImage;
         }
     }
 }

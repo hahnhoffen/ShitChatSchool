@@ -139,7 +139,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Content="Take photo"
-            Opacity="0.8">
+            Opacity="0.8" Click="takePhoto_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5" />
