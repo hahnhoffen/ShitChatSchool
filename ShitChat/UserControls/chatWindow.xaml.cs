@@ -33,7 +33,7 @@ namespace ShitChat.UserControls
         {
             this.messageManager = messageManager1;
         }
-        
+
         public void UpdateWindowInformation()
         {
             userNameLabel.Content = messageManager.currentUser.UserName;
@@ -44,29 +44,48 @@ namespace ShitChat.UserControls
             }
         }
 
+        private void FriendsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FriendsListBox.SelectedItem != null)
+            {
+                string selectedFriend = FriendsListBox.SelectedItem.ToString();
+                friendNameLabel.Content = selectedFriend;
+            }
+        }
+
         private void Sendbtn_Click(object sender, RoutedEventArgs e)
         {
             string message = MessageTextBox.Text;
-            foreach (User user in messageManager.currentUser.friendsList)
+
+            if (FriendsListBox.SelectedItem != null)
             {
-                if (user.UserName == MessagesListView.SelectedItem.ToString())
+                string selectedFriend = FriendsListBox.SelectedItem.ToString();
+                reciever = messageManager.currentUser.friendsList.FirstOrDefault(user => user.UserName == selectedFriend);
+
+                if (reciever != null)
                 {
-                    reciever = user;
-                }
-                else
-                {
-                    continue;
+                    SendMessage(message);
                 }
             }
-            messageManager.CreateNewMessage(message, messageManager.currentUser, reciever);
         }
 
+        private void SendMessage(string message)
+        {
+            messageManager.CreateNewMessage(message, messageManager.currentUser, reciever);
+            UpdateChatDisplay($"{messageManager.currentUser.UserName}: {message}", reciever);
+            MessageTextBox.Text = string.Empty;
+        }
+
+        private void UpdateChatDisplay(string message, User receiver)
+        {
+            string displayMessage = $"{receiver.UserName}: {message}";
+            MessagesListView.Items.Add(displayMessage);
+        }
 
         public void ShowChatWindow()
         {
             this.Visibility = Visibility.Visible;
         }
-
 
         public void HideChatWindow()
         {
