@@ -128,7 +128,7 @@
                 Grid.Column="1"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
-                Content="Choose Photo" Click="ChoosePhoto_Btn_Click"/>
+                Content="Choose Photo" Click="ChoosePhoto_Btn_Click_1"/>
         
         <Button Margin="20"
                  x:Name="TakePhoto_btn"

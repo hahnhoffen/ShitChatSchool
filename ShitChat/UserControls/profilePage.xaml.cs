@@ -48,7 +48,6 @@ namespace ShitChat.UserControls
         }
 
 
-
         public void SearchFriend(string friendName)
         {
             foreach (User user in registerWindow.userList)
@@ -103,6 +102,12 @@ namespace ShitChat.UserControls
         private void takePhoto_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.ShowPhotoWindow();
+        }
+
+        //Ger bildens värde till avatarPicture.
+        public void SetProfileImage(BitmapImage profileImage)
+        {
+            avatarPicture.Source = profileImage;
         }
     }
 }

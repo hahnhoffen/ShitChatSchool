@@ -1,4 +1,6 @@
 ﻿using Emgu.CV;
+using Emgu.CV.Bioinspired;
+using Emgu.CV.Util;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -27,10 +29,17 @@ namespace ShitChat.UserControls
         bool streamVideo = false;
         static int camera = 0;
         VideoCapture capture = new VideoCapture(camera);
+        profilePage profilePage;
 
         public TakePhoto()
         {
             InitializeComponent();
+        }
+
+
+        public void SetProfilePage(profilePage profilePage)
+        {
+            this.profilePage = profilePage;
         }
 
         private async void StreamVideo()
@@ -59,6 +68,8 @@ namespace ShitChat.UserControls
             }
         }
 
+        
+
         //Konverterar till bitmap
         private BitmapImage Convert(Bitmap bitmap)
         {
@@ -74,27 +85,20 @@ namespace ShitChat.UserControls
 
         private void OpenCam_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Okay to use Camera?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                if (camera == 0)
-                {
-                    StreamVideo();
-                }
-                else
-                {
-                    MessageBox.Show("Could't find Camera");
-                    streamVideo = false;
-                }
-            }
+
+             if (camera == 0)
+             {
+                 streamVideo = true;
+                 StreamVideo();
+             }
+             else
+             {
+                 MessageBox.Show("Could't find Camera");
+                 streamVideo = false;
+             }
         }
 
-        private void ChoosePhoto_Btn_Click(object sender, RoutedEventArgs e)
-        {
-            
-            this.PhotoHide();
-        }
-
-        private void TakePhoto_btn_Click(object sender, RoutedEventArgs e)
+        public void TakePhoto_btn_Click(object sender, RoutedEventArgs e)
         {
             //Tar en frame från kameran och får en Mat objekt
             Mat frame = capture.QueryFrame();
@@ -104,10 +108,15 @@ namespace ShitChat.UserControls
 
             //själva bilden i bitmapimage format
             BitmapImage bitmapImage1 = Convert(bitmap);
+            profilePage.SetProfileImage(bitmapImage1);
 
             //Ger imageBoxen värdet av bitmapimage
             Photo_Box.Source = bitmapImage1;
+
+            //Sparar ner Bilden i en variabel för att återanvända.
+            BitmapImage profilePic = bitmapImage1;
         }
+
 
         public void PhotoHide()
         {
@@ -116,6 +125,15 @@ namespace ShitChat.UserControls
         public void PhotoShow()
         {
             this.Visibility = Visibility.Visible;
+        }
+
+        private void ChoosePhoto_Btn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (this != null)
+            {
+                profilePage.Visibility = Visibility.Visible;
+                this.PhotoHide();
+            }
         }
     }
 }
