@@ -44,7 +44,7 @@ namespace ShitChat
         {
             if (registerWindow != null) 
             {
-                string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented);
+                string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented); //Error
                 StreamWriter sw = new StreamWriter(usersPath);
                 sw.WriteLine(json);
                 sw.Close();
