@@ -58,7 +58,9 @@ namespace ShitChat.UserControls
         public void DisplayProfile(User user)
         {
             userNameLabel.Content = user.UserName;
+            userCountryLabel.Content = "Country: " +  user.Country.ToString();
             userCityLabel.Content = "City: " + user.City.ToString();
+            presentationLabel.Content = user.Presentation.ToString();
             if (user.AvatarImage != null)
             {
                 BitmapImage b = new BitmapImage();
@@ -95,11 +97,8 @@ namespace ShitChat.UserControls
 
         private void changeAvatarBtn_Click(object sender, RoutedEventArgs e)
         {
-            //userManager.currentUser.OpenFileDialog();
             mainWindow.avatarPage.SetManagers(userManager, this);
             mainWindow.avatarPage.Visibility = Visibility.Visible;
-            //avatarPicture.Source = new BitmapImage(new Uri(userManager.currentUser.AvatarImage, UriKind.Relative));
-            //profilePicture.Source = userManager.currentUser.AvatarImage.ToString();
         }
 
         private void takePhoto_Click(object sender, RoutedEventArgs e)

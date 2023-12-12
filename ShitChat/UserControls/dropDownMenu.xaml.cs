@@ -47,6 +47,8 @@ namespace ShitChat.UserControls
 
             if (profile.Visibility != Visibility.Visible)
             {
+                profile.presentationTextBox.Focusable = true;
+                profile.presentationTextBox.Focus();
                 profile.Visibility = Visibility.Visible;
             }
         }
