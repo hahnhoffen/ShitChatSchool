@@ -44,6 +44,7 @@ namespace ShitChat.UserControls
 
         private async void StreamVideo()
         {
+
             while (streamVideo)
             {
                 var frameSize = new System.Drawing.Size(345, 225);
