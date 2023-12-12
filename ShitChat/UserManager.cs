@@ -26,8 +26,8 @@ namespace ShitChat
         {
             this.currentUser = user;
             this.registerWindow = registerWindow;
-            currentUser.friendsList.Add(new User("Example friend 1", "1234"));
-            currentUser.friendsList.Add(new User("Example friend 2", "1234"));
+            currentUser.friendsList.Add(new User("Raashid", "1234"));
+            currentUser.friendsList.Add(new User("Tim", "1234"));
         }
 
        

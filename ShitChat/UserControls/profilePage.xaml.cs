@@ -25,8 +25,8 @@ namespace ShitChat.UserControls
         UserManager userManager;
         MainWindow mainWindow;
         menuBar MenuBar;
-
         User searchedUser;
+
 
         public profilePage()
         {
@@ -58,7 +58,7 @@ namespace ShitChat.UserControls
         public void DisplayProfile(User user)
         {
             userNameLabel.Content = user.UserName;
-            userCountryLabel.Content = "Country: " +  user.Country.ToString();
+            userCountryLabel.Content = "Country: " + user.Country.ToString();
             userCityLabel.Content = "City: " + user.City.ToString();
             if (user.Presentation != null)
             {
@@ -88,6 +88,14 @@ namespace ShitChat.UserControls
         {
             if (searchedUser != null && searchedUser.UserName != userManager.currentUser.UserName) 
             {
+                foreach (User user in userManager.currentUser.friendsList)
+                {
+                    if (searchedUser == user)
+                    {
+                        MessageBox.Show("You've already got this user in your friends list!");
+                        return;
+                    }
+                }
                 userManager.currentUser.AddFriend(searchedUser);
                 MessageBox.Show("You added a friend!");
             }
@@ -104,10 +112,12 @@ namespace ShitChat.UserControls
             mainWindow.avatarPage.Visibility = Visibility.Visible;
         }
 
+
         private void takePhoto_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.ShowPhotoWindow();
         }
+
 
         //Ger bildens värde till avatarPicture.
         public void SetProfileImage(BitmapImage profileImage)

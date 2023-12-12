@@ -27,6 +27,7 @@ namespace ShitChat
         RegisterWindow registerWindow;
         User currentUser;
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -68,10 +69,13 @@ namespace ShitChat
             Profile.ShowProfile();
         }
 
+
         public void ShowPhotoWindow()
         {
             TakePhoto.PhotoShow();
         }
+
+
         public void hidePhotoWindow()
         {
             TakePhoto.PhotoHide();

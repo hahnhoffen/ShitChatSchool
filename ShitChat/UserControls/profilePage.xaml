@@ -138,8 +138,9 @@
             Margin="5,25,15,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
+            Click="takePhoto_Click"
             Content="Take photo"
-            Opacity="0.8" Click="takePhoto_Click">
+            Opacity="0.8">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5" />
@@ -167,8 +168,6 @@
             x:Name="presentationLabel"
             Grid.Row="2"
             Grid.Column="1"
-            Width="200"
-            Height="40"
             Margin="15,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -179,11 +178,6 @@
             x:Name="presentationTextBlock"
             Grid.Row="2"
             Grid.Column="2"
-            Height="150"
-            Width="500"
-            Margin="10,20,10,0"
-            >
-            
-        </TextBlock>
+            Margin="10,20,10,0" />
     </Grid>
 </UserControl>

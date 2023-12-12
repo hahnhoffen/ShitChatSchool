@@ -26,17 +26,23 @@ namespace ShitChat
         private User newUser;
         public List<User> userList;
         public Login login;  
+
+
         public RegisterWindow()
         {
             InitializeComponent();
             newUser = new User("Username", "Password"); //Why do we create a person before we add the details? What happens if they don't register the form correctly?
             userList = ReadUsersFromJson("users.json") ?? new List<User>();
         }
+
+
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             Application.Current.Shutdown();
         }
+
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             newUser.UserName = UsernameTextBox.Text;
@@ -60,10 +66,14 @@ namespace ShitChat
             login.Show();
             this.Hide();
         }
+
+
         private bool UserAlreadyExist(string username)
         {
             return userList?.Any(user => user?.UserName != null && user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)) ?? false;
         }
+
+
         private void ClearInputFields()
         {
             UsernameTextBox.Text = "";
@@ -73,16 +83,22 @@ namespace ShitChat
             PasswordBox.Password = "";
             RePasswordBox.Password = "";
         }
+
+
         private void GoBack_button(object sender, RoutedEventArgs e)
         {
             login.Show();
             this.Hide();
         }
+
+
         //Sätter värdet på Login så det inte öppnet ett nytt varje gång.
         public void SetLogin(Login login)
         {
             this.login = login;
         }
+
+
         private List<User> ReadUsersFromJson(string filePath)
         {
             try
@@ -94,7 +110,14 @@ namespace ShitChat
                 }
                 else
                 {
-                    userList = new List<User>();
+                    userList = new List<User>
+                    {
+                        new User("admin", "admin"),
+                        new User("Tim", "admin"),
+                        new User("Johan", "admin"),
+                        new User("Raashid", "admin"),
+                        new User("Victor", "admin"),
+                    };
                 }
             }
             catch (Exception ex)

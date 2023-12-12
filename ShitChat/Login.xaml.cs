@@ -33,20 +33,17 @@ namespace ShitChat
         string password = null;
         User logedInUser { set; get; }
 
+
         public Login()
         {
             InitializeComponent();
           //  profile.SetRegisterWindow(registerWindow);
             registerWindow.SetLogin(this);
-            registerWindow.userList.Add(new User("admin", "admin"));
-            registerWindow.userList.Add(new User("Tim", "1234"));
-            registerWindow.userList.Add(new User("Johan", "1234"));
-            registerWindow.userList.Add(new User("Victor", "1234"));
-            registerWindow.userList.Add(new User("Raashid", "1234"));
             mainWindow.SetRegisterWindow(registerWindow);
             profile.SetLogin(this);
             this.Show();
         }
+
 
         protected override void OnClosed(EventArgs e)
         {
@@ -63,6 +60,7 @@ namespace ShitChat
             Register_label.Visibility = Visibility.Collapsed;
         }
         
+
         //Loggar in en användare om den finns i Userlist, om inte hänvisas man till registerWindow.
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
@@ -97,11 +95,13 @@ namespace ShitChat
             }
         }
 
+
         //Retunerar Den inlogade Usern till resten av programmet.
         public User GetLogedInUser()
         {
             return logedInUser;
         }
+
 
         //stänger ner applikationen.
         private void Quit_app(object sender, RoutedEventArgs e)

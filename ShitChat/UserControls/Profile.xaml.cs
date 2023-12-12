@@ -28,7 +28,6 @@ namespace ShitChat.UserControls
         Profile profile;
         chatWindow chatWindow;
         UserManager userManager;
-
         public Profile()
         {
             InitializeComponent();
@@ -105,6 +104,7 @@ namespace ShitChat.UserControls
           //Error_Psw_label.Visibility = Visibility.Hidden;
         }
 
+
         private void ChangePresentation()
         {
             if (presentationTextBox.Text != "")
@@ -112,6 +112,7 @@ namespace ShitChat.UserControls
                 currentUser.Presentation = presentationTextBox.Text;
             }
         }
+
 
         private void ChangeCountry()
         {
