@@ -60,7 +60,10 @@ namespace ShitChat.UserControls
             userNameLabel.Content = user.UserName;
             userCountryLabel.Content = "Country: " +  user.Country.ToString();
             userCityLabel.Content = "City: " + user.City.ToString();
-            presentationLabel.Content = user.Presentation.ToString();
+            if (user.Presentation != null)
+            {
+                presentationLabel.Content = user.Presentation.ToString();
+            }
             if (user.AvatarImage != null)
             {
                 BitmapImage b = new BitmapImage();
