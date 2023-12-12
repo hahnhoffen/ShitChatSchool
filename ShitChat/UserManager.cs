@@ -11,59 +11,54 @@ using System.Xml;
 
 namespace ShitChat
 {
-    public  class UserManager
+    public class UserManager
     {
         RegisterWindow registerWindow;
         public User currentUser;
-        public string usersPath = "users.txt";
+        public string usersPath = "users.json";
 
-        public void SetUser(User user)
+        public UserManager()
+        {
+        }
+
+
+        public void SetClasses(User user, RegisterWindow registerWindow)
         {
             this.currentUser = user;
-        }
-
-
-        public void SetRegisterWindow(RegisterWindow registerWindow)
-        {
             this.registerWindow = registerWindow;
+            currentUser.friendsList.Add(new User("Example friend 1", "1234"));
+            currentUser.friendsList.Add(new User("Example friend 2", "1234"));
         }
 
-
+       
         public void DeleteUser(string userName)
         {
             foreach (User user in registerWindow.userList)
             {
                 registerWindow.userList.Remove(user);
-
             }
         }
-
-
-        internal bool LogInUser(string username, string password)
-        {
-            foreach (User user in registerWindow.userList)
-            {
-                if (user.Username == username)
-                {
-                    user.LogIn(username, password);
-                    currentUser = user;
-                    return true;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-            return false;
-        }
-
-
+       
+       
         public void SaveUserListToJson()
         {
-            string json = JsonConvert.SerializeObject(registerWindow.userList);
-            StreamWriter sw = new StreamWriter(usersPath);
-            sw.WriteLine(json);
-            sw.Close();
+            if (registerWindow != null) 
+            {
+                string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented);
+                StreamWriter sw = new StreamWriter(usersPath);
+                sw.WriteLine(json);
+                sw.Close();
+            }
         }
-    }
+       
+       
+        public void ImportJsonUserList()
+        {
+            if (registerWindow != null)
+            {
+                string jsonString = File.ReadAllText(usersPath);
+                registerWindow.userList = System.Text.Json.JsonSerializer.Deserialize<List<User>>(jsonString)!;
+            }
+        }
+    }  
 }

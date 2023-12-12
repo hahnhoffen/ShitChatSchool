@@ -7,11 +7,13 @@
     xmlns:local="clr-namespace:ShitChat"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Width="900"
-    Height="500"
+    Width="930"
+    Height="510"
+    MinWidth="930"
+    MinHeight="510"
     mc:Ignorable="d">
 
-    <Grid Margin="0,0,-5,0" Background="Black">
+    <Grid Margin="0,0,-5,0" Background="#FF336444">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="*" />
@@ -44,8 +46,9 @@
             Grid.Row="1"
             Width="700"
             Height="435"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center" Visibility="Hidden" />
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Hidden" />
 
         <!--  Front Window  -->
         <UserControls:FrontWindow
@@ -54,7 +57,27 @@
             Width="700"
             Height="435"
             HorizontalAlignment="Right"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Center" />
+
+        <!--  Profile Page  -->
+        <UserControls:profilePage
+            x:Name="profilePage"
+            Grid.Row="1"
+            Width="700"
+            Height="435"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Hidden" />
+
+        <!--  Avatar Control  -->
+        <UserControls:avatarMenu
+            x:Name="avatarPage"
+            Grid.Row="1"
+            Width="700"
+            Height="435"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Hidden" />
 
     </Grid>
 </Window>

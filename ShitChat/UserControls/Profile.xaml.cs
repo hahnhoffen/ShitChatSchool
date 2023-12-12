@@ -20,24 +20,38 @@ namespace ShitChat.UserControls
     /// </summary>
     public partial class Profile : UserControl
     {
-        public Login login;
+        Login login;
         User CurrentUser = null;
-        public RegisterWindow registerWindow;
+        RegisterWindow registerWindow;
         dropDownMenu DropDownMenu;
+        Profile profile;
+        chatWindow chatWindow;
 
         public Profile()
         {
             InitializeComponent();
         }
 
-        //hämtas i LoginWindow. Användar labeln byts när man loggar in.
-        Profile profile;
-        chatWindow chatWindow;
 
-        public void dropDownMenu()
+        //sätter värdet i registerWindow
+        public void SetRegisterWindow(RegisterWindow registerWindow)
         {
-            InitializeComponent();
+            this.registerWindow = registerWindow;
         }
+
+
+        //hämtar värdena av chatWindow 
+        public void SetChatWindow(chatWindow ChatWindow)
+        {
+            this.chatWindow = ChatWindow;
+        }
+
+
+        public void SetLogin(Login login1)
+        {
+            this.login = login1;
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -58,8 +72,8 @@ namespace ShitChat.UserControls
             {
                 profile.Visibility = Visibility.Hidden;
             }
-
         }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -75,61 +89,38 @@ namespace ShitChat.UserControls
         }
 
 
-        //hämtar värdena av profile 
-        public void SetProfile(Profile profile)
-        {
-            this.profile = profile;
-        }
-
-        //hämtar värdena av chatWindow 
-        public void SetChatWindow(chatWindow ChatWindow)
-        {
-            this.chatWindow = ChatWindow;
-        }
-        public void SetLabelToUser(string CurrentUser)
-        { 
-            UsrName_Label.Content = CurrentUser.ToString();
-        }
-        //sätter värdet till den inloggades användarnamn
-
-        //tar värdet från login och tilldelar denna usercontrolen
-        public void SetLogin(Login login)
-        {
-            this.login = login;
-        }
         //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
         //Är inte adresstextBoxen "" så ändras adressen till det angivna.
         private void Apply_btn_Click(object sender, RoutedEventArgs e)
         {
             if (Chge_Psw_Box.Text != "" &&
-                Cofrm_Psw_Box.Text != "" &&
-                Chg_Adr_Box.Text != "")
+                Cofrm_Psw_Box.Text != "")
             {
                 ChangePassWord();
-                Pwrd_Error_Label.Visibility = Visibility.Collapsed;
+                Error_Psw_label.Visibility = Visibility.Hidden;
             }
             else
             {
-                Pwrd_Error_Label.Visibility = Visibility.Visible;
-                Pwrd_Error_Label.Content = "You need to fill both password fields!";
+                Error_Psw_label.Visibility = Visibility.Visible;
             }
 
-            if (Chg_Adr_Box.Text != "")
+            if (Chg_City_Box.Text != "")
             {
-                Change_Address();
-                Adrs_Error_Label.Visibility = Visibility.Collapsed;
+                Change_City();
             }
             else
             {
-                Adrs_Error_Label.Visibility = Visibility.Visible;
+                Error_Adr_Label.Visibility = Visibility.Visible;
             }
         }
+
+
         //byter till aktuellt lösenord
         private void ChangePassWord()
         {
             foreach (User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser) &&
+                if (user.UserName.Equals(CurrentUser.UserName) &&
                     Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
                 {
                     Chge_Psw_Box.Text = user.Password;
@@ -137,28 +128,32 @@ namespace ShitChat.UserControls
                 }
             }
         }
+
+
         //Byter Adress.
-        private void Change_Address()
+        private void Change_City()
         {
             foreach(User user in registerWindow.userList)
             {
-                if (user.UserName.Equals(CurrentUser))
+                if (user.UserName.Equals(CurrentUser.UserName))
                 {
-                    Chg_Adr_Box.Text = user.Address;
+                    Chg_City_Box.Text = user.City;
+                    Error_Adr_Label.Visibility = Visibility.Hidden;
                     break;
                 }
             }
         }
+
 
         public void ShowProfile()
         {
             this.Visibility = Visibility.Visible;
         }
 
+
         public void HideProfile()
         {
             this.Visibility = Visibility.Collapsed;
         }
-       
     }
 }

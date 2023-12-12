@@ -8,7 +8,8 @@
     Title="Login"
     Width="800"
     Height="450"
-    mc:Ignorable="d">
+    mc:Ignorable="d" 
+    Background="#FF336444" >
     <Window.Resources>
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3" />
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA" />
@@ -463,13 +464,14 @@
             </Button.Background>
         </Button>
         <TextBox
+            VerticalContentAlignment="Center"
             x:Name="UserName_box"
             Width="170"
             Height="30"
             Margin="150,120,0,160"
             HorizontalAlignment="Left"
             Background="White"
-            Style="{DynamicResource TextBoxStyle2}" TabIndex="0" />
+            Style="{DynamicResource TextBoxStyle2}" TabIndex="0" SelectionOpacity="-3"/>
         <Label
             Width="100"
             Margin="47,124,0,158"
@@ -562,7 +564,9 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Label.Foreground>
         </Label>
-        <PasswordBox Style="{DynamicResource PasswordBoxStyle1}" 
+        <PasswordBox 
+            VerticalContentAlignment="Center"
+            Style="{DynamicResource PasswordBoxStyle1}" 
             x:Name="Psw_Box"  
             MaxLength="25"
             Width="170"

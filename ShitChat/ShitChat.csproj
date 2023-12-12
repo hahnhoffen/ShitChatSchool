@@ -11,7 +11,13 @@
     <None Remove="shit.png" />
     <None Remove="UserControls\account-box.svg" />
     <None Remove="UserControls\account.png" />
-    <None Remove="UserControls\addFriend.png" />
+    <None Remove="UserControls\avatar1.png" />
+    <None Remove="UserControls\avatar2.png" />
+    <None Remove="UserControls\avatar3.png" />
+    <None Remove="UserControls\profile1.png" />
+    <None Remove="UserControls\profile2.png" />
+    <None Remove="UserControls\profile3.png" />
+    <None Remove="UserControls\shitIconS.png" />
     <None Remove="UserControls\userIcon.png" />
   </ItemGroup>
 
@@ -23,6 +29,13 @@
     <Resource Include="shit.png" />
     <Resource Include="UserControls\account-box.svg" />
     <Resource Include="UserControls\account.png" />
+    <Resource Include="UserControls\avatar1.png" />
+    <Resource Include="UserControls\avatar2.png" />
+    <Resource Include="UserControls\avatar3.png" />
+    <Resource Include="UserControls\profile1.png" />
+    <Resource Include="UserControls\profile2.png" />
+    <Resource Include="UserControls\profile3.png" />
+    <Resource Include="UserControls\shitIconS.png" />
     <Resource Include="UserControls\userIcon.png" />
   </ItemGroup>
 

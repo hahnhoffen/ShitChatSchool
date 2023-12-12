@@ -25,6 +25,7 @@ namespace ShitChat
         RegisterWindow registerWindow = new RegisterWindow();
         MainWindow mainWindow = new MainWindow();
         Profile profile = new Profile();
+        profilePage ProfilePage = new profilePage();
         dropDownMenu menu = new dropDownMenu();
 
         bool isFound = false;
@@ -35,12 +36,26 @@ namespace ShitChat
         public Login()
         {
             InitializeComponent();
+            profile.SetRegisterWindow(registerWindow);
             registerWindow.SetLogin(this);
             registerWindow.userList.Add(new User("admin", "admin"));
+            registerWindow.userList.Add(new User("Tim", "1234"));
+            registerWindow.userList.Add(new User("Johan", "1234"));
+            registerWindow.userList.Add(new User("Victor", "1234"));
+            registerWindow.userList.Add(new User("Raashid", "1234"));
+            mainWindow.SetRegisterWindow(registerWindow);
             profile.SetLogin(this);
-            this.Show();
             
+            this.Show();
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Application.Current.Shutdown();
+        }
+
+
         //Tar användaren till registeringen, gömmer Påminnelse label.
         private void ToRegisterWindow(object sender, RoutedEventArgs e)
         {
@@ -60,14 +75,11 @@ namespace ShitChat
                 foreach(User users in registerWindow.userList)
                 {
                     if (user == users.UserName &&
-                        password == users.Password || 
-                        user == "admin" && 
-                        password == "admin"
-                        )
+                        password == users.Password)
                     {
                         isFound = true;
                         logedInUser = users;
-                        mainWindow.SetUserName(user);
+                        mainWindow.SetUserName(users);
                         mainWindow.Show();
                         this.Hide();
 
