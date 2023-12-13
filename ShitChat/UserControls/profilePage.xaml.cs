@@ -90,7 +90,7 @@ namespace ShitChat.UserControls
             {
                 foreach (User user in userManager.currentUser.friendsList)
                 {
-                    if (searchedUser == user)
+                    if (searchedUser.UserName == user.UserName)
                     {
                         MessageBox.Show("You've already got this user in your friends list!");
                         return;

@@ -33,9 +33,8 @@ namespace ShitChat.UserControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            userManager.SaveUserListToJson();
-            Login login = new Login();
             mainWindow.Visibility = Visibility.Collapsed;
+            mainWindow.ShowLogin();
         }
         
 

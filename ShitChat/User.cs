@@ -18,7 +18,7 @@ namespace ShitChat
         public string Password { get; set; }
         public string AvatarImage {  get; set; }
         public string Presentation;
-        public List<User> friendsList = new List<User>();
+        public List<User> friendsList = new List<User>(); 
         public List<Conversation> conversations = new List<Conversation>();
 
 

@@ -25,6 +25,7 @@ namespace ShitChat
         MessageManager messageManager = new MessageManager();
         UserManager userManager = new UserManager();
         RegisterWindow registerWindow;
+        Login login;
         User currentUser;
 
 
@@ -45,9 +46,16 @@ namespace ShitChat
         }
 
 
-        public void SetRegisterWindow(RegisterWindow registerWindow)
+        public void SetRegisterWindow(RegisterWindow registerWindow, Login login)
         {
             this.registerWindow = registerWindow;
+            this.login = login;
+        }
+
+
+        public void ShowLogin()
+        {
+            login.Visibility = Visibility.Visible;
         }
 
 
