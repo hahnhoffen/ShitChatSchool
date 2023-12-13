@@ -17,17 +17,15 @@ namespace ShitChat
         public User currentUser;
         public string usersPath = "users.json";
 
-        public UserManager()
-        {
-        }
+        public UserManager() { }
 
 
         public void SetClasses(User user, RegisterWindow registerWindow)
         {
             this.currentUser = user;
             this.registerWindow = registerWindow;
-            currentUser.friendsList.Add(new User("Raashid", "1234"));
-            currentUser.friendsList.Add(new User("Tim", "1234"));
+           // currentUser.friendsList.Add(new User("Raashid", "1234"));
+           // currentUser.friendsList.Add(new User("Tim", "1234"));
         }
 
        
@@ -44,20 +42,12 @@ namespace ShitChat
         {
             if (registerWindow != null) 
             {
-                string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented); //Error
+                JsonSerializerSettings settings = new JsonSerializerSettings();
+                settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                string json = JsonConvert.SerializeObject(registerWindow.userList, Newtonsoft.Json.Formatting.Indented, settings); //Error
                 StreamWriter sw = new StreamWriter(usersPath);
                 sw.WriteLine(json);
                 sw.Close();
-            }
-        }
-       
-       
-        public void ImportJsonUserList()
-        {
-            if (registerWindow != null)
-            {
-                string jsonString = File.ReadAllText(usersPath);
-                registerWindow.userList = System.Text.Json.JsonSerializer.Deserialize<List<User>>(jsonString)!;
             }
         }
     }  

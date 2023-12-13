@@ -37,9 +37,9 @@ namespace ShitChat
         public Login()
         {
             InitializeComponent();
-          //  profile.SetRegisterWindow(registerWindow);
+          // profile.SetRegisterWindow(registerWindow);
             registerWindow.SetLogin(this);
-            mainWindow.SetRegisterWindow(registerWindow);
+            mainWindow.SetRegisterWindow(registerWindow, this);
             profile.SetLogin(this);
             this.Show();
         }
@@ -55,6 +55,7 @@ namespace ShitChat
         //Tar användaren till registeringen, gömmer Påminnelse label.
         private void ToRegisterWindow(object sender, RoutedEventArgs e)
         {
+           // registerWindow.userList = registerWindow.ReadUsersFromJson("users.json");
             registerWindow.Show();
             this.Hide();
             Register_label.Visibility = Visibility.Collapsed;
@@ -64,6 +65,7 @@ namespace ShitChat
         //Loggar in en användare om den finns i Userlist, om inte hänvisas man till registerWindow.
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
+           // registerWindow.userList = registerWindow.ReadUsersFromJson("users.json");
             user = UserName_box.Text;
             password = Psw_Box.Password;
 

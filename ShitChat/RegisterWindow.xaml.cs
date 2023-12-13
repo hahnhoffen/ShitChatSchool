@@ -1,6 +1,9 @@
-﻿using ShitChat.UserControls;
+﻿using Newtonsoft.Json;
+using ShitChat.UserControls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -32,7 +35,7 @@ namespace ShitChat
         {
             InitializeComponent();
             newUser = new User("Username", "Password"); //Why do we create a person before we add the details? What happens if they don't register the form correctly?
-            userList = ReadUsersFromJson("users.json") ?? new List<User>();
+            Deserialize("users.json");
         }
 
 
@@ -99,32 +102,27 @@ namespace ShitChat
         }
 
 
-        private List<User> ReadUsersFromJson(string filePath)
+        public void Deserialize(string filePath)
         {
-            try
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+
+            if (File.Exists(filePath))
             {
-                if (File.Exists(filePath))
-                {
-                    string json = File.ReadAllText(filePath);
-                    return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
-                }
-                else
-                {
-                    userList = new List<User>
-                    {
-                        new User("admin", "admin"),
-                        new User("Tim", "admin"),
-                        new User("Johan", "admin"),
-                        new User("Raashid", "admin"),
-                        new User("Victor", "admin"),
-                    };
-                }
+                string json = File.ReadAllText("users.json");
+                userList = JsonConvert.DeserializeObject<List<User>>(json, settings);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error reading users from JSON file: " + ex.Message);
+                userList = new List<User>
+                {
+                    new User("admin", "admin"),
+                    new User("Tim", "admin"),
+                    new User("Johan", "admin"),
+                    new User("Raashid", "admin"),
+                    new User("Victor", "admin"),
+                };
             }
-            return userList;
         }
     }
 }
