@@ -17,9 +17,7 @@ namespace ShitChat
         public User currentUser;
         public string usersPath = "users.json";
 
-        public UserManager()
-        {
-        }
+        public UserManager() { }
 
 
         public void SetClasses(User user, RegisterWindow registerWindow)
@@ -52,15 +50,5 @@ namespace ShitChat
                 sw.Close();
             }
         }
-       
-       
-      //  public void ImportJsonUserList()
-      //  {
-      //      if (registerWindow != null)
-      //      {
-      //          string jsonString = File.ReadAllText(usersPath);
-      //          registerWindow.userList = System.Text.Json.JsonSerializer.Deserialize<List<User>>(jsonString)!;
-      //      }
-      //  }
     }  
 }

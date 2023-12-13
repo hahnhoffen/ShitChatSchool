@@ -25,14 +25,16 @@ namespace ShitChat.UserControls
             InitializeComponent();
         }
 
+
         public void ShowFront()
         {
             Front.Visibility = Visibility.Visible;
         }
+
+
         public void HideFront()
         {
             Front.Visibility = Visibility.Hidden;
         }
-
     }
 }

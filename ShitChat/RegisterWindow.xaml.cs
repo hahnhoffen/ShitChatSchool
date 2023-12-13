@@ -124,35 +124,6 @@ namespace ShitChat
                 };
             }
         }
-
-
-        //  public List<User> ReadUsersFromJson(string filePath)
-        //  {
-        //      try
-        //      {
-        //          if (File.Exists(filePath))
-        //          {
-        //              string json = File.ReadAllText(filePath);
-        //              return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
-        //          }
-        //          else
-        //          {
-        //              userList = new List<User>
-        //              {
-        //                  new User("admin", "admin"),
-        //                  new User("Tim", "admin"),
-        //                  new User("Johan", "admin"),
-        //                  new User("Raashid", "admin"),
-        //                  new User("Victor", "admin"),
-        //              };
-        //          }
-        //      }
-        //      catch (Exception ex)
-        //      {
-        //          MessageBox.Show("Error reading users from JSON file: " + ex.Message);
-        //      }
-        //      return userList;
-        //  }
     }
 }
 
