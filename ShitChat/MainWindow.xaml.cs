@@ -25,12 +25,15 @@ namespace ShitChat
         MessageManager messageManager = new MessageManager();
         UserManager userManager = new UserManager();
         RegisterWindow registerWindow;
+        Login login;
         User currentUser;
+
 
         public MainWindow()
         {
             InitializeComponent();
             DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager, profilePage);
+            TakePhoto.SetProfilePage(profilePage);
         }
 
 
@@ -43,9 +46,16 @@ namespace ShitChat
         }
 
 
-        public void SetRegisterWindow(RegisterWindow registerWindow)
+        public void SetRegisterWindow(RegisterWindow registerWindow, Login login)
         {
             this.registerWindow = registerWindow;
+            this.login = login;
+        }
+
+
+        public void ShowLogin()
+        {
+            login.Visibility = Visibility.Visible;
         }
 
 
@@ -58,12 +68,25 @@ namespace ShitChat
             userManager.SetClasses(user, registerWindow);
             profilePage.SetManagers(registerWindow, userManager, this);
             ChatWindow.SetManager(messageManager);
+            Profile.SetRegisterWindow(registerWindow, userManager);
         }
 
 
         public void ShowProfile()
         {
             Profile.ShowProfile();
+        }
+
+
+        public void ShowPhotoWindow()
+        {
+            TakePhoto.PhotoShow();
+        }
+
+
+        public void hidePhotoWindow()
+        {
+            TakePhoto.PhotoHide();
         }
     }
 }

@@ -9,17 +9,15 @@ namespace ShitChat
 {
     public class Conversation
     {
-        public List<Message> messages;
-        public User User { get; set; }
-        public int conversationId {  get; set; }
+        public List<Message> messages = new List<Message>();
+        public User Friend { get; set; }
+        public int ConversationId { get; set; }
+        public static int ConversationNextId = 1;
 
-        public static int conversationNextId = 1;
-        
-
-        public Conversation(Message message, User reciever)
+        public Conversation(User friend)
         {
-            this.conversationId = conversationNextId++;
-            this.User = reciever;
+            this.ConversationId = ConversationNextId++;
+            this.Friend = friend;
         }
 
         public string GetJson()

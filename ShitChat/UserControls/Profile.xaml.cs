@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emgu.CV.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,26 +22,25 @@ namespace ShitChat.UserControls
     public partial class Profile : UserControl
     {
         Login login;
-        User CurrentUser = null;
+        User currentUser;
         RegisterWindow registerWindow;
         dropDownMenu DropDownMenu;
         Profile profile;
         chatWindow chatWindow;
-
+        UserManager userManager;
         public Profile()
         {
             InitializeComponent();
         }
 
 
-        //sätter värdet i registerWindow
-        public void SetRegisterWindow(RegisterWindow registerWindow)
+        public void SetRegisterWindow(RegisterWindow registerWindow, UserManager userManager)
         {
             this.registerWindow = registerWindow;
+            this.userManager = userManager;
         }
 
 
-        //hämtar värdena av chatWindow 
         public void SetChatWindow(chatWindow ChatWindow)
         {
             this.chatWindow = ChatWindow;
@@ -89,59 +89,65 @@ namespace ShitChat.UserControls
         }
 
 
-        //stämmer inte passwordboxarna eller är dem null så visas label, annars ändras lösenordet.
-        //Är inte adresstextBoxen "" så ändras adressen till det angivna.
         private void Apply_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (Chge_Psw_Box.Text != "" &&
-                Cofrm_Psw_Box.Text != "")
+            currentUser = userManager.currentUser;
+            if (Chge_Psw_Box.Password != "" &&
+                Cofrm_Psw_Box.Password != "")
             {
                 ChangePassWord();
-                Error_Psw_label.Visibility = Visibility.Hidden;
             }
-            else
-            {
-                Error_Psw_label.Visibility = Visibility.Visible;
-            }
+            Change_City(Chg_City_Box.Text);
+            ChangeCountry();
+            ChangePresentation();
+            ClearFields();
+          //Error_Psw_label.Visibility = Visibility.Hidden;
+        }
 
-            if (Chg_City_Box.Text != "")
+
+        private void ChangePresentation()
+        {
+            if (presentationTextBox.Text != "")
             {
-                Change_City();
-            }
-            else
-            {
-                Error_Adr_Label.Visibility = Visibility.Visible;
+                currentUser.Presentation = presentationTextBox.Text;
             }
         }
 
 
-        //byter till aktuellt lösenord
+        private void ChangeCountry()
+        {
+            if (Chge_Country_Box.Text != "")
+            {
+                currentUser.Country = Chge_Country_Box.Text;
+            }
+        }
+
+
         private void ChangePassWord()
         {
-            foreach (User user in registerWindow.userList)
+            if (Chge_Psw_Box.Password == Cofrm_Psw_Box.Password)
             {
-                if (user.UserName.Equals(CurrentUser.UserName) &&
-                    Chge_Psw_Box.Text == Cofrm_Psw_Box.Text)
-                {
-                    Chge_Psw_Box.Text = user.Password;
-                    break;
-                }
+                currentUser.Password = Chge_Psw_Box.Password;
             }
         }
 
 
-        //Byter Adress.
-        private void Change_City()
+        private void Change_City(string city)
         {
-            foreach(User user in registerWindow.userList)
+            if (Chg_City_Box.Text != "")
             {
-                if (user.UserName.Equals(CurrentUser.UserName))
-                {
-                    Chg_City_Box.Text = user.City;
-                    Error_Adr_Label.Visibility = Visibility.Hidden;
-                    break;
-                }
+                currentUser.City = city;
             }
+            Error_Adr_Label.Visibility = Visibility.Hidden;
+        }
+
+
+        public void ClearFields()
+        {
+            Chg_City_Box.Text = "";
+            Chge_Psw_Box.Password = "";
+            Chge_Country_Box.Text = "";
+            presentationTextBox.Text = "";
         }
 
 

@@ -48,8 +48,9 @@ namespace ShitChat.UserControls
         {
             if (FriendsListBox.SelectedItem != null)
             {
-                string selectedFriend = FriendsListBox.SelectedItem.ToString();
-                friendNameLabel.Content = selectedFriend;
+                User selectedFriend = messageManager.currentUser.friendsList.FirstOrDefault(user => user.UserName == FriendsListBox.SelectedItem.ToString());
+                friendNameLabel.Content = selectedFriend.UserName;
+                UpdateChatDisplay(selectedFriend);
             }
         }
 
@@ -72,14 +73,24 @@ namespace ShitChat.UserControls
         private void SendMessage(string message)
         {
             messageManager.CreateNewMessage(message, messageManager.currentUser, reciever);
-            UpdateChatDisplay($"{messageManager.currentUser.UserName}: {message}", reciever);
+            UpdateChatDisplay(reciever); 
             MessageTextBox.Text = string.Empty;
         }
 
-        private void UpdateChatDisplay(string message, User receiver)
+        private void UpdateChatDisplay(User selectedFriend)
         {
-            string displayMessage = $"{receiver.UserName}: {message}";
-            MessagesListView.Items.Add(displayMessage);
+            MessagesListView.Items.Clear();
+
+           
+            Conversation conversation = messageManager.currentUser.conversations.FirstOrDefault(c => c.Friend == selectedFriend);
+
+            if (conversation != null)
+            {
+                foreach (Message message in conversation.messages)
+                {
+                    MessagesListView.Items.Add($"{message.Writer.UserName}: {message.MessageString}");
+                }
+            }
         }
 
         public void ShowChatWindow()

@@ -34,9 +34,8 @@ namespace ShitChat.UserControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            userManager.SaveUserListToJson();
-            Login login = new Login();
             mainWindow.Visibility = Visibility.Collapsed;
+            mainWindow.ShowLogin();
         }
         
 
@@ -48,6 +47,8 @@ namespace ShitChat.UserControls
 
             if (profile.Visibility != Visibility.Visible)
             {
+                profile.presentationTextBox.Focusable = true;
+                profile.presentationTextBox.Focus();
                 profile.Visibility = Visibility.Visible;
             }
         }

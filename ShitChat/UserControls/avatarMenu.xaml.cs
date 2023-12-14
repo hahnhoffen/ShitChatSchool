@@ -52,7 +52,7 @@ namespace ShitChat.UserControls
         }
 
 
-        //Takes the number from 'var picked' and changes the profile picture to corresponding avatar number
+        //Takes the number from 'var picked' and changes the profilePage picture to corresponding avatar number
         public void Pick()
         {
             switch (picked)

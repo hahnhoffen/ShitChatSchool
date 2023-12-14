@@ -25,18 +25,12 @@ namespace ShitChat.UserControls
         UserManager userManager;
         MainWindow mainWindow;
         menuBar MenuBar;
-
         User searchedUser;
+
 
         public profilePage()
         {
             InitializeComponent();
-        }
-
-
-        public void SetMenuBar(menuBar MenuBar)
-        {
-            this.MenuBar = MenuBar;
         }
 
 
@@ -46,7 +40,6 @@ namespace ShitChat.UserControls
             this.userManager = userManager;
             this.mainWindow = mainWindow;
         }
-
 
 
         public void SearchFriend(string friendName)
@@ -65,12 +58,26 @@ namespace ShitChat.UserControls
         public void DisplayProfile(User user)
         {
             userNameLabel.Content = user.UserName;
+            userCountryLabel.Content = "Country: " + user.Country.ToString();
             userCityLabel.Content = "City: " + user.City.ToString();
+            if (user.Presentation != null)
+            {
+                presentationLabel.Content = user.Presentation.ToString();
+            }
             if (user.AvatarImage != null)
             {
                 BitmapImage b = new BitmapImage();
                 b.BeginInit();
                 b.UriSource = new Uri(user.AvatarImage, UriKind.RelativeOrAbsolute);
+                b.EndInit();
+                avatarPicture.Source = b;
+            }
+            else
+            {
+                string presetAvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.UriSource = new Uri(presetAvatarImage, UriKind.RelativeOrAbsolute);
                 b.EndInit();
                 avatarPicture.Source = b;
             }
@@ -81,6 +88,14 @@ namespace ShitChat.UserControls
         {
             if (searchedUser != null && searchedUser.UserName != userManager.currentUser.UserName) 
             {
+                foreach (User user in userManager.currentUser.friendsList)
+                {
+                    if (searchedUser.UserName == user.UserName)
+                    {
+                        MessageBox.Show("You've already got this user in your friends list!");
+                        return;
+                    }
+                }
                 userManager.currentUser.AddFriend(searchedUser);
                 MessageBox.Show("You added a friend!");
             }
@@ -93,11 +108,21 @@ namespace ShitChat.UserControls
 
         private void changeAvatarBtn_Click(object sender, RoutedEventArgs e)
         {
-            //userManager.currentUser.OpenFileDialog();
             mainWindow.avatarPage.SetManagers(userManager, this);
             mainWindow.avatarPage.Visibility = Visibility.Visible;
-            //avatarPicture.Source = new BitmapImage(new Uri(userManager.currentUser.AvatarImage, UriKind.Relative));
-            //profilePicture.Source = userManager.currentUser.AvatarImage.ToString();
+        }
+
+
+        private void takePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.ShowPhotoWindow();
+        }
+
+
+        //Ger bildens värde till avatarPicture.
+        public void SetProfileImage(BitmapImage profileImage)
+        {
+            avatarPicture.Source = profileImage;
         }
     }
 }
