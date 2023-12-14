@@ -24,6 +24,7 @@ namespace ShitChat.UserControls
         MainWindow mainWindow;
         UserManager userManager;
         profilePage ProfilePage;
+        friendsWindow FriendsWindow;
 
 
         public dropDownMenu()

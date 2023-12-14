@@ -114,7 +114,7 @@
             Height="25"
             Margin="13,13,15,12"
             Content="Friends"
-            Cursor="">
+            Cursor="" Click="Button_Click_2">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>

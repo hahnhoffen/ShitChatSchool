@@ -8,14 +8,17 @@
              d:DesignHeight="435" d:DesignWidth="700">
 
     <Grid>
+
         <local:dropDownMenu Margin="0,44,524,0"/>
         <local:menuBar/>
-        <Frame x:Name="Background" Content="" Margin="176,44,0,0" Foreground="{x:Null}" Background="#FFFCFCFC"/>
-        <Button x:Name="AddFriends" Content="Add a friend" Margin="291,304,320,100" Click="AddFriends_Click"/>
-        <Button x:Name="RemoveFriends" Content="Remove a friend" Margin="493,304,118,100" Click="RemoveFriends_Click"/>
-        <TextBox x:Name="textboxAddFriend" TextWrapping="Wrap" Text="Add a new friend by searching for their username!" Margin="303,113,110,288"/>
-        <TextBox x:Name="searchNewFriends" HorizontalAlignment="Left" Margin="380,146,0,0" TextWrapping="Wrap" Text="Search here" VerticalAlignment="Top" Width="120" Opacity="0.59" AcceptsReturn="True"/>
-        <ListBox x:Name="removeFriend_ListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="251,67,49,168" Width="400" Height="200" SelectionChanged="removeFriend_ListBox_SelectionChanged"/>
+        <Frame x:Name="Background" Content="" Margin="176,44,0,0" Foreground="{x:Null}" Background="#FF41643B"/>
+        <ListBox x:Name="removeFriend_ListBox" d:ItemsSource="{d:SampleData ItemCount=0}"  Margin="359,119,15,63" SelectionChanged="removeFriend_ListBox_SelectionChanged" Background="#FFABACAB" RenderTransformOrigin="0.496,0.457" Initialized="removeFriend_ListBox_Initialized" IsEnabledChanged="removeFriend_ListBox_IsEnabledChanged" IsEnabled="False"/>
+        <Button x:Name="AddFriends" Content="Add a friend" Margin="186,392,425,12" Click="AddFriends_Click" Background="#FFDDDDDD" BorderThickness="0,1,1,1"/>
+        <Button x:Name="RemoveFriends" Content="Remove a friend" Margin="600,390,11,14" Click="RemoveFriends_Click" RenderTransformOrigin="-0.046,-0.391"/>
+        <TextBox x:Name="textboxAddFriend" TextWrapping="Wrap" Text="Add a new friend by searching for their username!" Margin="307,55,106,346" Background="#FF41643B"/>
+        <ListBox x:Name="AddFriend_ListBox" d:ItemsSource="{d:SampleData ItemCount=0}" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" SelectionChanged="AddFriend_ListBox_SelectionChanged" Margin="203,121,378,161" IsEnabledChanged="AddFriend_ListBox_IsEnabledChanged" Background="#FFABACAB" IsEnabled="False"/>
+        <TextBox x:Name="searchNewFriends" HorizontalAlignment="Left" Margin="348,94,0,0" TextWrapping="Wrap" Text="Search here" VerticalAlignment="Top" Width="120" Opacity="0.59" AcceptsReturn="True"/>
+        <Button x:Name="search_Button" Content="Search" HorizontalAlignment="Left" Margin="480,93,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.086,-0.501" Click="search_Button_Click"/>
 
     </Grid>
 
