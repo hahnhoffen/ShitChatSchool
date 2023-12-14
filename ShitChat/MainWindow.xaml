@@ -78,8 +78,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Visibility="Hidden" />
-        
-        <!--Photo Control-->
+
+        <!--  Photo Control  -->
         <UserControls:TakePhoto
             x:Name="TakePhoto"
             Grid.Row="1"
@@ -87,6 +87,17 @@
             Height="440"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            Visibility="Hidden"/>
+            Visibility="Hidden" />
+
+        <!--  FriendsView Control  -->
+        <UserControls:friendsWindow x:Name="friendsWindow"
+            Grid.Row="1"
+            Width="700"
+            Height="435"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Hidden" />
+
+
     </Grid>
 </Window>

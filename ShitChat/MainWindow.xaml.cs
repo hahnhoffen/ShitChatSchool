@@ -88,5 +88,10 @@ namespace ShitChat
         {
             TakePhoto.PhotoHide();
         }
+
+        public void ShowFriendsWindow()
+        {
+            friendsWindow.Visibility = Visibility.Visible;
+        }
     }
 }

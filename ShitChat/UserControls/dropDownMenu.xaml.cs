@@ -81,8 +81,18 @@ namespace ShitChat.UserControls
         {
             if (frontWindow.Visibility != Visibility.Visible)
             {
+                ProfilePage.Visibility = Visibility.Hidden;
                 frontWindow.ShowFront();
             }
+            else
+            {
+                ProfilePage.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void friendsButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.ShowFriendsWindow();
         }
     }
 }
