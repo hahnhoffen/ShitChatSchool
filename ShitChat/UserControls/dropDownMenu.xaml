@@ -109,11 +109,13 @@
             </Button.Background>
         </Button>
         <Button
+            x:Name="friendsButton"
             Grid.Row="4"
             Height="25"
             Margin="13,13,15,12"
             Content="Friends"
-            Cursor="">
+            Cursor=""
+            Click="friendsButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Button.Background>

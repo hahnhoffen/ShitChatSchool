@@ -8,7 +8,6 @@
              d:DesignHeight="435" d:DesignWidth="700">
 
     <Grid>
-
         <local:dropDownMenu Margin="0,44,524,0"/>
         <local:menuBar/>
         <Frame x:Name="Background" Content="" Margin="176,44,0,0" Foreground="{x:Null}" Background="#FF41643B"/>

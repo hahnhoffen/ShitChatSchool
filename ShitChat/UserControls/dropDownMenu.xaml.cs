@@ -89,6 +89,11 @@ namespace ShitChat.UserControls
                 ProfilePage.Visibility = Visibility.Hidden;
             }
         }
+
+        private void friendsButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.ShowFriendsWindow();
+        }
     }
 }
 

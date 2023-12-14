@@ -25,13 +25,12 @@ namespace ShitChat.UserControls
         User user = new User();
         public friendsWindow()
         {
-
-            textboxAddFriend.Visibility = Visibility.Hidden;
-            searchNewFriends.Visibility = Visibility.Hidden;
-            removeFriend_ListBox.Visibility = Visibility.Hidden;
-            AddFriend_ListBox.Visibility = Visibility.Hidden;
-            AddFriend_ListBox.IsEnabled = false;
-            removeFriend_ListBox.IsEnabled = false;
+       //     textboxAddFriend.Visibility = Visibility.Hidden;
+       //     searchNewFriends.Visibility = Visibility.Hidden;
+       //     removeFriend_ListBox.Visibility = Visibility.Hidden;
+       //     AddFriend_ListBox.Visibility = Visibility.Hidden;
+       //     AddFriend_ListBox.IsEnabled = false;
+       //     removeFriend_ListBox.IsEnabled = false;
             InitializeComponent();
         }
 
