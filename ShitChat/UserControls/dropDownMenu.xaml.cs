@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +24,7 @@ namespace ShitChat.UserControls
         MainWindow mainWindow;
         UserManager userManager;
         profilePage ProfilePage;
+        friendsWindow FriendsWindow;
 
 
         public dropDownMenu()
