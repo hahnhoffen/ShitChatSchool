@@ -75,7 +75,7 @@ namespace ShitChat.UserControls
                             var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
                             if (result == MessageBoxResult.Yes)
                             {
-                                user.AddFriend(user);
+                                manager.currentUser.AddFriend(user);
                                 MessageBox.Show("User have been added as your friend");
                             }
                         }
@@ -107,7 +107,7 @@ namespace ShitChat.UserControls
                         var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
                         if (result == MessageBoxResult.Yes)
                         {
-                            user.RemoveFriend(user);
+                            manager.currentUser.RemoveFriend(user);
                             MessageBox.Show("User have been removed as your friend");
                         }
                     }
