@@ -35,6 +35,7 @@ namespace ShitChat.UserControls
             InitializeComponent();
         }
 
+
         private void AddFriends_Click(object sender, RoutedEventArgs e)
         {
             AddFriends.Visibility = Visibility.Hidden;
@@ -44,6 +45,7 @@ namespace ShitChat.UserControls
             AddFriend_ListBox.Visibility = Visibility.Visible;
             AddFriend_ListBox.IsEnabled = true;
         }
+
 
         private void RemoveFriends_Click(object sender, RoutedEventArgs e)
         {
@@ -55,6 +57,8 @@ namespace ShitChat.UserControls
             removeFriend_ListBox.Visibility = Visibility.Visible;
             removeFriend_ListBox.IsEnabled = true;
         }
+
+
         private void search_Button_Click(object sender, RoutedEventArgs e)
         {
             string searching = searchNewFriends.Text;
@@ -84,6 +88,8 @@ namespace ShitChat.UserControls
                 MessageBox.Show("User not found, please try again!");
             }
         }
+
+
         private void removeFriend_ListBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (removeFriend_ListBox.Visibility != Visibility.Hidden)
@@ -110,6 +116,7 @@ namespace ShitChat.UserControls
             }
         }
 
+
         private void AddFriend_ListBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (AddFriend_ListBox.Visibility == Visibility.Visible)
@@ -125,7 +132,6 @@ namespace ShitChat.UserControls
                         }
                     }
                 }
-
             }
         }
     }

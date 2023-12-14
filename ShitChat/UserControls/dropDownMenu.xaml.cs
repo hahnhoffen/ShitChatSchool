@@ -81,7 +81,12 @@ namespace ShitChat.UserControls
         {
             if (frontWindow.Visibility != Visibility.Visible)
             {
+                ProfilePage.Visibility = Visibility.Hidden;
                 frontWindow.ShowFront();
+            }
+            else
+            {
+                ProfilePage.Visibility = Visibility.Hidden;
             }
         }
     }
