@@ -23,27 +23,48 @@ namespace ShitChat
 
         public void CreateNewMessage(string message, User writer, User reciever)
         {
-            Message newMessage = new Message(message, writer, reciever);
-            writer.conversations.Add(new Conversation(newMessage, reciever));
-            reciever.conversations.Add(new Conversation(newMessage, writer));
-        }
+            
+            Conversation conversation = writer.conversations.FirstOrDefault(c => c.Friend == reciever);
 
-
-        public void ReplyToConversation(string message, User writer, User reciever)
-        {
-            Message newMessage = new Message(message, writer, reciever);
-            foreach (Conversation con in writer.conversations)
+            if (conversation == null)
             {
-                if (con.User == reciever)
-                {
-                    con.messages.Add(newMessage);
-                }
-                else
-                {
-                    CreateNewMessage(message, writer, reciever);
-                }
+               
+                conversation = new Conversation(reciever);
+                writer.conversations.Add(conversation);
             }
+
+           
+            conversation.messages.Add(new Message(message, writer, reciever));
+
+           
+            Conversation recipientConversation = reciever.conversations.FirstOrDefault(c => c.Friend == writer);
+
+            if (recipientConversation == null)
+            {
+                recipientConversation = new Conversation(writer);
+                reciever.conversations.Add(recipientConversation);
+            }
+
+            recipientConversation.messages.Add(new Message(message, writer, reciever));
         }
+
+
+
+       //public void ReplyToConversation(string message, User writer, User reciever)
+       //{
+       //    Message newMessage = new Message(message, writer, reciever);
+       //    foreach (Conversation con in writer.conversations)
+       //    {
+       //        if (con.User == reciever)
+       //        {
+       //            con.messages.Add(newMessage);
+       //        }
+       //        else
+       //        {
+       //            CreateNewMessage(message, writer, reciever);
+       //        }
+       //    }
+       //}
 
 
         public void ExportToJson(string fileName, string location)

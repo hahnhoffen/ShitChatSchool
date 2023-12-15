@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Emgu.CV.Features2D;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,15 +30,10 @@ namespace ShitChat.UserControls
         User searchedUser;
         bool fromProfilePage = false;
 
+
         public profilePage()
         {
             InitializeComponent();
-        }
-
-
-        public void SetMenuBar(menuBar MenuBar)
-        {
-            this.MenuBar = MenuBar;
         }
 
 
@@ -48,11 +45,11 @@ namespace ShitChat.UserControls
         }
 
 
-        public void SearchFriend(string friendName)
+        public void SearchUser(string userName)
         {
             foreach (User user in registerWindow.userList)
             {
-                if (friendName == user.UserName)
+                if (userName == user.UserName)
                 {
                     searchedUser = user;
                     DisplayProfile(user);
@@ -61,49 +58,103 @@ namespace ShitChat.UserControls
         }
 
 
-        public void DisplayProfile(User user)
+        public void DisplayProfile(User searchedUser)
         {
-            userNameLabel.Content = user.UserName;
-            userCityLabel.Content = "City: " + user.City.ToString();
-            if (user.AvatarImage != null)
+            bool myProfile = true;
+            if (searchedUser.UserName == userManager.currentUser.UserName)
+            {
+                ButtonVisibility(myProfile);
+            }
+            else
+            {
+                ButtonVisibility(!myProfile);
+                foreach (User user in userManager.currentUser.friendsList)
+                {
+                    if (user.UserName == searchedUser.UserName)
+                    {
+                        addFriendBtn.Content = "- Remove Friend";
+                    }
+                }
+            }
+            userNameLabel.Content = searchedUser.UserName;
+            userCountryLabel.Content = "Country: " + searchedUser.Country.ToString();
+            userCityLabel.Content = "City: " + searchedUser.City.ToString();
+            if (searchedUser.Presentation != null)
+            {
+                presentationLabel.Content = searchedUser.Presentation.ToString();
+            }
+            if (searchedUser.AvatarImage != null)
             {
                 BitmapImage b = new BitmapImage();
                 b.BeginInit();
-                b.UriSource = new Uri(user.AvatarImage, UriKind.RelativeOrAbsolute);
+                b.UriSource = new Uri(searchedUser.AvatarImage, UriKind.RelativeOrAbsolute);
+                b.EndInit();
+                avatarPicture.Source = b;
+            }
+            else
+            {
+                string presetAvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
+                BitmapImage b = new BitmapImage();
+                b.BeginInit();
+                b.UriSource = new Uri(presetAvatarImage, UriKind.RelativeOrAbsolute);
                 b.EndInit();
                 avatarPicture.Source = b;
             }
         }
 
 
-        private void addFriendBtn_Click(object sender, RoutedEventArgs e)
+        public void ButtonVisibility(bool myProfile)
         {
-            if (searchedUser != null && searchedUser.UserName != userManager.currentUser.UserName) 
+            if (myProfile)
             {
-                userManager.currentUser.AddFriend(searchedUser);
-                MessageBox.Show("You added a friend!");
+                addFriendBtn.Visibility = Visibility.Hidden;
+                sendMessageBtn.Visibility = Visibility.Hidden;
+                changeAvatarBtn.Visibility = Visibility.Visible;
+                takePhotoBtn.Visibility = Visibility.Visible;
             }
             else
             {
-                MessageBox.Show("You can't add youself.");
+                changeAvatarBtn.Visibility = Visibility.Hidden;
+                takePhotoBtn.Visibility = Visibility.Hidden;
+                addFriendBtn.Visibility = Visibility.Visible;
+                sendMessageBtn.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void addFriendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (searchedUser != null) 
+            {
+                foreach (User user in userManager.currentUser.friendsList)
+                {
+                    if (searchedUser.UserName == user.UserName)
+                    {
+                        userManager.currentUser.RemoveFriend(searchedUser);
+                        MessageBox.Show("You've removed this user from your friends list!");
+                        addFriendBtn.Content = "+ Add Friend";
+                        return;
+                    }
+                }
+                userManager.currentUser.AddFriend(searchedUser);
+                MessageBox.Show("You added a friend!");
+                addFriendBtn.Content = "- Remove Friend";
             }
         }
 
 
         private void changeAvatarBtn_Click(object sender, RoutedEventArgs e)
         {
-            //userManager.currentUser.OpenFileDialog();
             mainWindow.avatarPage.SetManagers(userManager, this);
             mainWindow.avatarPage.Visibility = Visibility.Visible;
-            //avatarPicture.Source = new BitmapImage(new Uri(userManager.currentUser.AvatarImage, UriKind.Relative));
-            //profilePicture.Source = userManager.currentUser.AvatarImage.ToString();
         }
+
 
         private void takePhoto_Click(object sender, RoutedEventArgs e)
         {
             fromProfilePage = true;
             mainWindow.ShowPhotoWindow();
         }
+
 
         //Ger bildens värde till avatarPicture.
         public void SetProfileImage(BitmapImage profileImage)

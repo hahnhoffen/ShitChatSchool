@@ -22,6 +22,9 @@
     <Compile Update="UserControls\dropDownMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\friendsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\FrontWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\dropDownMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\friendsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\FrontWindow.xaml">

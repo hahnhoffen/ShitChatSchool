@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +24,7 @@ namespace ShitChat.UserControls
         MainWindow mainWindow;
         UserManager userManager;
         profilePage ProfilePage;
+        friendsWindow FriendsWindow;
 
 
         public dropDownMenu()
@@ -33,9 +34,8 @@ namespace ShitChat.UserControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            userManager.SaveUserListToJson();
-            Login login = new Login();
             mainWindow.Visibility = Visibility.Collapsed;
+            mainWindow.ShowLogin();
         }
         
 
@@ -47,6 +47,8 @@ namespace ShitChat.UserControls
 
             if (profile.Visibility != Visibility.Visible)
             {
+                profile.presentationTextBox.Focusable = true;
+                profile.presentationTextBox.Focus();
                 profile.Visibility = Visibility.Visible;
             }
         }
@@ -79,8 +81,19 @@ namespace ShitChat.UserControls
         {
             if (frontWindow.Visibility != Visibility.Visible)
             {
+                ProfilePage.Visibility = Visibility.Hidden;
                 frontWindow.ShowFront();
             }
+            else
+            {
+                ProfilePage.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void friendsButton_Click(object sender, RoutedEventArgs e)
+        {
+            //FriendsWindow.ShowFriendsWindow();
+            mainWindow.ShowFriendsWindow();
         }
     }
 }

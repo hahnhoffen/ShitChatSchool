@@ -220,18 +220,20 @@
             Click="Apply_btn_Click"
             Content="Apply"
             Style="{DynamicResource ButtonStyle1}"
-            TabIndex="3" />
-        <TextBox
+            TabIndex="5" />
+        <PasswordBox
             x:Name="Chge_Psw_Box"
             Grid.Row="2"
             Grid.Column="2"
-            Width="200"
+            Width="180"
             Height="25"
+            Margin="10"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
             FontSize="16"
-            Style="{DynamicResource TextBoxStyle1}"
-            TabIndex="0" />
+            TabIndex="3" 
+            BorderThickness="0"
+            />
         <Label
             x:Name="UsrName_Label"
             Grid.Row="0"
@@ -259,6 +261,7 @@
             Stretch="Fill" />
         <TextBox
             x:Name="Chg_City_Box"
+            TabIndex="1"
             Grid.Row="2"
             Grid.Column="1"
             Width="200"
@@ -266,8 +269,7 @@
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
             FontSize="16"
-            Style="{DynamicResource TextBoxStyle1}"
-            TabIndex="2" />
+            Style="{DynamicResource TextBoxStyle1}" />
         <Label
             Grid.Row="2"
             Grid.Column="1"
@@ -292,18 +294,38 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
             </Label.Foreground>
         </Label>
-        <TextBox
-            x:Name="Cofrm_Psw_Box"
+        <Border
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="200"
+            Height="25"
+            HorizontalAlignment="Left"
+            Background="White"
+            CornerRadius="10,10,10,10"
+            Panel.ZIndex="-1"/>
+        <Border
             Grid.Row="3"
             Grid.Column="2"
             Width="200"
             Height="25"
             HorizontalAlignment="Left"
+            Background="White"
+            CornerRadius="10,10,10,10" />
+        <PasswordBox
+            x:Name="Cofrm_Psw_Box"
+            Grid.Row="3"
+            Grid.Column="2"
+            Width="180"
+            Height="25"
+            Margin="10"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
             VerticalContentAlignment="Center"
             FontSize="16"
-            Style="{DynamicResource TextBoxStyle2}"
-            TabIndex="1" />
+            TabIndex="4" 
+            BorderThickness="0"
+            
+            />
         <Label
             Grid.Row="3"
             Grid.Column="1"
@@ -327,7 +349,7 @@
             VerticalContentAlignment="Center"
             FontSize="16"
             Style="{DynamicResource TextBoxStyle1}"
-            TabIndex="0" />
+            TabIndex="2" />
         <Label
             Grid.Row="3"
             Grid.Column="0"
@@ -342,6 +364,8 @@
             </Label.Foreground>
         </Label>
         <TextBox
+            x:Name="presentationTextBox"
+            TabIndex="0"
             Grid.Row="1"
             Grid.Column="1"
             Margin="10,10,10,10"
@@ -382,27 +406,5 @@
             Content="Passwords not identical"
             Foreground="Red"
             Visibility="Hidden" />
-        <Button
-            x:Name="Photo_btn"
-            Grid.Row="4"
-            Grid.Column="1"
-            Width="100"
-            Height="35"
-            Margin="0,17,0,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Content="Take Photo"
-            Style="{DynamicResource ButtonStyle1}"
-            TabIndex="3" Click="Photo_btn_Click" />
-        <Image
-            x:Name="ProfilePic_box"
-            Grid.Row="1"
-            Grid.Column="2"
-            Width="170"
-            Height="170"
-            Margin="62,8,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top">
-        </Image>
     </Grid>
 </UserControl>
