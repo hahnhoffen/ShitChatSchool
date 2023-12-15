@@ -14,6 +14,7 @@
     <None Remove="UserControls\avatar1.png" />
     <None Remove="UserControls\avatar2.png" />
     <None Remove="UserControls\avatar3.png" />
+    <None Remove="UserControls\avatar4.png" />
     <None Remove="UserControls\profile1.png" />
     <None Remove="UserControls\profile2.png" />
     <None Remove="UserControls\profile3.png" />
@@ -35,6 +36,7 @@
     <Resource Include="UserControls\avatar1.png" />
     <Resource Include="UserControls\avatar2.png" />
     <Resource Include="UserControls\avatar3.png" />
+    <Resource Include="UserControls\avatar4.png" />
     <Resource Include="UserControls\profile1.png" />
     <Resource Include="UserControls\profile2.png" />
     <Resource Include="UserControls\profile3.png" />

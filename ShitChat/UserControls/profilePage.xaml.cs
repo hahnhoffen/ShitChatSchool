@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Emgu.CV.Features2D;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,11 +44,11 @@ namespace ShitChat.UserControls
         }
 
 
-        public void SearchFriend(string friendName)
+        public void SearchUser(string userName)
         {
             foreach (User user in registerWindow.userList)
             {
-                if (friendName == user.UserName)
+                if (userName == user.UserName)
                 {
                     searchedUser = user;
                     DisplayProfile(user);
@@ -55,20 +57,36 @@ namespace ShitChat.UserControls
         }
 
 
-        public void DisplayProfile(User user)
+        public void DisplayProfile(User searchedUser)
         {
-            userNameLabel.Content = user.UserName;
-            userCountryLabel.Content = "Country: " + user.Country.ToString();
-            userCityLabel.Content = "City: " + user.City.ToString();
-            if (user.Presentation != null)
+            bool myProfile = true;
+            if (searchedUser.UserName == userManager.currentUser.UserName)
             {
-                presentationLabel.Content = user.Presentation.ToString();
+                ButtonVisibility(myProfile);
             }
-            if (user.AvatarImage != null)
+            else
+            {
+                ButtonVisibility(!myProfile);
+                foreach (User user in userManager.currentUser.friendsList)
+                {
+                    if (user.UserName == searchedUser.UserName)
+                    {
+                        addFriendBtn.Content = "- Remove Friend";
+                    }
+                }
+            }
+            userNameLabel.Content = searchedUser.UserName;
+            userCountryLabel.Content = "Country: " + searchedUser.Country.ToString();
+            userCityLabel.Content = "City: " + searchedUser.City.ToString();
+            if (searchedUser.Presentation != null)
+            {
+                presentationLabel.Content = searchedUser.Presentation.ToString();
+            }
+            if (searchedUser.AvatarImage != null)
             {
                 BitmapImage b = new BitmapImage();
                 b.BeginInit();
-                b.UriSource = new Uri(user.AvatarImage, UriKind.RelativeOrAbsolute);
+                b.UriSource = new Uri(searchedUser.AvatarImage, UriKind.RelativeOrAbsolute);
                 b.EndInit();
                 avatarPicture.Source = b;
             }
@@ -84,24 +102,41 @@ namespace ShitChat.UserControls
         }
 
 
+        public void ButtonVisibility(bool myProfile)
+        {
+            if (myProfile)
+            {
+                addFriendBtn.Visibility = Visibility.Hidden;
+                sendMessageBtn.Visibility = Visibility.Hidden;
+                changeAvatarBtn.Visibility = Visibility.Visible;
+                takePhotoBtn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                changeAvatarBtn.Visibility = Visibility.Hidden;
+                takePhotoBtn.Visibility = Visibility.Hidden;
+                addFriendBtn.Visibility = Visibility.Visible;
+                sendMessageBtn.Visibility = Visibility.Visible;
+            }
+        }
+
         private void addFriendBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (searchedUser != null && searchedUser.UserName != userManager.currentUser.UserName) 
+            if (searchedUser != null) 
             {
                 foreach (User user in userManager.currentUser.friendsList)
                 {
                     if (searchedUser.UserName == user.UserName)
                     {
-                        MessageBox.Show("You've already got this user in your friends list!");
+                        userManager.currentUser.RemoveFriend(searchedUser);
+                        addFriendBtn.Content = "+ Add Friend";
+                        MessageBox.Show("You've removed this user from your friends list!");
                         return;
                     }
                 }
                 userManager.currentUser.AddFriend(searchedUser);
+                addFriendBtn.Content = "- Remove Friend";
                 MessageBox.Show("You added a friend!");
-            }
-            else
-            {
-                MessageBox.Show("You can't add youself.");
             }
         }
 

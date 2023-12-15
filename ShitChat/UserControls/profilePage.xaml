@@ -117,9 +117,9 @@
             Grid.Column="0"
             Width="100"
             Height="20"
-            Margin="5,0,15,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
+                        Margin="5,0,15,0"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
             Click="changeAvatarBtn_Click"
             Content="Change avatar"
             Opacity="0.8">
@@ -130,14 +130,14 @@
             </Button.Resources>
         </Button>
         <Button
-            x:Name="takePhoto"
+            x:Name="takePhotoBtn"
             Grid.Row="2"
             Grid.Column="0"
             Width="100"
             Height="20"
-            Margin="5,25,15,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
+            Margin="15,0,5,0"
+HorizontalAlignment="Left"
+VerticalAlignment="Top"
             Click="takePhoto_Click"
             Content="Take photo"
             Opacity="0.8">
@@ -153,9 +153,10 @@
             Grid.Column="0"
             Width="100"
             Height="20"
-            Margin="15,25,15,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="5,0,15,0"
+HorizontalAlignment="Right"
+VerticalAlignment="Top"
+            
             Content="Send Message"
             Opacity="0.8">
             <Button.Resources>

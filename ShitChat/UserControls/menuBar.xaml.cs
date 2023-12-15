@@ -68,7 +68,7 @@ namespace ShitChat.UserControls
             if (e.Key == Key.Enter)
             {
                 string friendsName = txtInput.Text;
-                ProfilePage.SearchFriend(friendsName);
+                ProfilePage.SearchUser(friendsName);
                 ProfilePage.Visibility = Visibility.Visible;
                 txtInput.Clear();
             }
@@ -77,7 +77,7 @@ namespace ShitChat.UserControls
 
         private void btn_userMenu_Click(object sender, RoutedEventArgs e)
         {
-            ProfilePage.SearchFriend(userManager.currentUser.UserName);
+            ProfilePage.SearchUser(userManager.currentUser.UserName);
             ProfilePage.Visibility = Visibility.Visible;
         }
     }

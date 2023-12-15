@@ -148,7 +148,7 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="30,30,30,30"
-                Source="/UserControls/shitIconS.png" />
+                Source="/UserControls/avatar4.png" />
             <Button
                 x:Name="profileBtn4"
                 Grid.Row="2"
