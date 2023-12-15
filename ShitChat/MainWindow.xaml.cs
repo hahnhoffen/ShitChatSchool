@@ -32,6 +32,8 @@ namespace ShitChat
             InitializeComponent();
             DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager, profilePage);
             TakePhoto.SetProfilePage(profilePage);
+            TakePhoto.SetProfile(Profile);
+            Profile.SetTakePhoto(TakePhoto);
         }
 
 

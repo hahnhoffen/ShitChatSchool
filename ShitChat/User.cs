@@ -15,7 +15,7 @@ namespace ShitChat
     public class User : Person
     {
         public string UserName;
-        public string Password; //Borde inte dessa två variabler ligga i User istället för Person? 
+        public string Password;  
         public string AvatarImage;
         public string Presentation;
 

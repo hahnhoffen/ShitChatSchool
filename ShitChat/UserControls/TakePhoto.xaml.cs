@@ -30,12 +30,17 @@ namespace ShitChat.UserControls
         static int camera = 0;
         VideoCapture capture = new VideoCapture(camera);
         profilePage profilePage;
+        Profile profile;
 
         public TakePhoto()
         {
             InitializeComponent();
         }
 
+        public void SetProfile(Profile profile)
+        {
+            this.profile = profile;
+        }
 
         public void SetProfilePage(profilePage profilePage)
         {
@@ -44,28 +49,33 @@ namespace ShitChat.UserControls
 
         private async void StreamVideo()
         {
-
-            while (streamVideo)
+            try
             {
-                var frameSize = new System.Drawing.Size(345, 225);
+                while (streamVideo)
+                {
+                    var frameSize = new System.Drawing.Size(345, 225);
 
-                //tar en frame från kameran, här är bilden en array av RGB(pixlar)
-                Mat frame = new Mat();
-                capture.Read(frame);
+                    //tar en frame från kameran, här är bilden en array av RGB(pixlar)
+                    Mat frame = new Mat();
+                    capture.Read(frame);
 
-                CvInvoke.Resize(frame, frame, frameSize);
+                    CvInvoke.Resize(frame, frame, frameSize);
 
-                //Gör bilden till bitmap, alltså en frame som uppdateras. Gör om Arrayen till faktiska färger.
-                var img = frame.ToBitmap();
+                    //Gör bilden till bitmap, alltså en frame som uppdateras. Gör om Arrayen till faktiska färger.
+                    var img = frame.ToBitmap();
 
-                //konverterar bitmap till image, eftersom imagebox tar sourcecode???
-                BitmapImage bitmapImage = Convert(img);
+                    //konverterar bitmap till image, eftersom imagebox tar sourcecode???
+                    BitmapImage bitmapImage = Convert(img);
 
-                //Sätter imagebox till bitmap
-                Cam_box.Source = bitmapImage;
+                    //Sätter imagebox till bitmap
+                    Cam_box.Source = bitmapImage;
 
-                await Task.Delay(16);
-
+                    await Task.Delay(16);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Camera already in use");
             }
         }
 
@@ -99,23 +109,38 @@ namespace ShitChat.UserControls
              }
         }
 
+
+
         public void TakePhoto_btn_Click(object sender, RoutedEventArgs e)
         {
-            //Tar en frame från kameran och får en Mat objekt
-            Mat frame = capture.QueryFrame();
+            try
+            {
+                //Tar en frame från kameran och får en Mat objekt
+                Mat frame = capture.QueryFrame();
 
-            //Konverterar Mat objektet till Bitmap
-            Bitmap bitmap = frame.ToBitmap();
+                //Konverterar Mat objektet till Bitmap
+                Bitmap bitmap = frame.ToBitmap();
 
-            //själva bilden i bitmapimage format
-            BitmapImage bitmapImage1 = Convert(bitmap);
-            profilePage.SetProfileImage(bitmapImage1);
+                //själva bilden i bitmapimage format
+                BitmapImage bitmapImage1 = Convert(bitmap);
+                profilePage.SetProfileImage(bitmapImage1);
+                profile.SetProfilePic(bitmapImage1);
 
-            //Ger imageBoxen värdet av bitmapimage
-            Photo_Box.Source = bitmapImage1;
+                //Ger imageBoxen värdet av bitmapimage
+                Photo_Box.Source = bitmapImage1;
 
-            //Sparar ner Bilden i en variabel för att återanvända.
-            BitmapImage profilePic = bitmapImage1;
+                //Sparar ner Bilden i en variabel för att återanvända.
+                BitmapImage profilePic = bitmapImage1;
+
+                System.Drawing.Imaging.ImageFormat imageFormat = null;
+                imageFormat = System.Drawing.Imaging.ImageFormat.Png;
+
+                    
+            }
+            catch
+            {
+                MessageBox.Show("Camera is already in use");
+            }
         }
 
 
@@ -123,6 +148,7 @@ namespace ShitChat.UserControls
         {
             this.Visibility = Visibility.Hidden;
         }
+
         public void PhotoShow()
         {
             this.Visibility = Visibility.Visible;
@@ -130,9 +156,17 @@ namespace ShitChat.UserControls
 
         private void ChoosePhoto_Btn_Click_1(object sender, RoutedEventArgs e)
         {
-            if (this != null)
+            bool newbool = profilePage.GetBool(false);
+
+            if (this != null && profilePage.GetBool(false) == true)
             {
                 profilePage.Visibility = Visibility.Visible;
+                this.PhotoHide();
+                profilePage.GetBool(false);
+            }
+            else
+            {
+                profile.ShowProfile();
                 this.PhotoHide();
             }
         }

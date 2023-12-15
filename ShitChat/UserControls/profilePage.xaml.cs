@@ -25,8 +25,8 @@ namespace ShitChat.UserControls
         UserManager userManager;
         MainWindow mainWindow;
         menuBar MenuBar;
-
         User searchedUser;
+        bool fromProfilePage = false;
 
         public profilePage()
         {
@@ -101,6 +101,7 @@ namespace ShitChat.UserControls
 
         private void takePhoto_Click(object sender, RoutedEventArgs e)
         {
+            fromProfilePage = true;
             mainWindow.ShowPhotoWindow();
         }
 
@@ -108,6 +109,10 @@ namespace ShitChat.UserControls
         public void SetProfileImage(BitmapImage profileImage)
         {
             avatarPicture.Source = profileImage;
+        }
+        public bool GetBool(bool fromProfilePage)
+        {
+            return fromProfilePage;
         }
     }
 }
