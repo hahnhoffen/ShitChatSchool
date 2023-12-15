@@ -177,7 +177,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="30,30,30,30"
-                Source="/UserControls/shitIconS.png" />
+                Source="/UserControls/avatar5.png" />
             <Button
                 x:Name="profileBtn5"
                 Grid.Row="2"
@@ -208,7 +208,7 @@
                 Grid.Row="2"
                 Grid.Column="2"
                 Margin="30,30,30,30"
-                Source="/UserControls/shitIconS.png" />
+                Source="/UserControls/avatar6.png" />
             <Button
                 x:Name="profileBtn6"
                 Grid.Row="2"

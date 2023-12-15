@@ -129,14 +129,14 @@ namespace ShitChat.UserControls
                     if (searchedUser.UserName == user.UserName)
                     {
                         userManager.currentUser.RemoveFriend(searchedUser);
-                        addFriendBtn.Content = "+ Add Friend";
                         MessageBox.Show("You've removed this user from your friends list!");
+                        addFriendBtn.Content = "+ Add Friend";
                         return;
                     }
                 }
                 userManager.currentUser.AddFriend(searchedUser);
-                addFriendBtn.Content = "- Remove Friend";
                 MessageBox.Show("You added a friend!");
+                addFriendBtn.Content = "- Remove Friend";
             }
         }
 
