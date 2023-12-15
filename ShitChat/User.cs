@@ -20,7 +20,7 @@ namespace ShitChat
         public string Presentation;
         public List<User> friendsList = new List<User>(); 
         public List<Conversation> conversations = new List<Conversation>();
-
+        
 
         public User() { }
 

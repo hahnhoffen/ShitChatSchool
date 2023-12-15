@@ -92,6 +92,7 @@ namespace ShitChat.UserControls
 
         private void friendsButton_Click(object sender, RoutedEventArgs e)
         {
+            //FriendsWindow.ShowFriendsWindow();
             mainWindow.ShowFriendsWindow();
         }
     }
