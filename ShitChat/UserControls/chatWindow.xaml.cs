@@ -82,7 +82,7 @@ namespace ShitChat.UserControls
             MessagesListView.Items.Clear();
 
            
-            Conversation conversation = messageManager.currentUser.conversations.FirstOrDefault(c => c.Friend == selectedFriend);
+            Conversation conversation = messageManager.currentUser.conversations.FirstOrDefault(c => c.Friend.UserName == selectedFriend.UserName);
 
             if (conversation != null)
             {
