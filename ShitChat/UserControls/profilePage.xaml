@@ -11,6 +11,9 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="ImageStyle1" TargetType="{x:Type Image}"  />
+    </UserControl.Resources>
 
     <Grid Background="#FF336444">
         <Grid.ColumnDefinitions>
@@ -50,12 +53,19 @@
                 <DropShadowEffect Opacity="0.5" Color="Black" />
             </Border.Effect>
         </Border>
-        <Image
-            x:Name="avatarPicture"
+        <Border
             Grid.Row="1"
-            Grid.Column="0"
-            Margin="30,30,30,30"
-            Source="/UserControls/avatar1.png" />
+            Grid.Column="0">
+
+            <Image Style="{DynamicResource ImageStyle1}"
+                x:Name="avatarPicture"
+                Source="/UserControls/avatar1.png"
+                Width="183" Height="183"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Stretch="Uniform">
+            </Image>
+        </Border>
         <Label
             x:Name="userNameLabel"
             Grid.Row="1"

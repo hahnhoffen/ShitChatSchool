@@ -27,7 +27,9 @@ namespace ShitChat.UserControls
         dropDownMenu DropDownMenu;
         Profile profile;
         chatWindow chatWindow;
+        TakePhoto takePhoto;
         UserManager userManager;
+
         public Profile()
         {
             InitializeComponent();
@@ -39,8 +41,13 @@ namespace ShitChat.UserControls
             this.registerWindow = registerWindow;
             this.userManager = userManager;
         }
+        public void SetTakePhoto(TakePhoto takePhoto)
+        {
+            this.takePhoto = takePhoto;
+        }
 
 
+        //hämtar värdena av chatWindow 
         public void SetChatWindow(chatWindow ChatWindow)
         {
             this.chatWindow = ChatWindow;
@@ -150,6 +157,10 @@ namespace ShitChat.UserControls
             presentationTextBox.Text = "";
         }
 
+        public void SetProfilePic(BitmapImage image)
+        {
+            ProfilePic_box.Source = image;
+        }
 
         public void ShowProfile()
         {
@@ -160,6 +171,13 @@ namespace ShitChat.UserControls
         public void HideProfile()
         {
             this.Visibility = Visibility.Collapsed;
+        }
+
+        private void Photo_btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            takePhoto.PhotoShow();
+            this.HideProfile();
         }
     }
 }
