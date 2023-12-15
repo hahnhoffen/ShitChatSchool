@@ -82,7 +82,6 @@ namespace ShitChat.UserControls
         private void UpdateChatDisplay(User selectedFriend)
         {
             MessagesListView.Items.Clear();
-
             Conversation conversation = messageManager.currentUser.conversations.FirstOrDefault(c => c.Friend.UserName == selectedFriend.UserName);
 
             if (conversation != null)

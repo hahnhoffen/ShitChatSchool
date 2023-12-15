@@ -71,6 +71,7 @@ namespace ShitChat
             profilePage.SetManagers(registerWindow, userManager, this);
             ChatWindow.SetManager(messageManager);
             Profile.SetRegisterWindow(registerWindow, userManager);
+            ChatWindow.UpdateWindowInformation();
         }
 
 

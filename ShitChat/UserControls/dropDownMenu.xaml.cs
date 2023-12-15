@@ -64,6 +64,10 @@ namespace ShitChat.UserControls
                 chatWindow.UpdateWindowInformation();
                 chatWindow.ShowChatWindow();
             }
+            else
+            {
+                chatWindow.UpdateWindowInformation();
+            }
         }
 
         //sätter värdena på Rutorna/UserControlsen.
