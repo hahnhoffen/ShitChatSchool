@@ -53,6 +53,11 @@ namespace ShitChat.UserControls
                     searchedUser = user;
                     DisplayProfile(user);
                 }
+                else
+                {
+                    MessageBox.Show("There is no such user");
+                    return;
+                }
             }
         }
 
