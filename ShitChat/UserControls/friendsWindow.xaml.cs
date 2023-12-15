@@ -56,29 +56,27 @@ namespace ShitChat.UserControls
         }
         private void RemoveFriends_Click(object sender, RoutedEventArgs e)
         {
-            if (removeFriend_ListBox.Visibility != Visibility.Visible)
+            removeFriend_ListBox.Visibility = Visibility.Visible;
+            
+            /*if (removeFriend_ListBox.SelectedItem != null)
             {
-                removeFriend_ListBox.Visibility = Visibility.Visible;
-                if (removeFriend_ListBox.SelectedItem != null)
+                string message = "Are you sure you want to remove this friend?";
+                string title = "Remove friend";
+                var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
                 {
-                    string message = "Are you sure you want to remove this friend?";
-                    string title = "Remove friend";
-                    var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        manager.currentUser.RemoveFriend(user);
-                        MessageBox.Show("User have been removed as your friend");
-                    }
-                    //else if (removeFriend_ListBox == null)
-                    //{
-                    //    MessageBox.Show("Sadly you have no friends..");
-                    //}
-                    //else if (removeFriend_ListBox.Visibility == Visibility.Hidden)
-                    //{
-                    //    return;
-                    //}
+                    manager.currentUser.RemoveFriend(user);
+                    MessageBox.Show("User have been removed as your friend");
                 }
-            }
+                //else if (removeFriend_ListBox == null)
+                //{
+                //    MessageBox.Show("Sadly you have no friends..");
+                //}
+                //else if (removeFriend_ListBox.Visibility == Visibility.Hidden)
+                //{
+                //    return;
+                //}
+            }*/
         }
         private void search_Button_Click(object sender, RoutedEventArgs e)
         {
