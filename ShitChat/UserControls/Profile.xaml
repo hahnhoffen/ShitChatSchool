@@ -406,5 +406,27 @@
             Content="Passwords not identical"
             Foreground="Red"
             Visibility="Hidden" />
+        <Button
+            x:Name="Photo_btn"
+            Grid.Row="4"
+            Grid.Column="1"
+            Width="100"
+            Height="35"
+            Margin="0,17,0,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Content="Take Photo"
+            Style="{DynamicResource ButtonStyle1}"
+            TabIndex="3" Click="Photo_btn_Click" />
+        <Image
+            x:Name="ProfilePic_box"
+            Grid.Row="1"
+            Grid.Column="2"
+            Width="170"
+            Height="170"
+            Margin="62,8,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+        </Image>
     </Grid>
 </UserControl>

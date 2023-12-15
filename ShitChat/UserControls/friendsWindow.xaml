@@ -21,7 +21,7 @@
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="29*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="removeFriend_ListBox" d:ItemsSource="{d:SampleData ItemCount=0}"  Margin="285,110,94,110" Background="#FFABACAB" RenderTransformOrigin="0.496,0.457" IsEnabled="False" Visibility="Hidden"  Width="235" Height="220">
+        <ListBox x:Name="removeFriend_ListBox" d:ItemsSource="{d:SampleData ItemCount=0}"  Margin="285,110,94,110" Background="#FFABACAB" RenderTransformOrigin="0.496,0.457" IsEnabled="False" Visibility="Hidden" Width="235" Height="220">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -28,6 +28,8 @@ namespace ShitChat.UserControls
         MainWindow mainWindow;
         menuBar MenuBar;
         User searchedUser;
+        bool fromProfilePage = false;
+        bool takenPhoto = false;
 
 
         public profilePage()
@@ -87,22 +89,30 @@ namespace ShitChat.UserControls
             {
                 presentationLabel.Content = searchedUser.Presentation.ToString();
             }
-            if (searchedUser.AvatarImage != null)
+
+            if(takenPhoto == true) 
             {
-                BitmapImage b = new BitmapImage();
-                b.BeginInit();
-                b.UriSource = new Uri(searchedUser.AvatarImage, UriKind.RelativeOrAbsolute);
-                b.EndInit();
-                avatarPicture.Source = b;
+                //if we've been to takenphoto UserControle, keep the picture, else update it to the avatarImage
             }
             else
             {
-                string presetAvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
-                BitmapImage b = new BitmapImage();
-                b.BeginInit();
-                b.UriSource = new Uri(presetAvatarImage, UriKind.RelativeOrAbsolute);
-                b.EndInit();
-                avatarPicture.Source = b;
+                if (searchedUser.AvatarImage != null)
+                {
+                    BitmapImage b = new BitmapImage();
+                    b.BeginInit();
+                    b.UriSource = new Uri(searchedUser.AvatarImage, UriKind.RelativeOrAbsolute);
+                    b.EndInit();
+                    avatarPicture.Source = b;
+                }
+                else
+                {
+                    string presetAvatarImage = @"/UserControls/avatar1.png";   //Updating the pathway for the specific account's avatar image
+                    BitmapImage b = new BitmapImage();
+                    b.BeginInit();
+                    b.UriSource = new Uri(presetAvatarImage, UriKind.RelativeOrAbsolute);
+                    b.EndInit();
+                    avatarPicture.Source = b;
+                }
             }
         }
 
@@ -156,6 +166,8 @@ namespace ShitChat.UserControls
 
         private void takePhoto_Click(object sender, RoutedEventArgs e)
         {
+            takenPhoto = true;
+            fromProfilePage = true;
             mainWindow.ShowPhotoWindow();
         }
 
@@ -164,6 +176,11 @@ namespace ShitChat.UserControls
         public void SetProfileImage(BitmapImage profileImage)
         {
             avatarPicture.Source = profileImage;
+        }
+
+        public bool GetBool(bool fromProfilePage)
+        {
+            return fromProfilePage;
         }
     }
 }
