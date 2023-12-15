@@ -32,7 +32,7 @@ namespace ShitChat
         public MainWindow()
         {
             InitializeComponent();
-            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager, profilePage);
+            DropDownMenu.SetWindows(Profile, ChatWindow, Front, this, userManager, profilePage, friendsWindow);
             TakePhoto.SetProfilePage(profilePage);
             TakePhoto.SetProfile(Profile);
             Profile.SetTakePhoto(TakePhoto);

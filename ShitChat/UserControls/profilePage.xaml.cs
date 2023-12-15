@@ -50,7 +50,7 @@ namespace ShitChat.UserControls
         {
             foreach (User user in registerWindow.userList)
             {
-                if (userName == user.UserName)
+                if (userName.ToLower() == user.UserName.ToLower())
                 {
                     searchedUser = user;
                     DisplayProfile(user);

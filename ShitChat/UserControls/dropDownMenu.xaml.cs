@@ -44,6 +44,7 @@ namespace ShitChat.UserControls
             chatWindow.HideChatWindow();
             frontWindow.HideFront();
             ProfilePage.Visibility = Visibility.Hidden;
+            FriendsWindow.Visibility = Visibility.Hidden;
 
             if (profile.Visibility != Visibility.Visible)
             {
@@ -58,6 +59,7 @@ namespace ShitChat.UserControls
             profile.Visibility = Visibility.Hidden;
             frontWindow.HideFront();
             ProfilePage.Visibility= Visibility.Hidden;
+            FriendsWindow.Visibility = Visibility.Hidden;
 
             if (chatWindow.Visibility != Visibility.Visible)
             {
@@ -71,7 +73,7 @@ namespace ShitChat.UserControls
         }
 
         //sätter värdena på Rutorna/UserControlsen.
-        public void SetWindows(Profile profile, chatWindow ChatWindow, FrontWindow frontWindow, MainWindow mainWindow, UserManager userManager, profilePage profilePage)
+        public void SetWindows(Profile profile, chatWindow ChatWindow, FrontWindow frontWindow, MainWindow mainWindow, UserManager userManager, profilePage profilePage, friendsWindow friendsWindow)
         {
             this.profile = profile;
             this.chatWindow = ChatWindow;
@@ -79,6 +81,7 @@ namespace ShitChat.UserControls
             this.mainWindow = mainWindow;
             this.userManager = userManager;
             this.ProfilePage = profilePage;
+            this.FriendsWindow = friendsWindow;
         }
 
         private void Home_Btn_Click(object sender, RoutedEventArgs e)
@@ -86,6 +89,7 @@ namespace ShitChat.UserControls
             if (frontWindow.Visibility != Visibility.Visible)
             {
                 ProfilePage.Visibility = Visibility.Hidden;
+                FriendsWindow.Visibility = Visibility.Hidden;
                 frontWindow.ShowFront();
             }
             else
