@@ -120,6 +120,7 @@ namespace ShitChat.UserControls
             }
         }
 
+
         private void addFriendBtn_Click(object sender, RoutedEventArgs e)
         {
             if (searchedUser != null) 
