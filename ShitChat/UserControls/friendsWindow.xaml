@@ -21,7 +21,7 @@
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="29*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="removeFriend_ListBox" d:ItemsSource="{d:SampleData ItemCount=0}"  Margin="285,110,94,110" Background="#FFABACAB" RenderTransformOrigin="0.496,0.457" IsEnabled="False" Visibility="Hidden" Width="235" Height="220">
+        <ListBox x:Name="removeFriend_ListBox" Margin="35,59,131,98" Background="#FFABACAB" RenderTransformOrigin="0.496,0.457" Visibility="Visible" IsEnabled="True" SelectionChanged="removeFriend_ListBox_SelectionChanged">
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,12 +31,8 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <Button x:Name="AddFriends" Content="Add friend" Margin="25,335,493,75" Click="AddFriends_Click" Background="#FFDDDDDD" BorderThickness="0,1,1,1" RenderTransformOrigin="0.491,0.596" Visibility="Visible" Width="95" Height="30"/>
-        <Button x:Name="RemoveFriends" Content="Remove friend" Margin="25,385,494,25" Click="RemoveFriends_Click" RenderTransformOrigin="-0.046,-0.391" Visibility="Visible" Width="95" Height="30"/>
-        <ListBox x:Name="AddFriend_ListBox" d:ItemsSource="{Binding Users}" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="25,110,354,180" Background="#FFABACAB" IsEnabled="False" Visibility="Hidden" Width="235" Height="150"/>
-        <TextBox x:Name="searchNewFriends" HorizontalAlignment="Left" Margin="27,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Opacity="0.59" AcceptsReturn="True" Visibility="Hidden" BorderBrush="White" SelectionBrush="#FFFBFBFB" Height="17"/>
-        <Button x:Name="search_Button" Content="Search" HorizontalAlignment="Left" Margin="160,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.086,-0.501" Click="search_Button_Click" Visibility="Hidden"/>
-        <Label x:Name="textHelper" Content="Find new friends by searching below!" Margin="33,10,142,383" FontWeight="Bold" FontSize="20" Foreground="White" Visibility="Hidden"/>
+        <Button x:Name="RemoveFriends" Content="Remove friend" Margin="37,362,482,48" RenderTransformOrigin="-0.046,-0.391" Visibility="Visible" Width="95" Height="30" IsEnabled="False" Click="RemoveFriends_Click"/>
+        <Label x:Name="textHelper" Content="Here is your friendlist, click on them and then the button to remove them" Margin="-1,4,2,389" FontWeight="Bold" FontSize="20" Foreground="White" Visibility="Visible" Grid.ColumnSpan="2"/>
 
     </Grid>
 

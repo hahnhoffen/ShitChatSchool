@@ -24,7 +24,7 @@ namespace ShitChat.UserControls
         MainWindow mainWindow;
         UserManager userManager;
         profilePage ProfilePage;
-        friendsWindow FriendsWindow;
+        friendsWindow friends;
 
 
         public dropDownMenu()
@@ -34,6 +34,7 @@ namespace ShitChat.UserControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            friends.HideFriendsWindow();
             mainWindow.Visibility = Visibility.Collapsed;
             mainWindow.ShowLogin();
         }
@@ -41,10 +42,11 @@ namespace ShitChat.UserControls
 
         private void Profile_btn_Click(object sender, RoutedEventArgs e)
         {
+            friends.HideFriendsWindow();
             chatWindow.HideChatWindow();
             frontWindow.HideFront();
             ProfilePage.Visibility = Visibility.Hidden;
-            FriendsWindow.Visibility = Visibility.Hidden;
+            friends.Visibility = Visibility.Hidden;
 
             if (profile.Visibility != Visibility.Visible)
             {
@@ -56,10 +58,12 @@ namespace ShitChat.UserControls
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            friends.HideFriendsWindow();
             profile.Visibility = Visibility.Hidden;
             frontWindow.HideFront();
+            friends.HideFriendsWindow();
             ProfilePage.Visibility= Visibility.Hidden;
-            FriendsWindow.Visibility = Visibility.Hidden;
+            friends.Visibility = Visibility.Hidden;
 
             if (chatWindow.Visibility != Visibility.Visible)
             {
@@ -73,7 +77,11 @@ namespace ShitChat.UserControls
         }
 
         //sätter värdena på Rutorna/UserControlsen.
+<<<<<<< HEAD
         public void SetWindows(Profile profile, chatWindow ChatWindow, FrontWindow frontWindow, MainWindow mainWindow, UserManager userManager, profilePage profilePage, friendsWindow friendsWindow)
+=======
+        public void SetWindows(Profile profile, chatWindow ChatWindow, FrontWindow frontWindow, MainWindow mainWindow, UserManager userManager, profilePage profilePage, friendsWindow friends)
+>>>>>>> YES
         {
             this.profile = profile;
             this.chatWindow = ChatWindow;
@@ -81,11 +89,16 @@ namespace ShitChat.UserControls
             this.mainWindow = mainWindow;
             this.userManager = userManager;
             this.ProfilePage = profilePage;
+<<<<<<< HEAD
             this.FriendsWindow = friendsWindow;
+=======
+            this.friends = friends;
+>>>>>>> YES
         }
 
         private void Home_Btn_Click(object sender, RoutedEventArgs e)
         {
+            friends.HideFriendsWindow();
             if (frontWindow.Visibility != Visibility.Visible)
             {
                 ProfilePage.Visibility = Visibility.Hidden;
@@ -100,8 +113,9 @@ namespace ShitChat.UserControls
 
         private void friendsButton_Click(object sender, RoutedEventArgs e)
         {
-            //FriendsWindow.ShowFriendsWindow();
-            mainWindow.ShowFriendsWindow();
+            //friends = new friendsWindow();
+            friends.ShowFriendsWindow();
+            
         }
     }
 }

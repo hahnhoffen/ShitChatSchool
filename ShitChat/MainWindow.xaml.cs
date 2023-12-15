@@ -22,6 +22,7 @@ namespace ShitChat
     /// </summary>
     public partial class MainWindow : Window
     {
+        FriendsManager friendsManager = new FriendsManager();
         MessageManager messageManager = new MessageManager();
         UserManager userManager = new UserManager();
         RegisterWindow registerWindow;
@@ -72,6 +73,7 @@ namespace ShitChat
             ChatWindow.SetManager(messageManager);
             Profile.SetRegisterWindow(registerWindow, userManager);
             ChatWindow.UpdateWindowInformation();
+            friendsWindow.SetManager(messageManager);
         }
 
 
@@ -92,9 +94,6 @@ namespace ShitChat
             TakePhoto.PhotoHide();
         }
 
-        public void ShowFriendsWindow()
-        {
-            friendsWindow.Visibility = Visibility.Visible;
-        }
+
     }
 }

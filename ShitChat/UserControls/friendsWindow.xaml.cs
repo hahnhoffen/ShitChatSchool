@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Net.Http.Json;
@@ -25,132 +26,145 @@ namespace ShitChat.UserControls
     /// </summary>
     public partial class friendsWindow : UserControl
     {
-        public List<User> Users { get; private set; }
-        UserManager manager = new UserManager();
-        User user = new User();
+        //UserManager manager; //= new UserManager();
+        User user;
         RegisterWindow register = new RegisterWindow();
+        MessageManager friendsManager;
         private User loggedInUser;
+
         public friendsWindow()
         {
             InitializeComponent();
-            LoadUserData();
-            DataContext = this;
         }
-        private void LoadUserData()
+
+        public void SetManager(MessageManager manager)
         {
-            string jsonF = manager.usersPath;
-            try
-            {
-                string jsonContent = File.ReadAllText(jsonF);
-                Users = JsonConvert.DeserializeObject<List<User>>(jsonContent);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
+            this.friendsManager = manager;
         }
-        private bool IsUser (string username)
-        {
-            loggedInUser = register.userList.FirstOrDefault(user => user.UserName == username);
-            return loggedInUser != null;
-        }
+
+        //private bool IsUser (string username)
+        //{
+        //    loggedInUser = register.userList.FirstOrDefault(user => user.UserName == username);
+        //    return loggedInUser != null;
+        //}
+
         private bool IsAdmin()
         {
-            return loggedInUser != null && loggedInUser.UserName == "admin";
+            //return loggedInUser != null && loggedInUser.UserName == "admin";
+            return friendsManager.currentUser.UserName == "admin";
         }
-        private void AddFriends_Click(object sender, RoutedEventArgs e)
-        {
-            textHelper.Visibility = Visibility.Visible;
-            searchNewFriends.Visibility = Visibility.Visible;
-            search_Button.Visibility = Visibility.Visible;
-            AddFriend_ListBox.Visibility = Visibility.Visible;
-        }
-        private void RemoveFriends_Click(object sender, RoutedEventArgs e)
-        {
-            removeFriend_ListBox.Visibility = Visibility.Visible;
-            if (IsAdmin())
-            {
-                removeFriend_ListBox.Items.Add(register.userList);
-            }
-            else
-            {
-                removeFriend_ListBox.Items.Add(user.friendsList);
-            }
-        }
-        private void search_Button_Click(object sender, RoutedEventArgs e)
-        {
-            string searching = searchNewFriends.Text.Trim();
-            /*if (!string.IsNullOrEmpty(searching))
-            {
-                User foundUser = Users.FirstOrDefault(user => user.UserName == searching);
-                if (foundUser != null)
-                {
-                    AddFriend_ListBox.Items.Add(foundUser.UserName);
-                    string message = $"Do you want to add {foundUser.UserName} to your friendlist?";
-                    string title = "Add friend";
-                    var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        user.AddFriend(user);
-                        MessageBox.Show($"{foundUser.UserName} have been added as your friend");
-                        AddFriend_ListBox.Items.Clear();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("User not Found, please try again!");
-                }
-            }*/
-        }
+
         public void ShowFriendsWindow()
         {
             this.Visibility = Visibility.Visible;
+            ShowFriendsList();
         }
+
         public void HideFriendsWindow()
         {
             this.Visibility = Visibility.Collapsed;
         }
-        private void removeFriend_ListBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+
+        private void ShowFriendsList()
         {
-            if (removeFriend_ListBox.Visibility != Visibility.Visible)
+            removeFriend_ListBox.Items.Clear();
+            if (IsAdmin())
             {
-                removeFriend_ListBox.Visibility = Visibility.Visible;
-                if (IsAdmin())
+
+                foreach (User user in register.userList)
                 {
-                    if (removeFriend_ListBox.SelectedItem != null)
+                    if (user.UserName != "admin")
                     {
-                        string message = "Are you sure you want to remove this user?";
-                        string title = "Remove User";
-                        var option = MessageBox.Show(message, title, MessageBoxButton.YesNo);
-                        if (option == MessageBoxResult.Yes)
+                        removeFriend_ListBox.Items.Add(user.UserName);
+                    }
+                }
+            }
+            else
+            {
+                if (friendsManager.currentUser.friendsList != null && friendsManager.currentUser.friendsList.Count > 0)
+                {
+                    foreach (User friend in friendsManager.currentUser.friendsList)
+                    {
+                        if (friend.UserName != friendsManager.currentUser.UserName)
                         {
-                            manager.currentUser.RemoveFriend(user);
-                            MessageBox.Show("User have been removed!");
+                            removeFriend_ListBox.Items.Add($"{friend.UserName}");
                         }
                     }
                 }
                 else
                 {
-                    if (removeFriend_ListBox.SelectedItem != null)
-                    {
-                        string message = "Are you sure you want to remove this friend?";
-                        string title = "Remove friend";
-                        var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
-                        if (result == MessageBoxResult.Yes)
-                        {
-                            manager.currentUser.RemoveFriend(user);
-                            MessageBox.Show("User have been removed as your friend");
-                        }
-                        else if (removeFriend_ListBox == null)
-                        {
-                            MessageBox.Show("Sadly you have no friends..");
-                        }
-                        else if (removeFriend_ListBox.Visibility == Visibility.Hidden)
-                        {
-                            return;
-                        }
-                    }
+                    MessageBox.Show("Sadly you have no friends :(");
                 }
+            }
+        }
+
+        private void UpdateRemoveFriendsButtonState()
+        {
+            RemoveFriends.IsEnabled = true;
+        }
+
+        private void removeFriend_ListBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            UpdateRemoveFriendsButtonState();
+        }
+
+        //private void RemoveFriends_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (IsAdmin())
+        //    {
+        //        HandleAdminRemove();
+        //    }
+        //    else
+        //    {
+        //        HandleUserRemove();
+        //    }
+        //}
+
+        private void HandleAdminRemove()
+        {
+            if (removeFriend_ListBox.SelectedItem != null)
+            {
+                string message = "Are you sure you want to remove this user?";
+                string title = "Remove User";
+                var option = MessageBox.Show(message, title, MessageBoxButton.YesNo);
+
+                if (option == MessageBoxResult.Yes)
+                {
+                    removeFriend_ListBox.Items.Remove(removeFriend_ListBox.SelectedItem);
+                    MessageBox.Show("User has been removed!");
+                }
+            }
+        }
+
+        private void HandleUserRemove()
+        {
+            if (removeFriend_ListBox.SelectedItem != null)
+            {
+                string message = "Are you sure you want to remove this friend?";
+                string title = "Remove Friend";
+                var result = MessageBox.Show(message, title, MessageBoxButton.YesNo);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    removeFriend_ListBox.Items.Remove(removeFriend_ListBox.SelectedItem);
+                    MessageBox.Show("Friend has been removed as your friend");
+                }
+                else if (removeFriend_ListBox == null)
+                {
+                    MessageBox.Show("Sadly, you have no friends..");
+                }
+            }
+        }
+
+        private void RemoveFriends_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsAdmin())
+            {
+                HandleAdminRemove();
+            }
+            else
+            {
+                HandleUserRemove();
             }
         }
     }
