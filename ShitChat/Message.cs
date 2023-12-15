@@ -10,11 +10,11 @@ namespace ShitChat
     public class Message
     {
         public string MessageString { get; set; }
-        public User Writer {  get; set; }
-        public User Reciever { get; set; }
+        public string Writer {  get; set; }
+        public string Reciever { get; set; }
 
 
-        public Message(string messageString, User writer, User reciever)
+        public Message(string messageString, string writer, string reciever)
         {
             this.MessageString = messageString;
             this.Writer = writer;   

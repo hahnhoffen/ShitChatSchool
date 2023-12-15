@@ -34,7 +34,7 @@ namespace ShitChat
             }
 
            
-            conversation.messages.Add(new Message(message, writer, reciever));
+            conversation.messages.Add(new Message(message, writer.UserName, reciever.UserName));
 
            
             Conversation recipientConversation = reciever.conversations.FirstOrDefault(c => c.Friend == writer);
@@ -45,7 +45,7 @@ namespace ShitChat
                 reciever.conversations.Add(recipientConversation);
             }
 
-            recipientConversation.messages.Add(new Message(message, writer, reciever));
+            recipientConversation.messages.Add(new Message(message, writer.UserName, reciever.UserName));
         }
 
 

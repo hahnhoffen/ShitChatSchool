@@ -49,6 +49,8 @@ namespace ShitChat.UserControls
             if (FriendsListBox.SelectedItem != null)
             {
                 User selectedFriend = messageManager.currentUser.friendsList.FirstOrDefault(user => user.UserName == FriendsListBox.SelectedItem.ToString());
+                reciever = selectedFriend;
+
                 friendNameLabel.Content = selectedFriend.UserName;
                 UpdateChatDisplay(selectedFriend);
             }
@@ -81,14 +83,13 @@ namespace ShitChat.UserControls
         {
             MessagesListView.Items.Clear();
 
-           
             Conversation conversation = messageManager.currentUser.conversations.FirstOrDefault(c => c.Friend.UserName == selectedFriend.UserName);
 
             if (conversation != null)
             {
                 foreach (Message message in conversation.messages)
                 {
-                    MessagesListView.Items.Add($"{message.Writer.UserName}: {message.MessageString}");
+                    MessagesListView.Items.Add($"{message.Writer}: {message.MessageString}");
                 }
             }
         }
