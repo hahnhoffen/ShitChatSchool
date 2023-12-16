@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Windows.Themes;
 using ShitChat.UserControls;
 
 namespace ShitChat
@@ -55,13 +56,6 @@ namespace ShitChat
             this.login = login;
         }
 
-
-        public void ShowLogin()
-        {
-            login.Visibility = Visibility.Visible;
-        }
-
-
         public void SetUserName(User user)
         {
             this.currentUser = user;
@@ -74,6 +68,11 @@ namespace ShitChat
             Profile.SetRegisterWindow(registerWindow, userManager);
             ChatWindow.UpdateWindowInformation();
             friendsWindow.SetManager(messageManager);
+        }
+
+        public void ShowLogin()
+        {
+            login.Visibility = Visibility.Visible;
         }
 
 
@@ -94,6 +93,9 @@ namespace ShitChat
             TakePhoto.PhotoHide();
         }
 
-
+        public void HideFriends()
+        {
+            friendsWindow.Visibility = Visibility.Hidden;
+        }
     }
 }

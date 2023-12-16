@@ -64,6 +64,7 @@ namespace ShitChat.UserControls
 
         public void DisplayProfile(User searchedUser)
         {
+            mainWindow.HideFriends();
             bool myProfile = true;
             if (searchedUser.UserName == userManager.currentUser.UserName)
             {
